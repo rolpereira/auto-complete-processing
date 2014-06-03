@@ -144,10 +144,19 @@
       (error "Not `looking-back' at `ac-last-completion'."))
     (save-excursion
       (re-search-backward just-completed-string)
-      (when (assoc just-completed-string auto-complete-processing--functions-to-remove-prefix)
-        (replace-match (cdr (assoc just-completed-string auto-complete-processing--functions-to-remove-prefix)))))))
-
-
+      (let ((replace (assoc just-completed-string auto-complete-processing--functions-to-remove-prefix)))
+        (when replace
+          (replace-match (cdr replace))
+          ;; If there is a ". " before `just-completed-string' then remove the space
+          ;; This let's you do something like the following:
+          ;;     FloatList foo;
+          ;;     foo. |                <-- cursor is here
+          ;;     foo. float|[list.add] <-- cursor needs to be separated from "foo." to start the auto-complete
+          ;;     foo.add               <-- pressing RET joins the "add" with the "foo."
+          (when (looking-back (concat "\\\. " (cdr replace)))
+            (re-search-backward (concat "\\\. " (cdr replace)))
+            ;; Remove the space after the "." character
+            (replace-match (concat "." (cdr replace)) nil 'literal)))))))
 
 (defvar ac-source-processing
   '((candidates . auto-complete-processing--get-candidates)
