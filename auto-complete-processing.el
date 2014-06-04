@@ -25,61 +25,206 @@
 ;;; Code:
 
 (defvar auto-complete-processing--auto-complete-data
-  '("FloatList.add"
-     "FloatList.append"
-     "FloatList.array"
-     "FloatList.clear"
-     "FloatList.div"
-     "FloatList.get"
-     "FloatList.hasValue"
-     "FloatList.max"
-     "FloatList.min"
-     "FloatList.mult"
-     "FloatList.remove"
-     "FloatList.reverse"
-     "FloatList.set"
-     "FloatList.shuffle"
-     "FloatList.size"
-     "FloatList.sort"
-     "FloatList.sortReverse"
-     "FloatList.sub"
-     "IntList.add"
-     "IntList.append"
-     "IntList.array"
-     "IntList.clear"
-     "IntList.div"
-     "IntList.get"
-     "IntList.hasValue"
-     "IntList.increment"
-     "IntList.max"
-     "IntList.min"
-     "IntList.mult"
-     "IntList.remove"
-     "IntList.reverse"
-     "IntList.set"
-     "IntList.shuffle"
-     "IntList.size"
-     "IntList.sort"
-     "IntList.sortReverse"
-     "IntList.sub"
-     "StringList.append"
-     "StringList.array"
-     "StringList.clear"
-     "StringList.get"
-     "StringList.hasValue"
-     "StringList.lower"
-     "StringList.remove"
-     "StringList.reverse"
-     "StringList.set"
-     "StringList.shuffle"
-     "StringList.size"
-     "StringList.sort"
-     "StringList.sortReverse"
-     "StringList.upper")
+  '(("FloatDict.add" "Add to a value. If the key does not exist, an new pair is initialized with the value supplied.")
+     ("FloatDict.clear" "Remove all entries from the data structure.")
+     ("FloatDict.div" "Divide a value.")
+     ("FloatDict.get" "Return a value for the specified key.")
+     ("FloatDict.hasKey" "Check if a key is a part of the data structure.")
+     ("FloatDict.keyArray" "Return a copy of the internal keys array. In contrast to the <b>keys()</b> 
+method, this array can be modified.")
+     ("FloatDict.keys" "Return the internal array being used to store the keys.")
+     ("FloatDict.mult" "Multiply a value.")
+     ("FloatDict.remove" "Remove a key/value pair.")
+     ("FloatDict.set" "Create a new key/value pair or change the value of one.")
+     ("FloatDict.size" "Returns the number of key/value pairs.")
+     ("FloatDict.sortKeys" "Sort the keys alphabetically (ignoring case). Uses the value as 
+a tie-breaker (only really possible with a key that has a case change).")
+     ("FloatDict.sortKeysReverse" "Sort the keys alphabetically in reverse (ignoring case). Uses the value 
+as a tie-breaker (only really possible with a key that has a case change).")
+     ("FloatDict.sortValues" "Sort by values in ascending order. The smallest value will be at [0].")
+     ("FloatDict.sortValuesReverse" "Sort by values in descending order. The largest value will be at [0].")
+     ("FloatDict.sub" "Subtract from a value.")
+     ("FloatDict.valueArray" "The version of this method without a parameter creates a new 
+array and copies each of the values into it. The version with
+the <b>float[]</b> parameters fills an already-allocated array with the 
+values (more efficient than creating a new array each time). 
+If 'array' is null, or not the same size as the number of values, 
+a new array will be allocated and returned.")
+     ("FloatDict.values" "Return the internal array being used to store the values.")
+     ("FloatList.add" "Add to a value.")
+     ("FloatList.append" "Add a new entry to the list.")
+     ("FloatList.array" "Create a new array with a copy of all the values.")
+     ("FloatList.clear" "Remove all entries from the list.")
+     ("FloatList.div" "Divide a value.")
+     ("FloatList.get" "Get an entry at a particular index.")
+     ("FloatList.hasValue" "Check if a number is a part of the list.")
+     ("FloatList.max" "Return the largest value.")
+     ("FloatList.min" "Return the smallest value.")
+     ("FloatList.mult" "Multiply a value.")
+     ("FloatList.remove" "Remove an element from the specified index.")
+     ("FloatList.reverse" "Reverse the order of the list.")
+     ("FloatList.set" "Set the entry at a particular index.")
+     ("FloatList.shuffle" "Randomize the order of the list elements.")
+     ("FloatList.size" "Get the length of the list.")
+     ("FloatList.sort" "Sorts an array, lowest to highest.")
+     ("FloatList.sortReverse" "A sort in reverse. It's equivalent to running <b>sort()</b> and then <b>reverse()</b>, but is more efficient than running each separately.")
+     ("FloatList.sub" "Subtract from a value.")
+     ("IntDict.add" "Add to a value. If the key does not exist, an new pair is initialized with the value supplied.")
+     ("IntDict.clear" "Remove all entries from the data structure.")
+     ("IntDict.div" "Divide a value.")
+     ("IntDict.get" "Return a value for the specified key.")
+     ("IntDict.hasKey" "Check if a key is a part of the data structure.")
+     ("IntDict.increment" "Increase the value of a specific key value by 1")
+     ("IntDict.keyArray" "Return a copy of the internal keys array. In contrast to the <b>keys()</b> 
+method, this array can be modified.")
+     ("IntDict.keys" "Return the internal array being used to store the keys.")
+     ("IntDict.mult" "Multiply a value.")
+     ("IntDict.remove" "Remove a key/value pair.")
+     ("IntDict.set" "Create a new key/value pair or change the value of one.")
+     ("IntDict.size" "Returns the number of key/value pairs.")
+     ("IntDict.sortKeys" "Sort the keys alphabetically (ignoring case). Uses the value as 
+a tie-breaker (only really possible with a key that has a case change).")
+     ("IntDict.sortKeysReverse" "Sort the keys alphabetically in reverse (ignoring case). Uses the value as 
+a tie-breaker (only really possible with a key that has a case change).")
+     ("IntDict.sortValues" "Sort by values in ascending order. The smallest value will be at [0].")
+     ("IntDict.sortValuesReverse" "Sort by values in descending order. The largest value will be at [0].")
+     ("IntDict.sub" "Subtract from a value.")
+     ("IntDict.valueArray" "The version of this method without a parameter creates a new 
+array and copies each of the values into it. The version with
+the <b>int[]</b> parameters fills an already-allocated array with the 
+values (more efficient than creating a new array each time). 
+If 'array' is null, or not the same size as the number of values, 
+a new array will be allocated and returned.")
+     ("IntDict.values" "Return the internal array being used to store the values.")
+     ("IntList.add" "Add to a value.")
+     ("IntList.append" "Add a new entry to the list.")
+     ("IntList.array" "Create a new array with a copy of all the values.")
+     ("IntList.clear" "Remove all entries from the list.")
+     ("IntList.div" "Divide a value.")
+     ("IntList.get" "Get an entry at a particular index.")
+     ("IntList.hasValue" "Check if a number is a part of the data structure.")
+     ("IntList.increment" "Add one to a value.")
+     ("IntList.max" "Return the largest value.")
+     ("IntList.min" "Return the smallest value.")
+     ("IntList.mult" "Multiply a value.")
+     ("IntList.remove" "Remove an element from the specified index.")
+     ("IntList.reverse" "Reverse the order of the list.")
+     ("IntList.set" "Set the entry at a particular index.")
+     ("IntList.shuffle" "Randomize the order of the list elements.")
+     ("IntList.size" "Get the length of the list.")
+     ("IntList.sort" "Sorts the array, lowest to highest")
+     ("IntList.sortReverse" "A sort in reverse. It's equivalent to running <b>sort()</b> and then 
+<b>reverse()</b>, but is more efficient than running each separately.")
+     ("IntList.sub" "Subtract from a value.")
+     ("JSONArray.append" "Appends a new value to the <b>JSONArray</b>, increasing the array's length by one. New values may be of the following types: int, float, String, boolean, <b>JSONObject</b>, or <b>JSONArray</b>.")
+     ("JSONArray.getBoolean" "Gets the boolean value associated with the specified index.")
+     ("JSONArray.getFloat" "Gets the float value associated with the specified index.")
+     ("JSONArray.getInt" "Gets the int value associated with the specified index.")
+     ("JSONArray.getIntArray" "Returns the entire <b>JSONArray</b> as an array of ints.  (All values in the array must be of the int type.)")
+     ("JSONArray.getJSONArray" "Retrieves the <b>JSONArray</b> with the associated index value.")
+     ("JSONArray.getJSONObject" "Retrieves the <b>JSONObject</b> with the associated index value.")
+     ("JSONArray.getString" "Gets the String value associated with the specified index.")
+     ("JSONArray.getStringArray" "Returns the entire <b>JSONArray</b> as an array of Strings.  (All values in the array must be of the String type.)")
+     ("JSONArray.remove" "Removes the element from a <b>JSONArray</b> in the specified index position. Returns either the value associated with the given index, or null, if there is no value.")
+     ("JSONArray.setBoolean" "Inserts a new value into the <b>JSONArray</b> at the specified index position. If a value already exists in the specified position, the new value overwrites the old value. If the given index is greater than the length of the <b>JSONArray</b>, then null elements will be added as necessary to pad it out.")
+     ("JSONArray.setFloat" "Inserts a new value into the <b>JSONArray</b> at the specified index position. If a value already exists in the specified position, the new value overwrites the old value. If the given index is greater than the length of the <b>JSONArray</b>, then null elements will be added as necessary to pad it out.")
+     ("JSONArray.setInt" "Inserts a new value into the <b>JSONArray</b> at the specified index position. If a value already exists in the specified position, the new value overwrites the old value. If the given index is greater than the length of the <b>JSONArray</b>, then null elements will be added as necessary to pad it out.")
+     ("JSONArray.getJSONArray" "Sets the value of the <b>JSONArray</b> with the associated index value.")
+     ("JSONArray.getJSONObject" "Sets the value of the <b>JSONObject</b> with the index value.")
+     ("JSONArray.setString" "Inserts a new value into the <b>JSONArray</b> at the specified index position. If a value already exists in the specified position, the new value overwrites the old value. If the given index is greater than the length of the <b>JSONArray</b>, then null elements will be added as necessary to pad it out.")
+     ("JSONArray.size" "Gets the total number of elements in a <b>JSONArray</b> (inclusive of null elements).")
+     ("JSONObject.getBoolean" "Gets the boolean value associated with the specified key.")
+     ("JSONObject.getFloat" "Gets the float value associated with the specified key.")
+     ("JSONObject.getInt" "Gets the int value associated with the specified key.")
+     ("JSONObject.getJSONArray" "Retrieves the <b>JSONArray</b> with the associated key.")
+     ("JSONObject.getJSONObject" "Given a key value, retrieves the associated <b>JSONObject</b>.")
+     ("JSONObject.getString" "Gets the String value associated with the specified key.")
+     ("JSONObject.setBoolean" "Inserts a new key/boolean pair into the <b>JSONObject</b> or, if a value with the specified key already exists, assigns a new value.")
+     ("JSONObject.setFloat" "Inserts a new key/float pair into the <b>JSONObject</b> or, if a value with the specified key already exists, assigns a new value.")
+     ("JSONObject.setInt" "Inserts a new key/int pair into the <b>JSONObject</b> or, if a value with the specified key already exists, assigns a new value.")
+     ("JSONObject.setJSONArray" "Sets the value of the <b>JSONArray</b> with the associated key.")
+     ("JSONObject.setJSONObject" "Sets the value of the <b>JSONObject</b> with the associated key.")
+     ("JSONObject.setString" "Inserts a new key/String pair into the <b>JSONObject</b> or, if a value with the specified key already exists, assigns a new value.")
+     ("StringDict.clear" "Remove all entries.")
+     ("StringDict.get" "Return a value for the specified key.")
+     ("StringDict.hasKey" "Check if a key is a part of the data structure.")
+     ("StringDict.keyArray" "Return a copy of the internal keys array.")
+     ("StringDict.keys" "Return the internal array being used to store the keys.")
+     ("StringDict.remove" "Remove a key/value pair.")
+     ("StringDict.set" "Create a new key/value pair or change the value of one.")
+     ("StringDict.size" "Returns the number of key/value pairs.")
+     ("StringDict.sortKeys" "Sort the keys alphabetically.")
+     ("StringDict.sortKeysReverse" "Sort the keys alphabetially in reverse.")
+     ("StringDict.sortValues" "Sort by values in descending order.")
+     ("StringDict.sortValuesReverse" "Sort by values in descending order.")
+     ("StringDict.valueArray" "Create a new array and copy each of the values into it.")
+     ("StringDict.values" "Return the internal array being used to store the values.")
+     ("StringList.append" "Add a new entry to the list.")
+     ("StringList.array" "Create a new array with a copy of all the values.")
+     ("StringList.clear" "Remove all entries from the list.")
+     ("StringList.get" "Get an entry at a particular index.")
+     ("StringList.hasValue" "Check if a value is a part of the list.")
+     ("StringList.lower" "Make the entire list lower case.")
+     ("StringList.remove" "Remove an element from the specified index.")
+     ("StringList.reverse" "Reverses the order of the list.")
+     ("StringList.set" "Set the entry at a particular index. If the index is past the length of the list, it'll expand the list to accommodate, and fill the intermediate entries with \"null\".")
+     ("StringList.shuffle" "Randomize the order of the list elements")
+     ("StringList.size" "Get the length of the list.")
+     ("StringList.sort" "Sorts the array in place.")
+     ("StringList.sortReverse" "A sort in reverse. It's equivalent to running <b>sort()</b> and then <b>reverse()</b>, but is more efficient than running each separately.")
+     ("StringList.upper" "Make the entire list upper case.")
+     ("TableRow.getFloat" "Retrieves a float value from the <b>TableRow</b>'s specified column. The column may be specified by either its ID or title.")
+     ("TableRow.getFloat" "Retrieves an integer value from the <b>TableRow</b>'s specified column. The column may be specified by either its ID or title.")
+     ("TableRow.getString" "Retrieves a String value from the <b>TableRow</b>'s specified column. The column may be specified by either its ID or title.")
+     ("TableRow.setFloat" "Stores a float value in the <b>TableRow</b>'s specified column. The column may be specified by either its ID or title.")
+     ("TableRow.setInt" "Stores an integer value in the <b>TableRow</b>'s specified column. The column may be specified by either its ID or title.")
+     ("TableRow.setString" "Stores a String value in the <b>TableRow</b>'s specified column. The column may be specified by either its ID or title.")
+     ("Table.addColumn" "Use <b>addColumn()</b> to add a new column to a <b>Table</b> object.  Typically, you will want to specify a title, so the column may be easily referenced later by name.  (If no title is specified, the new column's title will be null.)  A column type may also be specified, in which case all values stored in this column must be of the same type (e.g., Table.INT or Table.FLOAT).  If no type is specified, the default type of STRING is used.")
+     ("Table.addRow" "Use <b>addRow()</b> to add a new row of data to a <b>Table</b> object.  By default, an empty row is created.  Typically, you would store a reference to the new row in a <b>TableRow</b> object (see <b>newRow</b> in the example above), and then set individual values using <b>setInt()</b>, <b>setFloat()</b>, or <b>setString()</b>.  If a <b>TableRow</b> object is included as a parameter, then that row is duplicated and added to the table.")
+     ("Table.clearRows" "Removes all rows from a <b>Table</b>.  While all rows are removed, columns and column titles are maintained.")
+     ("Table.findRow" "Finds the first row in the <b>Table</b> that contains the value provided, and returns a reference to that row.  Even if multiple rows are possible matches, only the first matching row is returned. The column to search may be specified by either its ID or title.")
+     ("Table.findRows" "Finds the rows in the <b>Table</b> that contain the value provided, and returns references to those rows.  Returns an iterator, so <b>for</b> must be used to iterate through all the rows, as shown in the example above. The column to search may be specified by either its ID or title.")
+     ("Table.getColumnCount" "Returns the total number of columns in a table.")
+     ("Table.getFloat" "Retrieves a float value from the <b>Table</b>'s specified row and column. The row is specified by its ID, while the column may be specified by either its ID or title.")
+     ("Table.getInt" "Retrieves an integer value from the <b>Table</b>'s specified row and column. The row is specified by its ID, while the column may be specified by either its ID or title.")
+     ("Table.getRow" "Returns a reference to the specified <b>TableRow</b>.  The reference can then be used to get and set values of the selected row, as illustrated in the example above.")
+     ("Table.getRowCount" "Returns the total number of rows in a table.")
+     ("Table.getString" "Retrieves a String value from the <b>Table</b>'s specified row and column. The row is specified by its ID, while the column may be specified by either its ID or title.")
+     ("Table.getStringColumn" "Retrieves all values in the specified column, and returns them as a String array.  The column may be specified by either its ID or title.")
+     ("Table.matchRow" "Finds the first row in the <b>Table</b> that matches the regular expression provided, and returns a reference to that row.  Even if multiple rows are possible matches, only the first matching row is returned. The column to search may be specified by either its ID or title.")
+     ("Table.matchRows" "Finds the rows in the <b>Table</b> that match the regular expression provided, and returns references to those rows.  Returns an iterator, so <b>for</b> must be used to iterate through all the rows, as shown in the example above. The column to search may be specified by either its ID or title.")
+     ("Table.removeColumn" "Use <b>removeColumn()</b> to remove an existing column from a <b>Table</b> object.  The column to be removed may be identified by either its title (a String) or its index value (an int).   <b>removeColumn(0)</b> would remove the first column, <b>removeColumn(1)</b> would remove the second column, and so on.")
+     ("Table.removeRow" "Removes a row from a <b>Table</b> object.")
+     ("Table.removeTokens" "Removes any of the specified characters (or \"tokens\").  The example above removes all commas, dollar signs, and spaces from the table.<br>
+<br>
+If no column is specified, then the values in all columns and rows are processed.  A specific column may be referenced by either its ID or title.")
+     ("Table.rows" "Gets all rows from the table.  Returns an iterator, so <b>for</b> must be used to iterate through all the rows, as shown in the example above.")
+     ("Table.setFloat" "Stores a float value in the <b>Table</b>'s specified row and column. The row is specified by its ID, while the column may be specified by either its ID or title.")
+     ("Table.setInt" "Stores an integer value in the <b>Table</b>'s specified row and column. The row is specified by its ID, while the column may be specified by either its ID or title.")
+     ("Table.setString" "Stores a String value in the <b>Table</b>'s specified row and column. The row is specified by its ID, while the column may be specified by either its ID or title.")
+     ("Table.trim" "Trims leading and trailing whitespace, such as spaces and tabs, from String table values.  If no column is specified, then the values in all columns and rows are trimmed.  A specific column may be referenced by either its ID or title."))
   "List of functions available in auto-complete-processing")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
-  '(("FloatList.add" . "add")
+  '(("FloatDict.add" . "add")
+     ("FloatDict.clear" . "clear")
+     ("FloatDict.div" . "div")
+     ("FloatDict.get" . "get")
+     ("FloatDict.hasKey" . "hasKey")
+     ("FloatDict.keyArray" . "keyArray")
+     ("FloatDict.keys" . "keys")
+     ("FloatDict.mult" . "mult")
+     ("FloatDict.remove" . "remove")
+     ("FloatDict.set" . "set")
+     ("FloatDict.size" . "size")
+     ("FloatDict.sortKeys" . "sortKeys")
+     ("FloatDict.sortKeysReverse" . "sortKeysReverse")
+     ("FloatDict.sortValues" . "sortValues")
+     ("FloatDict.sortValuesReverse" . "sortValuesReverse")
+     ("FloatDict.sub" . "sub")
+     ("FloatDict.valueArray" . "valueArray")
+     ("FloatDict.values" . "values")
+     ("FloatList.add" . "add")
      ("FloatList.append" . "append")
      ("FloatList.array" . "array")
      ("FloatList.clear" . "clear")
@@ -97,6 +242,25 @@
      ("FloatList.sort" . "sort")
      ("FloatList.sortReverse" . "sortReverse")
      ("FloatList.sub" . "sub")
+     ("IntDict.add" . "add")
+     ("IntDict.clear" . "clear")
+     ("IntDict.div" . "div")
+     ("IntDict.get" . "get")
+     ("IntDict.hasKey" . "hasKey")
+     ("IntDict.increment" . "increment")
+     ("IntDict.keyArray" . "keyArray")
+     ("IntDict.keys" . "keys")
+     ("IntDict.mult" . "mult")
+     ("IntDict.remove" . "remove")
+     ("IntDict.set" . "set")
+     ("IntDict.size" . "size")
+     ("IntDict.sortKeys" . "sortKeys")
+     ("IntDict.sortKeysReverse" . "sortKeysReverse")
+     ("IntDict.sortValues" . "sortValues")
+     ("IntDict.sortValuesReverse" . "sortValuesReverse")
+     ("IntDict.sub" . "sub")
+     ("IntDict.valueArray" . "valueArray")
+     ("IntDict.values" . "values")
      ("IntList.add" . "add")
      ("IntList.append" . "append")
      ("IntList.array" . "array")
@@ -116,6 +280,49 @@
      ("IntList.sort" . "sort")
      ("IntList.sortReverse" . "sortReverse")
      ("IntList.sub" . "sub")
+     ("JSONArray.append" . "append")
+     ("JSONArray.getBoolean" . "getBoolean")
+     ("JSONArray.getFloat" . "getFloat")
+     ("JSONArray.getInt" . "getInt")
+     ("JSONArray.getIntArray" . "getIntArray")
+     ("JSONArray.getJSONArray" . "getJSONArray")
+     ("JSONArray.getJSONObject" . "getJSONObject")
+     ("JSONArray.getString" . "getString")
+     ("JSONArray.getStringArray" . "getStringArray")
+     ("JSONArray.remove" . "remove")
+     ("JSONArray.setBoolean" . "setBoolean")
+     ("JSONArray.setFloat" . "setFloat")
+     ("JSONArray.setInt" . "setInt")
+     ("JSONArray.getJSONArray" . "getJSONArray")
+     ("JSONArray.getJSONObject" . "getJSONObject")
+     ("JSONArray.setString" . "setString")
+     ("JSONArray.size" . "size")
+     ("JSONObject.getBoolean" . "getBoolean")
+     ("JSONObject.getFloat" . "getFloat")
+     ("JSONObject.getInt" . "getInt")
+     ("JSONObject.getJSONArray" . "getJSONArray")
+     ("JSONObject.getJSONObject" . "getJSONObject")
+     ("JSONObject.getString" . "getString")
+     ("JSONObject.setBoolean" . "setBoolean")
+     ("JSONObject.setFloat" . "setFloat")
+     ("JSONObject.setInt" . "setInt")
+     ("JSONObject.setJSONArray" . "setJSONArray")
+     ("JSONObject.setJSONObject" . "setJSONObject")
+     ("JSONObject.setString" . "setString")
+     ("StringDict.clear" . "clear")
+     ("StringDict.get" . "get")
+     ("StringDict.hasKey" . "hasKey")
+     ("StringDict.keyArray" . "keyArray")
+     ("StringDict.keys" . "keys")
+     ("StringDict.remove" . "remove")
+     ("StringDict.set" . "set")
+     ("StringDict.size" . "size")
+     ("StringDict.sortKeys" . "sortKeys")
+     ("StringDict.sortKeysReverse" . "sortKeysReverse")
+     ("StringDict.sortValues" . "sortValues")
+     ("StringDict.sortValuesReverse" . "sortValuesReverse")
+     ("StringDict.valueArray" . "valueArray")
+     ("StringDict.values" . "values")
      ("StringList.append" . "append")
      ("StringList.array" . "array")
      ("StringList.clear" . "clear")
@@ -129,11 +336,39 @@
      ("StringList.size" . "size")
      ("StringList.sort" . "sort")
      ("StringList.sortReverse" . "sortReverse")
-     ("StringList.upper" . "upper")))
+     ("StringList.upper" . "upper")
+     ("TableRow.getFloat" . "getFloat")
+     ("TableRow.getFloat" . "getFloat")
+     ("TableRow.getString" . "getString")
+     ("TableRow.setFloat" . "setFloat")
+     ("TableRow.setInt" . "setInt")
+     ("TableRow.setString" . "setString")
+     ("Table.addColumn" . "addColumn")
+     ("Table.addRow" . "addRow")
+     ("Table.clearRows" . "clearRows")
+     ("Table.findRow" . "findRow")
+     ("Table.findRows" . "findRows")
+     ("Table.getColumnCount" . "getColumnCount")
+     ("Table.getFloat" . "getFloat")
+     ("Table.getInt" . "getInt")
+     ("Table.getRow" . "getRow")
+     ("Table.getRowCount" . "getRowCount")
+     ("Table.getString" . "getString")
+     ("Table.getStringColumn" . "getStringColumn")
+     ("Table.matchRow" . "matchRow")
+     ("Table.matchRows" . "matchRows")
+     ("Table.removeColumn" . "removeColumn")
+     ("Table.removeRow" . "removeRow")
+     ("Table.removeTokens" . "removeTokens")
+     ("Table.rows" . "rows")
+     ("Table.setFloat" . "setFloat")
+     ("Table.setInt" . "setInt")
+     ("Table.setString" . "setString")
+     ("Table.trim" . "trim")))
 
 (defun auto-complete-processing--get-candidates ()
   "Return a list of strings containing the candidates to pass to auto-complete."
-  auto-complete-processing--auto-complete-data)
+  (mapcar #'car auto-complete-processing--auto-complete-data))
 
 (defun auto-complete-processing--remove-class-prefix-from-method ()
   "Convert things like \"FloadList.sortReverse()\" into \"sortReverse()\" if needed."
