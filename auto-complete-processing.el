@@ -370,6 +370,18 @@ If no column is specified, then the values in all columns and rows are processed
   "Return a list of strings containing the candidates to pass to auto-complete."
   (mapcar #'car auto-complete-processing--auto-complete-data))
 
+
+(defun auto-complete-processing--get-documentation (completion)
+  "Return the documentation for COMPLETION."
+  ;; NOTE: `completion' contains the class prefix if it exists,
+  ;; e.g. "Table.trim" instead of just "trim"
+  (let ((contents (substring-no-properties completion)))
+    ;; Each element in `auto-complete-processing--auto-complete-data'
+    ;; has the following syntax:
+    ;;   car - a function name e.g. "Table.trim"
+    ;;   cadr - it's documentation e.g. "Trims leading and trailing [...snip...]"
+    (cadr (assoc contents auto-complete-processing--auto-complete-data))))
+
 (defun auto-complete-processing--remove-class-prefix-from-method ()
   "Convert things like \"FloadList.sortReverse()\" into \"sortReverse()\" if needed."
   ;; Check `ac-complete-1' to see how the variable `ac-last-completion' is created
@@ -396,6 +408,7 @@ If no column is specified, then the values in all columns and rows are processed
 (defvar ac-source-processing
   '((candidates . auto-complete-processing--get-candidates)
      (action . auto-complete-processing--remove-class-prefix-from-method)
+     (document . auto-complete-processing--get-documentation)
      (cache)))
 
 
