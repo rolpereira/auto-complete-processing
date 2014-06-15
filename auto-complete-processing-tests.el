@@ -45,5 +45,5 @@
     (should (null not-unique-functions))))
 
 
-(provide 'auto-complete-processing-test)
-;;; auto-complete-processing-test.el ends here
+(provide 'auto-complete-processing-tests)
+;;; auto-complete-processing-tests.el ends here
