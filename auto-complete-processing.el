@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2014  Rolando Pereira
 
-;; Author: Rolando Pereira <finalyugi@sapo.pt>
+;; Author: Rolando Pereira <rolando_pereira@sapo.pt>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify
