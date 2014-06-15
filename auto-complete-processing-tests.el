@@ -28,7 +28,7 @@
 (require 'auto-complete-processing)
 
 
-(ert-deftest auto-complete-processing-test--no-repeated-functions ()
+(ert-deftest auto-complete-processing-tests--no-repeated-functions ()
   "Check that there are no repeated functions in `auto-complete-processing--auto-complete-data'."
   (let ((count-functions (make-hash-table :test #'equal))
          (not-unique-functions '())     ; List containing functions that appear more than once
