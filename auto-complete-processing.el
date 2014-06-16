@@ -239,7 +239,49 @@ You may find that <b>pmouseX</b> and <b>pmouseY</b> have different values when r
 If you want values relative to the previous frame, use <b>pmouseX</b> and <b>pmouseY</b> inside <b>draw()</b>. If you want continuous response, use <b>pmouseX</b> and <b>pmouseY</b> inside the mouse event functions.")
      ("pmouseY" "The system variable <b>pmouseY</b> always contains the vertical position of the mouse in the frame previous to the current frame.
 <br><br>
-For more detail on how <b>pmouseY</b> is updated inside of mouse events and <b>draw()</b>, see the reference for <b>pmouseX</b>."))  
+For more detail on how <b>pmouseY</b> is updated inside of mouse events and <b>draw()</b>, see the reference for <b>pmouseX</b>.")
+     ("draw()" "Called directly after <b>setup()</b>, the <b>draw()</b> function continuously executes the lines of code contained inside its block until the program is stopped or <b>noLoop()</b> is called. <b>draw()</b> is called automatically and should never be called explicitly.<br/>
+<br/>
+It should always be controlled with <b>noLoop()</b>, <b>redraw()</b> and <b>loop()</b>. If <b>noLoop()</b> is used to stop the code in <b>draw()</b> from executing, then <b>redraw()</b> will cause the code inside <b>draw()</b> to be executed a single time, and <b>loop()</b> will cause the code inside <b>draw()</b> to resume executing continuously.<br/>
+<br/>
+The number of times <b>draw()</b> executes in each second may be controlled with the <b>frameRate()</b> function.<br/>
+<br/>
+It is common to call <b>background()</b> near the beginning of the <b>draw()</b> loop to clear the contents of the window, as shown in the first example above.  Since pixels drawn to the window are cumulative, omitting <b>background()</b> may result in unintended results, especially when drawing anti-aliased shapes or text.
+<br/><br/>
+There can only be one <b>draw()</b> function for each sketch, and <b>draw()</b> must exist if you want the code to run continuously, or to process events such as <b>mousePressed()</b>. Sometimes, you might have an empty call to <b>draw()</b> in your program, as shown in the second example above.")
+     ("keyPressed()" "The <b>keyPressed()</b> function is called once every time a key is pressed. The key that was pressed is stored in the <b>key</b> variable. 
+<br/> <br/>
+For non-ASCII keys, use the <b>keyCode</b> variable. The keys included in the ASCII specification (BACKSPACE, TAB, ENTER, RETURN, ESC, and DELETE) do not require checking to see if they key is coded, and you should simply use the <b>key</b> variable instead of <b>keyCode</b> If you're making cross-platform projects, note that the ENTER key is commonly used on PCs and Unix and the RETURN key is used instead on Macintosh. Check for both ENTER and RETURN to make sure your program will work for all platforms.
+<br/> <br/>
+Because of how operating systems handle key repeats, holding down a key may cause multiple calls to keyPressed() (and keyReleased() as well). The rate of repeat is set by the operating system and how each computer is configured.
+<br/><br/>
+Mouse and keyboard events only work when a program has <b>draw()</b>. Without <b>draw()</b>, the code is only run once and then stops listening for events.")
+     ("keyReleased()" "The <b>keyReleased()</b> function is called once every time a key is released. The key that was released will be stored in the <b>key</b> variable. See <b>key</b> and <b>keyReleased</b> for more information.
+<br/><br/>
+Mouse and keyboard events only work when a program has <b>draw()</b>. Without <b>draw()</b>, the code is only run once and then stops listening for events.")
+     ("keyTyped()" "The <b>keyTyped()</b> function is called once every time a key is pressed, but action keys such as Ctrl, Shift, and Alt are ignored. Because of how operating systems handle key repeats, holding down a key will cause multiple calls to <b>keyTyped()</b>, the rate is set by the operating system and how each computer is configured. 
+<br/><br/>
+Mouse and keyboard events only work when a program has <b>draw()</b>. Without <b>draw()</b>, the code is only run once and then stops listening for events.")
+     ("mouseClicked()" "The <b>mouseClicked()</b> function is called <i>after</i> a mouse button has been pressed and then released.
+<br/><br/>
+Mouse and keyboard events only work when a program has <b>draw()</b>. Without <b>draw()</b>, the code is only run once and then stops listening for events.")
+     ("mouseDragged()" "The <b>mouseDragged()</b> function is called once every time the mouse moves while a mouse button is pressed. (If a button <i>is not</i> being pressed, <b>mouseMoved()</b> is called instead.)
+<br/><br/>
+Mouse and keyboard events only work when a program has <b>draw()</b>. Without <b>draw()</b>, the code is only run once and then stops listening for events.")
+     ("mouseMoved()" "The <b>mouseMoved()</b> function is called every time the mouse moves and a mouse button is not pressed. (If a button <i>is</i> being pressed, <b>mouseDragged()</b> is called instead.)
+<br/><br/>
+Mouse and keyboard events only work when a program has <b>draw()</b>. Without <b>draw()</b>, the code is only run once and then stops listening for events.")
+     ("mousePressed()" "The <b>mousePressed()</b> function is called once after every time a mouse button is pressed. The <b>mouseButton</b> variable (see the related reference entry) can be used to determine which button has been pressed.
+<br/><br/>
+Mouse and keyboard events only work when a program has <b>draw()</b>. Without <b>draw()</b>, the code is only run once and then stops listening for events.")
+     ("mouseWheel()" "The <b>mouseWheel()</b> function returns positive values when the mouse wheel is rotated down (toward the user), and negative values for the other direction (up or away from the user). On OS X with \"natural\" scrolling enabled, the values are opposite.
+<br/><br/>
+Mouse and keyboard events only work when a program has <b>draw()</b>. Without <b>draw()</b>, the code is only run once and then stops listening for events.")
+     ("setup()" "The <b>setup()</b> function is called once when the program starts. It's used to define initial
+enviroment properties such as screen size and background color and to load media such as images
+and fonts as the program starts. There can only be one <b>setup()</b> function for each program and
+it shouldn't be called again after its initial execution. Note: Variables declared within
+<b>setup()</b> are not accessible within other functions, including <b>draw()</b>."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
