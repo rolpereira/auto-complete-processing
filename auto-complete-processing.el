@@ -449,17 +449,34 @@ it shouldn't be called again after its initial execution. Note: Variables declar
   "Return a list of strings containing the candidates to pass to auto-complete."
   (mapcar #'car auto-complete-processing--auto-complete-data))
 
+;; (ppcb (mapcar (lambda (x)
+;;                 (cons x (second (s-split "\\\." x))))
+;;         (mapcar #'car auto-complete-processing--auto-complete-data)))
 
 (defun auto-complete-processing--get-documentation (completion)
   "Return the documentation for COMPLETION."
   ;; NOTE: `completion' contains the class prefix if it exists,
   ;; e.g. "Table.trim" instead of just "trim"
   (let ((contents (substring-no-properties completion)))
-    ;; Each element in `auto-complete-processing--auto-complete-data'
-    ;; has the following syntax:
-    ;;   car - a function name e.g. "Table.trim"
-    ;;   cadr - it's documentation e.g. "Trims leading and trailing [...snip...]"
-    (cadr (assoc contents auto-complete-processing--auto-complete-data))))
+    (with-temp-buffer
+      ;; Each element in `auto-complete-processing--auto-complete-data'
+      ;; has the following syntax:
+      ;;   car - a function name e.g. "Table.trim"
+      ;;   cadr - it's documentation e.g. "Trims leading and trailing [...snip...]"
+      (insert (cadr (assoc contents auto-complete-processing--auto-complete-data)))
+
+      ;; Unfortunately `popup-tip' does a `substring-no-properties' on the return value
+      ;; of `auto-complete-processing--get-documentation' which removes the "bolds" and
+      ;; "italics" rendered by `shr-render-function'.
+      ;;
+      ;; At least `shr-render-region' removes the ugly "<b>" and "</b>" found in the
+      ;; documentation.
+      ;;
+      ;; Note that the shr package isn't in Emacs 23 and requires emacs compile with libxml2.
+      ;;
+      ;; TODO: Perhaps send a patch to popup.el to stop it from removing the text properties?
+      (shr-render-region (point-min) (point-max))
+      (buffer-string))))
 
 (defun auto-complete-processing--remove-class-prefix-from-method ()
   "Convert things like \"FloadList.sortReverse()\" into \"sortReverse()\" if needed."
