@@ -24,6 +24,9 @@
 
 ;;; Code:
 
+(require 'auto-complete)
+(require 'shr)
+
 (defvar auto-complete-processing--auto-complete-data
   '(("FloatDict.add" "Add to a value. If the key does not exist, an new pair is initialized with the value supplied.")
      ("FloatDict.clear" "Remove all entries from the data structure.")
