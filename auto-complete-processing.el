@@ -285,7 +285,6 @@ enviroment properties such as screen size and background color and to load media
 and fonts as the program starts. There can only be one <b>setup()</b> function for each program and
 it shouldn't be called again after its initial execution. Note: Variables declared within
 <b>setup()</b> are not accessible within other functions, including <b>draw()</b>.")
-
      ("PVector.add" "Adds x, y, and z components to a vector, adds one vector to another, or adds two independent vectors together. The version of the method that adds two vectors together is a static method and returns a PVector, the others have no return value -- they act directly on the vector. See the examples for more context.")
      ("PVector.angleBetween" "Calculates and returns the angle (in radians) between two vectors.")
      ("PVector.array" "Return a representation of this vector as a float array. This is only for temporary use. If used in any other fashion, the contents should be copied by using the <b>PVector.get()</b> method to copy into your own array.")
@@ -313,7 +312,100 @@ Note that there is one <em>static</em> version of this method, and two <em>non-s
      ("PVector.sub" "Subtracts x, y, and z components from a vector, subtracts one vector from another, or subtracts two independent vectors. The version of the method that substracts two vectors is a static method and returns a PVector, the others have no return value -- they act directly on the vector. See the examples for more context.  In all cases, the second vector (v2) is subtracted from the first (v1), resulting in v1-v2.")
      ("PVector.x" "The x component of the vector. This field (variable) can be used to both get and set the value (see above example.)")
      ("PVector.y" "The y component of the vector. This field (variable) can be used to both get and set the value (see above example.)")
-     ("PVector.z" "The z component of the vector. This field (variable) can be used to both get and set the value (see above example.)"))
+     ("PVector.z" "The z component of the vector. This field (variable) can be used to both get and set the value (see above example.)")
+     ("PImage.blend" "Blends a region of pixels into the image specified by the <b>img</b> parameter. These copies utilize full alpha channel support and a choice of the following modes to blend the colors of source pixels (A) with the ones of pixels in the destination image (B):<br />
+<br />
+BLEND - linear interpolation of colours: C = A*factor + B<br />
+<br />
+ADD - additive blending with white clip: C = min(A*factor + B, 255)<br />
+<br />
+SUBTRACT - subtractive blending with black clip: C = max(B - A*factor, 0)<br />
+<br />
+DARKEST - only the darkest colour succeeds: C = min(A*factor, B)<br />
+<br />
+LIGHTEST - only the lightest colour succeeds: C = max(A*factor, B)<br />
+<br />
+DIFFERENCE - subtract colors from underlying image.<br />
+<br />
+EXCLUSION - similar to DIFFERENCE, but less extreme.<br />
+<br />
+MULTIPLY - Multiply the colors, result will always be darker.<br />
+<br />
+SCREEN - Opposite multiply, uses inverse values of the colors.<br />
+<br />
+OVERLAY - A mix of MULTIPLY and SCREEN. Multiplies dark values,
+and screens light values.<br />
+<br />
+HARD_LIGHT - SCREEN when greater than 50% gray, MULTIPLY when lower.<br />
+<br />
+SOFT_LIGHT - Mix of DARKEST and LIGHTEST.
+Works like OVERLAY, but not as harsh.<br />
+<br />
+DODGE - Lightens light tones and increases contrast, ignores darks.
+Called \"Color Dodge\" in Illustrator and Photoshop.<br />
+<br />
+BURN - Darker areas are applied, increasing contrast, ignores lights.
+Called \"Color Burn\" in Illustrator and Photoshop.<br />
+<br />
+All modes use the alpha information (highest byte) of source image pixels as the blending factor. If the source and destination regions are different sizes, the image will be automatically resized to match the destination size. If the <b>src</b> parameter is not used, the display window is used as the source image.<br />
+<br />
+As of release 0149, this function ignores <b>imageMode()</b>.")
+     ("PImage.copy" "Copies a region of pixels from one image into another. If the source and destination regions aren't the same size, it will automatically resize source pixels to fit the specified target region. No alpha information is used in the process, however if the source image has an alpha channel set, it will be copied as well.
+<br /><br />
+As of release 0149, this function ignores <b>imageMode()</b>.")
+     ("PImage.filter" "Filters the image as defined by one of the following modes:<br />
+<br />
+THRESHOLD<br />
+Converts the image to black and white pixels depending if they are above or below the threshold defined by the level parameter. The parameter must be between 0.0 (black) and 1.0 (white). If no level is specified, 0.5 is used.<br />
+<br />
+GRAY<br />
+Converts any colors in the image to grayscale equivalents. No parameter is used.<br />
+<br />
+OPAQUE<br />
+Sets the alpha channel to entirely opaque. No parameter is used.<br />
+<br />
+INVERT<br />
+Sets each pixel to its inverse value. No parameter is used.<br />
+<br />
+POSTERIZE<br />
+Limits each channel of the image to the number of colors specified as the parameter. The parameter can be set to values between 2 and 255, but results are most noticeable in the lower ranges.<br />
+<br />
+BLUR<br />
+Executes a Guassian blur with the level parameter specifying the extent of the blurring. If no parameter is used, the blur is equivalent to Guassian blur of radius 1. Larger values increase the blur.<br />
+<br />
+ERODE<br />
+Reduces the light areas. No parameter is used.<br />
+<br />
+DILATE<br />
+Increases the light areas. No parameter is used.")
+     ("PImage.get" "Reads the color of any pixel or grabs a section of an image. If no parameters are specified, the entire image is returned. Use the <b>x</b> and <b>y</b> parameters to get the value of one pixel. Get a section of the display window by specifying an additional <b>width</b> and <b>height</b> parameter. When getting an image, the <b>x</b> and <b>y</b> parameters define the coordinates for the upper-left corner of the image, regardless of the current <b>imageMode()</b>.<br />
+<br />
+If the pixel requested is outside of the image window, black is returned. The numbers returned are scaled according to the current color ranges, but only RGB values are returned by this function. For example, even though you may have drawn a shape with <b>colorMode(HSB)</b>, the numbers returned will be in RGB format.<br />
+<br />
+Getting the color of a single pixel with <b>get(x, y)</b> is easy, but not as fast as grabbing the data directly from <b>pixels[]</b>. The equivalent statement to <b>get(x, y)</b> using <b>pixels[]</b> is <b>pixels[y*width+x]</b>. See the reference for <b>pixels[]</b> for more information.")
+     ("PImage.height" "The height of the image in units of pixels.")
+     ("PImage.loadPixels" "Loads the pixel data for the image into its <b>pixels[]</b> array. This function must always be called before reading from or writing to <b>pixels[]</b>.
+<br/><br/>
+Certain renderers may or may not seem to require <b>loadPixels()</b> or <b>updatePixels()</b>. However, the rule is that any time you want to manipulate the <b>pixels[]</b> array, you must first call <b>loadPixels()</b>, and after changes have been made, call <b>updatePixels()</b>. Even if the renderer may not seem to use this function in the current Processing release, this will always be subject to change.")
+     ("PImage.mask" "Masks part of an image from displaying by loading another image and using it as an alpha channel. This mask image should only contain grayscale data, but only the blue color channel is used. The mask image needs to be the same size as the image to which it is applied.<br />
+<br />
+In addition to using a mask image, an integer array containing the alpha channel data can be specified directly. This method is useful for creating dynamically generated alpha masks. This array must be of the same length as the target image's pixels array and should contain only grayscale data of values between 0-255.")
+     ("PImage.pixels" "Array containing the values for all the pixels in the image. These values are of the color datatype. This array is the size of the image, meaning if the image is 100 x 100 pixels, there will be 10000 values and if the window is 200 x 300 pixels, there will be 60000 values. The <b>index</b> value defines the position of a value within the array. For example, the statement <b>color b = img.pixels[230]</b> will set the variable <b>b</b> equal to the value at that location in the array. Before accessing this array, the data must loaded with the <b>loadPixels()</b> method. After the array data has been modified, the <b>updatePixels()</b> method must be run to update the changes. Without <b>loadPixels()</b>, running the code may (or will in future releases) result in a NullPointerException.")
+     ("PImage.resize" "Resize the image to a new width and height. To make the image scale proportionally, use 0 as the value for the <b>wide</b> or <b>high</b> parameter. For instance, to make the width of an image 150 pixels, and change the height using the same proportion, use resize(150, 0).<br />
+<br />
+Even though a PGraphics is technically a PImage, it is not possible to rescale the image data found in a PGraphics. (It's simply not possible to do this consistently across renderers: technically infeasible with P3D, or what would it even do with PDF?) If you want to resize PGraphics content, first get a copy of its image data using the <b>get()</b> method, and call <b>resize()</b> on the PImage that is returned.")
+     ("PImage.save" "Saves the image into a file. Images are saved in TIFF, TARGA, JPEG, and PNG format depending on the extension within the <b>filename</b> parameter. For example, \"image.tif\" will have a TIFF image and \"image.png\" will save a PNG image. If no extension is included in the filename, the image will save in TIFF format and <b>.tif</b> will be added to the name. These files are saved to the sketch's folder, which may be opened by selecting \"Show sketch folder\" from the \"Sketch\" menu. It is not possible to use <b>save()</b> while running the program in a web browser.<br /><br />To save an image created within the code, rather than through loading, it's necessary to make the image with the <b>createImage()</b> function so it is aware of the location of the program and can therefore save the file to the right place. See the <b>createImage()</b> reference for more information.")
+     ("PImage.set" "Changes the color of any pixel or writes an image directly into the display window.<br />
+<br />
+The <b>x</b> and <b>y</b> parameters specify the pixel to change and the <b>color</b> parameter specifies the color value. The color parameter is affected by the current color mode (the default is RGB values from 0 to 255). When setting an image, the <b>x</b> and <b>y</b> parameters define the coordinates for the upper-left corner of the image, regardless of the current <b>imageMode()</b>.
+<br /><br />
+Setting the color of a single pixel with <b>set(x, y)</b> is easy, but not as fast as putting the data directly into <b>pixels[]</b>. The equivalent statement to <b>set(x, y, #000000)</b> using <b>pixels[]</b> is <b>pixels[y*width+x] = #000000</b>. See the reference for <b>pixels[]</b> for more information.")
+     ("PImage.updatePixels" "Updates the image with the data in its <b>pixels[]</b> array. Use in conjunction with <b>loadPixels()</b>. If you're only reading pixels from the array, there's no need to call <b>updatePixels()</b>.
+<br/><br/>
+Certain renderers may or may not seem to require <b>loadPixels()</b> or <b>updatePixels()</b>. However, the rule is that any time you want to manipulate the <b>pixels[]</b> array, you must first call <b>loadPixels()</b>, and after changes have been made, call <b>updatePixels()</b>. Even if the renderer may not seem to use this function in the current Processing release, this will always be subject to change.
+<br/> <br/>
+Currently, none of the renderers use the additional parameters to <b>updatePixels()</b>, however this may be implemented in the future.")
+     ("PImage.width" "The width of the image in units of pixels."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
@@ -501,7 +593,20 @@ Note that there is one <em>static</em> version of this method, and two <em>non-s
      ("PVector.sub" . "sub")
      ("PVector.x" . "x")
      ("PVector.y" . "y")
-     ("PVector.z" . "z")))
+     ("PVector.z" . "z")
+     ("PImage.blend" . "blend")
+     ("PImage.copy" . "copy")
+     ("PImage.filter" . "filter")
+     ("PImage.get" . "get")
+     ("PImage.height" . "height")
+     ("PImage.loadPixels" . "loadPixels")
+     ("PImage.mask" . "mask")
+     ("PImage.pixels" . "pixels")
+     ("PImage.resize" . "resize")
+     ("PImage.save" . "save")
+     ("PImage.set" . "set")
+     ("PImage.updatePixels" . "updatePixels")
+     ("PImage.width" . "width")))
 
 (defun auto-complete-processing--get-candidates ()
   "Return a list of strings containing the candidates to pass to auto-complete."
