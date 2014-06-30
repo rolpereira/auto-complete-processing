@@ -1,0 +1,470 @@
+A list containg the functions found in
+http://processing.org/reference/ with indications of which functions
+already have been documented in this package.
+
+- [ ] Structure [0%]
+  - [ ] () (parentheses)
+  - [ ] , (comma)
+  - [ ] . (dot)
+  - [ ] /* */ (multiline comment)
+  - [ ] /** */ (doc comment)
+  - [ ] // (comment)
+  - [ ] ; (semicolon)
+  - [ ] = (assign)
+  - [ ] [] (array access)
+  - [ ] {} (curly braces)
+  - [ ] catch
+  - [ ] class
+  - [ ] draw()
+  - [ ] exit()
+  - [ ] extends
+  - [ ] false
+  - [ ] final
+  - [ ] implements
+  - [ ] import
+  - [ ] loop()
+  - [ ] new
+  - [ ] noLoop()
+  - [ ] null
+  - [ ] popStyle()
+  - [ ] private
+  - [ ] public
+  - [ ] pushStyle()
+  - [ ] redraw()
+  - [ ] return
+  - [ ] setup()
+  - [ ] static
+  - [ ] super
+  - [ ] this
+  - [ ] true
+  - [ ] try
+  - [ ] void
+
+- [ ] Environment [0%]
+  - [ ] cursor()
+  - [ ] displayHeight
+  - [ ] displayWidth
+  - [ ] focused
+  - [ ] frameCount
+  - [ ] frameRate()
+  - [ ] frameRate
+  - [ ] height
+  - [ ] noCursor()
+  - [ ] size()
+  - [ ] width
+
+- [ ] Data [0%]
+  - [ ] Primitive [0%]
+    - [ ] boolean
+    - [ ] byte
+    - [ ] char
+    - [ ] color
+    - [ ] double
+    - [ ] float
+    - [ ] int
+    - [ ] long
+
+  - [ ] Composite [0%]
+    - [ ] Array
+    - [ ] ArrayList
+    - [ ] FloatDict
+    - [ ] FloatList
+    - [ ] HashMap
+    - [ ] IntDict
+    - [ ] IntList
+    - [ ] JSONArray
+    - [ ] JSONObject
+    - [ ] Object
+    - [ ] String
+    - [ ] StringDict
+    - [ ] StringList
+    - [ ] Table
+    - [ ] TableRow
+    - [ ] XML
+
+  - [ ] Conversion [0%]
+    - [ ] binary()
+    - [ ] boolean()
+    - [ ] byte()
+    - [ ] char()
+    - [ ] float()
+    - [ ] hex()
+    - [ ] int()
+    - [ ] str()
+    - [ ] unbinary()
+    - [ ] unhex()
+
+  - [ ] String Functions [0%]
+    - [ ] join()
+    - [ ] match()
+    - [ ] matchAll()
+    - [ ] nf()
+    - [ ] nfc()
+    - [ ] nfp()
+    - [ ] nfs()
+    - [ ] split()
+    - [ ] splitTokens()
+    - [ ] trim()
+
+  - [ ] Array Functions [0%]
+    - [ ] append()
+    - [ ] arrayCopy()
+    - [ ] concat()
+    - [ ] expand()
+    - [ ] reverse()
+    - [ ] shorten()
+    - [ ] sort()
+    - [ ] splice()
+    - [ ] subset()
+
+- [ ] Control [0%]
+  - [ ] Relational Operators [0%]
+    - [ ] != (inequality)
+    - [ ] < (less than)
+    - [ ] <= (less than or equal to)
+    - [ ] == (equality)
+    - [ ] > (greater than)
+    - [ ] >= (greater than or equal to)
+
+  - [ ] Iteration [0%]
+    - [ ] for
+    - [ ] while
+
+  - [ ] Conditionals [0%]
+    - [ ] ?: (conditional)
+    - [ ] break
+    - [ ] case
+    - [ ] continue
+    - [ ] default
+    - [ ] else
+    - [ ] if
+    - [ ] switch
+
+  - [ ] Logical Operators [0%]
+    - [ ] ! (logical NOT)
+    - [ ] && (logical AND)
+    - [ ] || (logical OR)
+
+- [ ] Shape [0%]
+  - [ ] createShape()
+  - [ ] loadShape()
+  - [ ] PShape
+
+  - [ ] 2D Primitives [0%]
+    - [ ] arc()
+    - [ ] ellipse()
+    - [ ] line()
+    - [ ] point()
+    - [ ] quad()
+    - [ ] rect()
+    - [ ] triangle()
+
+  - [ ] Curves [0%]
+    - [ ] bezier()
+    - [ ] bezierDetail()
+    - [ ] bezierPoint()
+    - [ ] bezierTangent()
+    - [ ] curve()
+    - [ ] curveDetail()
+    - [ ] curvePoint()
+    - [ ] curveTangent()
+    - [ ] curveTightness()
+
+  - [ ] 3D Primitives [0%]
+    - [ ] box()
+    - [ ] sphere()
+    - [ ] sphereDetail()
+
+  - [ ] Attributes [0%]
+    - [ ] ellipseMode()
+    - [ ] noSmooth()
+    - [ ] rectMode()
+    - [ ] smooth()
+    - [ ] strokeCap()
+    - [ ] strokeJoin()
+    - [ ] strokeWeight()
+
+  - [ ] Vertex [0%]
+    - [ ] beginContour()
+    - [ ] beginShape()
+    - [ ] bezierVertex()
+    - [ ] curveVertex()
+    - [ ] endContour()
+    - [ ] endShape()
+    - [ ] quadraticVertex()
+    - [ ] vertex()
+
+  - [ ] Loading & Displaying [0%]
+    - [ ] shape()
+    - [ ] shapeMode()
+
+- [ ] Input [0%]
+  - [ ] Mouse [0%]
+    - [ ] mouseButton
+    - [ ] mouseClicked()
+    - [ ] mouseDragged()
+    - [ ] mouseMoved()
+    - [ ] mousePressed()
+    - [ ] mousePressed
+    - [ ] mouseReleased()
+    - [ ] mouseWheel()
+    - [ ] mouseX
+    - [ ] mouseY
+    - [ ] pmouseX
+    - [ ] pmouseY
+
+  - [ ] Keyboard [0%]
+    - [ ] key
+    - [ ] keyCode
+    - [ ] keyPressed()
+    - [ ] keyPressed
+    - [ ] keyReleased()
+    - [ ] keyTyped()
+
+  - [ ] Files [0%]
+    - [ ] BufferedReader
+    - [ ] createInput()
+    - [ ] createReader()
+    - [ ] loadBytes()
+    - [ ] loadJSONArray()
+    - [ ] loadJSONObject()
+    - [ ] loadStrings()
+    - [ ] loadTable()
+    - [ ] loadXML()
+    - [ ] open()
+    - [ ] parseXML()
+    - [ ] selectFolder()
+    - [ ] selectInput()
+
+  - [ ] Time & Date [0%]
+    - [ ] day()
+    - [ ] hour()
+    - [ ] millis()
+    - [ ] minute()
+    - [ ] month()
+    - [ ] second()
+    - [ ] year()
+
+- [ ] Output [0%]
+  - [ ] Text Area [0%]
+    - [ ] print()
+    - [ ] printArray()
+    - [ ] println()
+
+  - [ ] Image [0%]
+    - [ ] save()
+    - [ ] saveFrame()
+
+  - [ ] Files [0%]
+    - [ ] beginRaw()
+    - [ ] beginRecord()
+    - [ ] createOutput()
+    - [ ] createWriter()
+    - [ ] endRaw()
+    - [ ] endRecord()
+    - [ ] PrintWriter
+    - [ ] saveBytes()
+    - [ ] saveJSONArray()
+    - [ ] saveJSONObject()
+    - [ ] saveStream()
+    - [ ] saveStrings()
+    - [ ] saveTable()
+    - [ ] saveXML()
+    - [ ] selectOutput()
+
+- [ ] Transform [0%]
+  - [ ] applyMatrix()
+  - [ ] popMatrix()
+  - [ ] printMatrix()
+  - [ ] pushMatrix()
+  - [ ] resetMatrix()
+  - [ ] rotate()
+  - [ ] rotateX()
+  - [ ] rotateY()
+  - [ ] rotateZ()
+  - [ ] scale()
+  - [ ] shearX()
+  - [ ] shearY()
+  - [ ] translate()
+
+- [ ] Lights, Camera [0%]
+  - [ ] Lights [0%]
+    - [ ] ambientLight()
+    - [ ] directionalLight()
+    - [ ] lightFalloff()
+    - [ ] lights()
+    - [ ] lightSpecular()
+    - [ ] noLights()
+    - [ ] normal()
+    - [ ] pointLight()
+    - [ ] spotLight()
+
+  - [ ] Camera [0%]
+    - [ ] beginCamera()
+    - [ ] camera()
+    - [ ] endCamera()
+    - [ ] frustum()
+    - [ ] ortho()
+    - [ ] perspective()
+    - [ ] printCamera()
+    - [ ] printProjection()
+
+  - [ ] Coordinates [0%]
+    - [ ] modelX()
+    - [ ] modelY()
+    - [ ] modelZ()
+    - [ ] screenX()
+    - [ ] screenY()
+    - [ ] screenZ()
+
+  - [ ] Material Properties [0%]
+    - [ ] ambient()
+    - [ ] emissive()
+    - [ ] shininess()
+    - [ ] specular()
+
+- [ ] Color [0%]
+  - [ ] Setting [0%]
+    - [ ] background()
+    - [ ] clear()
+    - [ ] colorMode()
+    - [ ] fill()
+    - [ ] noFill()
+    - [ ] noStroke()
+    - [ ] stroke()
+
+  - [ ] Creating & Reading [0%]
+    - [ ] alpha()
+    - [ ] blue()
+    - [ ] brightness()
+    - [ ] color()
+    - [ ] green()
+    - [ ] hue()
+    - [ ] lerpColor()
+    - [ ] red()
+    - [ ] saturation()
+
+- [ ] Image
+  - [ ] createImage()
+  - [ ] PImage
+
+  - [ ] Loading & Displaying [0%]
+    - [ ] image()
+    - [ ] imageMode()
+    - [ ] loadImage()
+    - [ ] noTint()
+    - [ ] requestImage()
+    - [ ] tint()
+
+  - [ ] Textures [0%]
+    - [ ] texture()
+    - [ ] textureMode()
+    - [ ] textureWrap()
+
+  - [ ] Pixels [0%]
+    - [ ] blend()
+    - [ ] copy()
+    - [ ] filter()
+    - [ ] get()
+    - [ ] loadPixels()
+    - [ ] pixels[]
+    - [ ] set()
+    - [ ] updatePixels()
+
+- [ ] Rendering [0%]
+  - [ ] blendMode()
+  - [ ] createGraphics()
+  - [ ] PGraphics
+
+  - [ ] Shaders [0%]
+    - [ ] loadShader()
+    - [ ] PShader
+    - [ ] resetShader()
+    - [ ] shader()
+
+- [ ] Typography [0%]
+
+  - [ ] PFont
+
+  - [ ] Loading & Displaying [0%]
+    - [ ] createFont()
+    - [ ] loadFont()
+    - [ ] text()
+    - [ ] textFont()
+
+  - [ ] Attributes [0%]
+    - [ ] textAlign()
+    - [ ] textLeading()
+    - [ ] textMode()
+    - [ ] textSize()
+    - [ ] textWidth()
+
+  - [ ] Metrics [0%]
+    - [ ] textAscent()
+    - [ ] textDescent()
+
+- [ ] Math [0%]
+  - [ ] PVector
+
+  - [ ] Operators [0%]
+    - [ ] % (modulo)
+    - [ ] * (multiply)
+    - [ ] *= (multiply assign)
+    - [ ] + (addition)
+    - [ ] ++ (increment)
+    - [ ] += (add assign)
+    - [ ] - (minus)
+    - [ ] -- (decrement)
+    - [ ] -= (subtract assign)
+    - [ ] / (divide)
+    - [ ] /= (divide assign)
+       
+  - [ ] Bitwise Operators [0%]
+    - [ ] & (bitwise AND)
+    - [ ] << (left shift)
+    - [ ] >> (right shift)
+    - [ ] | (bitwise OR)
+
+  - [ ] Calculation [0%]
+    - [ ] abs()
+    - [ ] ceil()
+    - [ ] constrain()
+    - [ ] dist()
+    - [ ] exp()
+    - [ ] floor()
+    - [ ] lerp()
+    - [ ] log()
+    - [ ] mag()
+    - [ ] map()
+    - [ ] max()
+    - [ ] min()
+    - [ ] norm()
+    - [ ] pow()
+    - [ ] round()
+    - [ ] sq()
+    - [ ] sqrt()
+
+  - [ ] Trigonometry [0%]
+    - [ ] acos()
+    - [ ] asin()
+    - [ ] atan()
+    - [ ] atan2()
+    - [ ] cos()
+    - [ ] degrees()
+    - [ ] radians()
+    - [ ] sin()
+    - [ ] tan()
+
+  - [ ] Random [0%]
+    - [ ] noise()
+    - [ ] noiseDetail()
+    - [ ] noiseSeed()
+    - [ ] random()
+    - [ ] randomGaussian()
+    - [ ] randomSeed()
+
+- [ ] Constants [0%]
+  - [ ] HALF_PI
+  - [ ] PI
+  - [ ] QUARTER_PI
+  - [ ] TAU TWO_PI 
