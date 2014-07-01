@@ -1,8 +1,5 @@
-A list containg the functions found in
-http://processing.org/reference/ with indications of which functions
-already have been documented in this package.
 
-- [ ] Structure [0%]
+- [-] Structure [5%]
   - [ ] () (parentheses)
   - [ ] , (comma)
   - [ ] . (dot)
@@ -15,7 +12,7 @@ already have been documented in this package.
   - [ ] {} (curly braces)
   - [ ] catch
   - [ ] class
-  - [ ] draw()
+  - [X] draw()
   - [ ] exit()
   - [ ] extends
   - [ ] false
@@ -32,7 +29,7 @@ already have been documented in this package.
   - [ ] pushStyle()
   - [ ] redraw()
   - [ ] return
-  - [ ] setup()
+  - [X] setup()
   - [ ] static
   - [ ] super
   - [ ] this
@@ -40,20 +37,20 @@ already have been documented in this package.
   - [ ] try
   - [ ] void
 
-- [ ] Environment [0%]
+- [-] Environment [36%]
   - [ ] cursor()
-  - [ ] displayHeight
+  - [X] displayHeight
   - [ ] displayWidth
-  - [ ] focused
-  - [ ] frameCount
+  - [X] focused
+  - [X] frameCount
   - [ ] frameRate()
   - [ ] frameRate
-  - [ ] height
+  - [X] height
   - [ ] noCursor()
   - [ ] size()
   - [ ] width
 
-- [ ] Data [0%]
+- [-] Data [0%]
   - [ ] Primitive [0%]
     - [ ] boolean
     - [ ] byte
@@ -64,22 +61,22 @@ already have been documented in this package.
     - [ ] int
     - [ ] long
 
-  - [ ] Composite [0%]
+  - [-] Composite [62%]
     - [ ] Array
     - [ ] ArrayList
-    - [ ] FloatDict
-    - [ ] FloatList
+    - [X] FloatDict
+    - [X] FloatList
     - [ ] HashMap
-    - [ ] IntDict
-    - [ ] IntList
-    - [ ] JSONArray
-    - [ ] JSONObject
+    - [X] IntDict
+    - [X] IntList
+    - [X] JSONArray
+    - [X] JSONObject
     - [ ] Object
     - [ ] String
-    - [ ] StringDict
-    - [ ] StringList
-    - [ ] Table
-    - [ ] TableRow
+    - [X] StringDict
+    - [X] StringList
+    - [X] Table
+    - [X] TableRow
     - [ ] XML
 
   - [ ] Conversion [0%]
@@ -198,28 +195,28 @@ already have been documented in this package.
     - [ ] shape()
     - [ ] shapeMode()
 
-- [ ] Input [0%]
-  - [ ] Mouse [0%]
-    - [ ] mouseButton
-    - [ ] mouseClicked()
-    - [ ] mouseDragged()
-    - [ ] mouseMoved()
-    - [ ] mousePressed()
-    - [ ] mousePressed
+- [-] Input [25%]
+  - [-] Mouse [91%]
+    - [X] mouseButton
+    - [X] mouseClicked()
+    - [X] mouseDragged()
+    - [X] mouseMoved()
+    - [X] mousePressed()
+    - [X] mousePressed
     - [ ] mouseReleased()
-    - [ ] mouseWheel()
-    - [ ] mouseX
-    - [ ] mouseY
-    - [ ] pmouseX
-    - [ ] pmouseY
+    - [X] mouseWheel()
+    - [X] mouseX
+    - [X] mouseY
+    - [X] pmouseX
+    - [X] pmouseY
 
-  - [ ] Keyboard [0%]
-    - [ ] key
-    - [ ] keyCode
-    - [ ] keyPressed()
-    - [ ] keyPressed
-    - [ ] keyReleased()
-    - [ ] keyTyped()
+  - [X] Keyboard [100%]
+    - [X] key
+    - [X] keyCode
+    - [X] keyPressed()
+    - [X] keyPressed
+    - [X] keyReleased()
+    - [X] keyTyped()
 
   - [ ] Files [0%]
     - [ ] BufferedReader
@@ -344,9 +341,9 @@ already have been documented in this package.
     - [ ] red()
     - [ ] saturation()
 
-- [ ] Image
+- [-] Image
   - [ ] createImage()
-  - [ ] PImage
+  - [X] PImage
 
   - [ ] Loading & Displaying [0%]
     - [ ] image()
@@ -361,13 +358,13 @@ already have been documented in this package.
     - [ ] textureMode()
     - [ ] textureWrap()
 
-  - [ ] Pixels [0%]
+  - [-] Pixels [12%]
     - [ ] blend()
     - [ ] copy()
     - [ ] filter()
     - [ ] get()
     - [ ] loadPixels()
-    - [ ] pixels[]
+    - [X] pixels[]
     - [ ] set()
     - [ ] updatePixels()
 
@@ -403,8 +400,8 @@ already have been documented in this package.
     - [ ] textAscent()
     - [ ] textDescent()
 
-- [ ] Math [0%]
-  - [ ] PVector
+- [-] Math [16%]
+  - [X] PVector
 
   - [ ] Operators [0%]
     - [ ] % (modulo)
@@ -463,8 +460,8 @@ already have been documented in this package.
     - [ ] randomGaussian()
     - [ ] randomSeed()
 
-- [ ] Constants [0%]
-  - [ ] HALF_PI
-  - [ ] PI
-  - [ ] QUARTER_PI
-  - [ ] TAU TWO_PI 
+- [X] Constants [100%]
+  - [X] HALF_PI
+  - [X] PI
+  - [X] QUARTER_PI
+  - [X] TAU TWO_PI 
