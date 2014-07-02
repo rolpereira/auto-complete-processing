@@ -405,7 +405,14 @@ Setting the color of a single pixel with <b>set(x, y)</b> is easy, but not as fa
 Certain renderers may or may not seem to require <b>loadPixels()</b> or <b>updatePixels()</b>. However, the rule is that any time you want to manipulate the <b>pixels[]</b> array, you must first call <b>loadPixels()</b>, and after changes have been made, call <b>updatePixels()</b>. Even if the renderer may not seem to use this function in the current Processing release, this will always be subject to change.
 <br/> <br/>
 Currently, none of the renderers use the additional parameters to <b>updatePixels()</b>, however this may be implemented in the future.")
-     ("PImage.width" "The width of the image in units of pixels."))
+     ("PImage.width" "The width of the image in units of pixels.")
+     ("day()" "Processing communicates with the clock on your computer. The <b>day()</b> function returns the current day as a value from 1 - 31.")
+     ("hour()" "Processing communicates with the clock on your computer. The <b>hour()</b> function returns the current hour as a value from 0 - 23.")
+     ("millis()" "Returns the number of milliseconds (thousandths of a second) since starting the program. This information is often used for timing events and animation sequences.")
+     ("minute()" "Processing communicates with the clock on your computer. The <b>minute()</b> function returns the current minute as a value from 0 - 59.")
+     ("month()" "Processing communicates with the clock on your computer. The <b>month()</b> function returns the current month as a value from 1 - 12.")
+     ("second()" "Processing communicates with the clock on your computer. The <b>second()</b> function returns the current second as a value from 0 - 59.")
+     ("year()" "Processing communicates with the clock on your computer. The <b>year()</b> function returns the current year as an integer (2003, 2004, 2005, etc)."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix

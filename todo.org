@@ -195,7 +195,7 @@
     - [ ] shape()
     - [ ] shapeMode()
 
-- [-] Input [25%]
+- [-] Input [50%]
   - [-] Mouse [91%]
     - [X] mouseButton
     - [X] mouseClicked()
@@ -233,14 +233,14 @@
     - [ ] selectFolder()
     - [ ] selectInput()
 
-  - [ ] Time & Date [0%]
-    - [ ] day()
-    - [ ] hour()
-    - [ ] millis()
-    - [ ] minute()
-    - [ ] month()
-    - [ ] second()
-    - [ ] year()
+  - [X] Time & Date [100%]
+    - [X] day()
+    - [X] hour()
+    - [X] millis()
+    - [X] minute()
+    - [X] month()
+    - [X] second()
+    - [X] year()
 
 - [ ] Output [0%]
   - [ ] Text Area [0%]
