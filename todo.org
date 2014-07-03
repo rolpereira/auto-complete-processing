@@ -400,7 +400,7 @@
     - [ ] textAscent()
     - [ ] textDescent()
 
-- [-] Math [16%]
+- [-] Math [33%]
   - [X] PVector
 
   - [ ] Operators [0%]
@@ -452,13 +452,13 @@
     - [ ] sin()
     - [ ] tan()
 
-  - [ ] Random [0%]
-    - [ ] noise()
-    - [ ] noiseDetail()
-    - [ ] noiseSeed()
-    - [ ] random()
-    - [ ] randomGaussian()
-    - [ ] randomSeed()
+  - [X] Random [100%]
+    - [X] noise()
+    - [X] noiseDetail()
+    - [X] noiseSeed()
+    - [X] random()
+    - [X] randomGaussian()
+    - [X] randomSeed()
 
 - [X] Constants [100%]
   - [X] HALF_PI
