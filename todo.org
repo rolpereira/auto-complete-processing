@@ -400,7 +400,7 @@
     - [ ] textAscent()
     - [ ] textDescent()
 
-- [-] Math [33%]
+- [-] Math [50%]
   - [X] PVector
 
   - [ ] Operators [0%]
@@ -422,24 +422,24 @@
     - [ ] >> (right shift)
     - [ ] | (bitwise OR)
 
-  - [ ] Calculation [0%]
-    - [ ] abs()
-    - [ ] ceil()
-    - [ ] constrain()
-    - [ ] dist()
-    - [ ] exp()
-    - [ ] floor()
-    - [ ] lerp()
-    - [ ] log()
-    - [ ] mag()
-    - [ ] map()
-    - [ ] max()
-    - [ ] min()
-    - [ ] norm()
-    - [ ] pow()
-    - [ ] round()
-    - [ ] sq()
-    - [ ] sqrt()
+  - [X] Calculation [100%]
+    - [X] abs()
+    - [X] ceil()
+    - [X] constrain()
+    - [X] dist()
+    - [X] exp()
+    - [X] floor()
+    - [X] lerp()
+    - [X] log()
+    - [X] mag()
+    - [X] map()
+    - [X] max()
+    - [X] min()
+    - [X] norm()
+    - [X] pow()
+    - [X] round()
+    - [X] sq()
+    - [X] sqrt()
 
   - [ ] Trigonometry [0%]
     - [ ] acos()

@@ -430,7 +430,30 @@ By changing these parameters, the signal created by the <b>noise()</b> function 
 <br/>
 If two parameters are specified, the function will return a float with a value between the two values. For example, <b>random(-5, 10.2)</b> returns values starting at -5 and up to (but not including) 10.2. To convert a floating-point random number to an integer, use the <b>int()</b> function.")
      ("randomGaussian()" "Returns a float from a random series of numbers having a mean of 0 and standard deviation of 1. Each time the <b>randomGaussian()</b> function is called, it returns a number fitting a Gaussian, or normal, distribution. There is theoretically no minimum or maximum value that <b>randomGaussian()</b> might return. Rather, there is just a very low probability that values far from the mean will be returned; and a higher probability that numbers near the mean will be returned.")
-     ("randomSeed()" "Sets the seed value for <b>random()</b>. By default, <b>random()</b> produces different results each time the program is run. Set the <b>seed</b> parameter to a constant to return the same pseudo-random numbers each time the software is run."))
+     ("randomSeed()" "Sets the seed value for <b>random()</b>. By default, <b>random()</b> produces different results each time the program is run. Set the <b>seed</b> parameter to a constant to return the same pseudo-random numbers each time the software is run.")
+     ("abs()" "Calculates the absolute value (magnitude) of a number. The absolute value of a number is always positive.")
+     ("ceil()" "Calculates the closest int value that is greater than or equal to the value of the parameter. For example, <b>ceil(9.03)</b> returns the value 10.")
+     ("constrain()" "Constrains a value to not exceed a maximum and minimum value.")
+     ("dist()" "Calculates the distance between two points.")
+     ("exp()" "Returns Euler's number <i>e</i> (2.71828...) raised to the power of the <b>n</b> parameter.")
+     ("floor()" "Calculates the closest int value that is less than or equal to the value of the parameter.")
+     ("lerp()" "Calculates a number between two numbers at a specific increment. The <b>amt</b> parameter is the amount to interpolate between the two values where 0.0 equal to the first point, 0.1 is very near the first point, 0.5 is half-way in between, etc. The lerp function is convenient for creating motion along a straight path and for drawing dotted lines.")
+     ("log()" "Calculates the natural logarithm (the base-<i>e</i> logarithm) of a number. This function expects the <b>n</b> parameter to be a value greater than 0.0.")
+     ("mag()" "Calculates the magnitude (or length) of a vector. A vector is a direction in space commonly used in computer graphics and linear algebra. Because it has no \"start\" position, the magnitude of a vector can be thought of as the distance from the coordinate 0,0 to its x,y value. Therefore, <b>mag()</b> is a shortcut for writing <b>dist(0, 0, x, y)</b>.")
+     ("map()" "Re-maps a number from one range to another.<br/>
+<br/>
+In the first example above, the number 25 is converted from a value in the range of 0 to 100 into a value that ranges from the left edge of the window (0) to the right edge (width).<br/>
+<br/>
+As shown in the second example, numbers outside of the range are not clamped to the minimum and maximum parameters values, because out-of-range values are often intentional and useful.")
+     ("max()" "Determines the largest value in a sequence of numbers, and then returns that value. <b>max()</b> accepts either two or three <b>float</b> or <b>int</b> values as parameters, or an array of any length.")
+     ("min()" "Determines the smallest value in a sequence of numbers, and then returns that value. <b>min()</b> accepts either two or three <b>float</b> or <b>int</b> values as parameters, or an array of any length.")
+     ("norm()" "Normalizes a number from another range into a value between 0 and 1. Identical to <b>map(value, low, high, 0, 1)</b>.<br/>
+<br/>
+Numbers outside of the range are not clamped to 0 and 1, because out-of-range values are often intentional and useful.  (See the second example above.)")
+     ("pow()" "Facilitates exponential expressions. The <b>pow()</b> function is an efficient way of multiplying numbers by themselves (or their reciprocals) in large quantities. For example, <b>pow(3, 5)</b> is equivalent to the expression 3*3*3*3*3 and <b>pow(3, -5)</b> is equivalent to 1 / 3*3*3*3*3.")
+     ("round()" "Calculates the integer closest to the <b>n</b> parameter. For example, <b>round(133.8)</b> returns the value 134.")
+     ("sq()" "Squares a number (multiplies a number by itself). The result is always a positive number, as multiplying two negative numbers always yields a positive result. For example, -1 * -1 = 1.")
+     ("sqrt()" "Calculates the square root of a number. The square root of a number is always positive, even though there may be a valid negative root. The square root <b>s</b> of number <b>a</b> is such that <b>s*s = a</b>. It is the opposite of squaring."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
