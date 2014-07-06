@@ -400,7 +400,7 @@
     - [ ] textAscent()
     - [ ] textDescent()
 
-- [-] Math [50%]
+- [-] Math [66%]
   - [X] PVector
 
   - [ ] Operators [0%]
@@ -441,16 +441,16 @@
     - [X] sq()
     - [X] sqrt()
 
-  - [ ] Trigonometry [0%]
-    - [ ] acos()
-    - [ ] asin()
-    - [ ] atan()
-    - [ ] atan2()
-    - [ ] cos()
-    - [ ] degrees()
-    - [ ] radians()
-    - [ ] sin()
-    - [ ] tan()
+  - [X] Trigonometry [100%]
+    - [X] acos()
+    - [X] asin()
+    - [X] atan()
+    - [X] atan2()
+    - [X] cos()
+    - [X] degrees()
+    - [X] radians()
+    - [X] sin()
+    - [X] tan()
 
   - [X] Random [100%]
     - [X] noise()
