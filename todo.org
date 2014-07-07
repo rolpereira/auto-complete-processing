@@ -320,7 +320,7 @@
     - [ ] shininess()
     - [ ] specular()
 
-- [ ] Color [0%]
+- [-] Color [50%]
   - [ ] Setting [0%]
     - [ ] background()
     - [ ] clear()
@@ -330,16 +330,18 @@
     - [ ] noStroke()
     - [ ] stroke()
 
-  - [ ] Creating & Reading [0%]
-    - [ ] alpha()
-    - [ ] blue()
-    - [ ] brightness()
-    - [ ] color()
-    - [ ] green()
-    - [ ] hue()
-    - [ ] lerpColor()
-    - [ ] red()
-    - [ ] saturation()
+  - [X] Creating & Reading [100%]
+    - [X] alpha()
+    - [X] blue()
+    - [X] brightness()
+    - [X] color()
+    - [X] green()
+    - [X] hue()
+    - [X] lerpColor()
+    - [X] red()
+    - [X] saturation()
+    - [X] blendColor()
+      - It doesn't appear in the website reference?
 
 - [-] Image
   - [ ] createImage()

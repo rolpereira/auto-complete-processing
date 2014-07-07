@@ -462,7 +462,40 @@ Numbers outside of the range are not clamped to 0 and 1, because out-of-range va
      ("degrees()" "Converts a radian measurement to its corresponding value in degrees. Radians and degrees are two ways of measuring the same thing. There are 360 degrees in a circle and 2*PI radians in a circle. For example, 90&deg; = PI/2 = 1.5707964. All trigonometric functions in Processing require their parameters to be specified in radians.")
      ("radians()" "Converts a degree measurement to its corresponding value in radians. Radians and degrees are two ways of measuring the same thing. There are 360 degrees in a circle and 2*PI radians in a circle. For example, 90&deg; = PI/2 = 1.5707964. All trigonometric functions in Processing require their parameters to be specified in radians.")
      ("sin()" "Calculates the sine of an angle. This function expects the values of the <b>angle</b> parameter to be provided in radians (values from 0 to 6.28). Values are returned in the range -1 to 1.")
-     ("tan()" "Calculates the ratio of the sine and cosine of an angle. This function expects the values of the <b>angle</b> parameter to be provided in radians (values from 0 to PI*2). Values are returned in the range <b>infinity</b> to <b>-infinity</b>."))
+     ("tan()" "Calculates the ratio of the sine and cosine of an angle. This function expects the values of the <b>angle</b> parameter to be provided in radians (values from 0 to PI*2). Values are returned in the range <b>infinity</b> to <b>-infinity</b>.")
+     ("alpha()" "Extracts the alpha value from a color.")
+     ("blendColor()" "Blends two color values together based on the blending mode given as the <b>MODE</b> parameter. The possible modes are described in the reference for the <b>blend()</b> function.")
+     ("blue()" "Extracts the blue value from a color, scaled to match current <b>colorMode()</b>. The value is always returned as a float, so be careful not to assign it to an int value.<br />
+<br />
+The <b>blue()</b> function is easy to use and understand, but it is slower than a technique called bit masking. When working in <b>colorMode(RGB, 255)</b>, you can acheive the same results as <b>blue()</b> but with greater speed by using a bit mask to remove the other color components. For example, the following two lines of code are equivalent means of getting the blue value of the color value <b>c</b>:<br />
+<br />
+<pre>float b1 = blue(c);   // Simpler, but slower to calculate
+float b2 = c & 0xFF;  // Very fast to calculate</pre>")
+     ("brightness()" "Extracts the brightness value from a color.")
+     ("color()" "Creates colors for storing in variables of the <b>color</b> datatype. The parameters are interpreted as RGB or HSB values depending on the current <b>colorMode()</b>. The default mode is RGB values from 0 to 255 and, therefore, <b>color(255, 204, 0)</b> will return a bright yellow color (see the first example above).<br/>
+<br/>
+Note that if only one value is provided to <b>color()</b>, it will be interpreted as a grayscale value. Add a second value, and it will be used for alpha transparency. When three values are specified, they are interpreted as either RGB or HSB values. Adding a fourth value applies alpha transparency.<br/>
+<br/>
+Note that when using hexadecimal notation, it is not necessary to use <b>color()</b>, as in: <b>color c = #006699</b><br/>
+<br/>
+More about how colors are stored can be found in the reference for the <a href=\"color_datatype.html\">color</a> datatype.")
+     ("green()" "Extracts the green value from a color, scaled to match current <b>colorMode()</b>. The value is always returned as a float, so be careful not to assign it to an int value.<br />
+<br />
+The <b>green()</b> function is easy to use and understand, but it is slower than a technique called bit shifting. When working in <b>colorMode(RGB, 255)</b>, you can acheive the same results as <b>green()</b> but with greater speed by using the right shift operator (<b>>></b>) with a bit mask. For example, the following two lines of code are equivalent means of getting the green value of the color value <b>c</b>:<br />
+<br />
+<pre>float r1 = green(c);  // Simpler, but slower to calculate
+float r2 = c >> 8 & 0xFF;  // Very fast to calculate</pre>")
+     ("hue()" "Extracts the hue value from a color.")
+     ("lerpColor()" "Calculates a color or colors between two color at a specific increment. The <b>amt</b> parameter is the amount to interpolate between the two values where 0.0 equal to the first point, 0.1 is very near the first point, 0.5 is halfway in between, etc. 
+<br />
+An amount below 0 will be treated as 0. Likewise, amounts above 1 will be capped at 1. This is different from the behavior of lerp(), but necessary because otherwise numbers outside the range will produce strange and unexpected colors.")
+     ("red()" "Extracts the red value from a color, scaled to match current <b>colorMode()</b>. The value is always returned as a float, so be careful not to assign it to an int value.<br />
+<br />
+The <b>red()</b> function is easy to use and understand, but it is slower than a technique called bit shifting. When working in <b>colorMode(RGB, 255)</b>, you can acheive the same results as <b>red()</b> but with greater speed by using the right shift operator (<b>>></b>) with a bit mask. For example, the following two lines of code are equivalent means of getting the red value of the color value <b>c</b>:<br />
+<br />
+<pre>float r1 = red(c);  // Simpler, but slower to calculate
+float r2 = c >> 16 & 0xFF;  // Very fast to calculate</pre>")
+     ("saturation()" "Extracts the saturation value from a color."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
