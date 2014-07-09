@@ -495,7 +495,11 @@ The <b>red()</b> function is easy to use and understand, but it is slower than a
 <br />
 <pre>float r1 = red(c);  // Simpler, but slower to calculate
 float r2 = c >> 16 & 0xFF;  // Very fast to calculate</pre>")
-     ("saturation()" "Extracts the saturation value from a color."))
+     ("saturation()" "Extracts the saturation value from a color.")
+     ("ambient()" "Sets the ambient reflectance for shapes drawn to the screen. This is combined with the ambient light component of environment. The color components set through the parameters define the reflectance. For example in the default color mode, setting v1=255, v2=127, v3=0, would cause all the red light to reflect and half of the green light to reflect. Used in combination with <b>emissive()</b>, <b>specular()</b>, and <b>shininess()</b> in setting the material properties of shapes.")
+     ("emissive()" "Sets the emissive color of the material used for drawing shapes drawn to the screen. Used in combination with <b>ambient()</b>, <b>specular()</b>, and <b>shininess()</b> in setting the material properties of shapes.")
+     ("shininess()" "Sets the amount of gloss in the surface of shapes. Used in combination with <b>ambient()</b>, <b>specular()</b>, and <b>emissive()</b> in setting the material properties of shapes.")
+     ("specular()" "Sets the specular color of the materials used for shapes drawn to the screen, which sets the color of highlights. Specular refers to light which bounces off a surface in a preferred direction (rather than bouncing in all directions like a diffuse light). Used in combination with <b>emissive()</b>, <b>ambient()</b>, and <b>shininess()</b> in setting the material properties of shapes."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix

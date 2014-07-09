@@ -284,7 +284,7 @@
   - [ ] shearY()
   - [ ] translate()
 
-- [ ] Lights, Camera [0%]
+- [-] Lights, Camera [25%]
   - [ ] Lights [0%]
     - [ ] ambientLight()
     - [ ] directionalLight()
@@ -314,11 +314,11 @@
     - [ ] screenY()
     - [ ] screenZ()
 
-  - [ ] Material Properties [0%]
-    - [ ] ambient()
-    - [ ] emissive()
-    - [ ] shininess()
-    - [ ] specular()
+  - [X] Material Properties [100%]
+    - [X] ambient()
+    - [X] emissive()
+    - [X] shininess()
+    - [X] specular()
 
 - [-] Color [50%]
   - [ ] Setting [0%]
