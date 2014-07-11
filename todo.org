@@ -284,7 +284,7 @@
   - [ ] shearY()
   - [ ] translate()
 
-- [-] Lights, Camera [25%]
+- [-] Lights, Camera [50%]
   - [ ] Lights [0%]
     - [ ] ambientLight()
     - [ ] directionalLight()
@@ -306,13 +306,13 @@
     - [ ] printCamera()
     - [ ] printProjection()
 
-  - [ ] Coordinates [0%]
-    - [ ] modelX()
-    - [ ] modelY()
-    - [ ] modelZ()
-    - [ ] screenX()
-    - [ ] screenY()
-    - [ ] screenZ()
+  - [X] Coordinates [100%]
+    - [X] modelX()
+    - [X] modelY()
+    - [X] modelZ()
+    - [X] screenX()
+    - [X] screenY()
+    - [X] screenZ()
 
   - [X] Material Properties [100%]
     - [X] ambient()
@@ -320,15 +320,15 @@
     - [X] shininess()
     - [X] specular()
 
-- [-] Color [50%]
-  - [ ] Setting [0%]
-    - [ ] background()
-    - [ ] clear()
-    - [ ] colorMode()
-    - [ ] fill()
-    - [ ] noFill()
-    - [ ] noStroke()
-    - [ ] stroke()
+- [X] Color [100%]
+  - [X] Setting [100%]
+    - [X] background()
+    - [X] clear()
+    - [X] colorMode()
+    - [X] fill()
+    - [X] noFill()
+    - [X] noStroke()
+    - [X] stroke()
 
   - [X] Creating & Reading [100%]
     - [X] alpha()

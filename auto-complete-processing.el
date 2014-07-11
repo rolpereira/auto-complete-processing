@@ -522,7 +522,19 @@ When using hexadecimal notation to specify a color, use \"#\" or \"0x\" before t
 <br/> <br/>
 The value for the gray parameter must be less than or equal to the current maximum value as specified by <b>colorMode()</b>. The default maximum value is 255.
 <br/> <br/>
-When drawing in 2D with the default renderer, you may need <b>hint(ENABLE_STROKE_PURE)</b> to improve drawing quality (at the expense of performance). See the hint() documentation for more details."))
+When drawing in 2D with the default renderer, you may need <b>hint(ENABLE_STROKE_PURE)</b> to improve drawing quality (at the expense of performance). See the hint() documentation for more details.")
+     ("modelX()" "Returns the three-dimensional X, Y, Z position in model space. This returns the X value for a given coordinate based on the current set of transformations (scale, rotate, translate, etc.) The X value can be used to place an object in space relative to the location of the original point once the transformations are no longer in use. 
+<br/> <br/>
+In the example, the <b>modelX()</b>, <b>modelY()</b>, and <b>modelZ()</b> functions record the location of a box in space after being placed using a series of translate and rotate commands. After popMatrix() is called, those transformations no longer apply, but the (x, y, z) coordinate returned by the model functions is used to place another box in the same location.")
+     ("modelY()" "Returns the three-dimensional X, Y, Z position in model space. This returns the Y value for a given coordinate based on the current set of transformations (scale, rotate, translate, etc.) The Y value can be used to place an object in space relative to the location of the original point once the transformations are no longer in use.<br /> 
+<br />
+In the example, the <b>modelX()</b>, <b>modelY()</b>, and <b>modelZ()</b> functions record the location of a box in space after being placed using a series of translate and rotate commands. After popMatrix() is called, those transformations no longer apply, but the (x, y, z) coordinate returned by the model functions is used to place another box in the same location.")
+     ("modelZ()" "Returns the three-dimensional X, Y, Z position in model space. This returns the Z value for a given coordinate based on the current set of transformations (scale, rotate, translate, etc.) The Z value can be used to place an object in space relative to the location of the original point once the transformations are no longer in use.<br />
+<br />
+In the example, the <b>modelX()</b>, <b>modelY()</b>, and <b>modelZ()</b> functions record the location of a box in space after being placed using a series of translate and rotate commands. After popMatrix() is called, those transformations no longer apply, but the (x, y, z) coordinate returned by the model functions is used to place another box in the same location.")
+     ("screenX()" "Takes a three-dimensional X, Y, Z position and returns the X value for where it will appear on a (two-dimensional) screen.")
+     ("screenY()" "Takes a three-dimensional X, Y, Z position and returns the Y value for where it will appear on a (two-dimensional) screen.")
+     ("screenZ()" "Takes a three-dimensional X, Y, Z position and returns the Z value for where it will appear on a (two-dimensional) screen."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
