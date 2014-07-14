@@ -284,7 +284,7 @@
   - [ ] shearY()
   - [ ] translate()
 
-- [-] Lights, Camera [50%]
+- [-] Lights, Camera [75%]
   - [ ] Lights [0%]
     - [ ] ambientLight()
     - [ ] directionalLight()
@@ -296,15 +296,15 @@
     - [ ] pointLight()
     - [ ] spotLight()
 
-  - [ ] Camera [0%]
-    - [ ] beginCamera()
-    - [ ] camera()
-    - [ ] endCamera()
-    - [ ] frustum()
-    - [ ] ortho()
-    - [ ] perspective()
-    - [ ] printCamera()
-    - [ ] printProjection()
+  - [X] Camera [100%]
+    - [X] beginCamera()
+    - [X] camera()
+    - [X] endCamera()
+    - [X] frustum()
+    - [X] ortho()
+    - [X] perspective()
+    - [X] printCamera()
+    - [X] printProjection()
 
   - [X] Coordinates [100%]
     - [X] modelX()
