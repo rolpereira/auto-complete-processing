@@ -284,17 +284,17 @@
   - [ ] shearY()
   - [ ] translate()
 
-- [-] Lights, Camera [75%]
-  - [ ] Lights [0%]
-    - [ ] ambientLight()
-    - [ ] directionalLight()
-    - [ ] lightFalloff()
-    - [ ] lights()
-    - [ ] lightSpecular()
-    - [ ] noLights()
-    - [ ] normal()
-    - [ ] pointLight()
-    - [ ] spotLight()
+- [X] Lights, Camera [100%]
+  - [X] Lights [100%]
+    - [X] ambientLight()
+    - [X] directionalLight()
+    - [X] lightFalloff()
+    - [X] lights()
+    - [X] lightSpecular()
+    - [X] noLights()
+    - [X] normal()
+    - [X] pointLight()
+    - [X] spotLight()
 
   - [X] Camera [100%]
     - [X] beginCamera()
