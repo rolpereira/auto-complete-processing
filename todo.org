@@ -269,20 +269,20 @@
     - [ ] saveXML()
     - [ ] selectOutput()
 
-- [ ] Transform [0%]
-  - [ ] applyMatrix()
-  - [ ] popMatrix()
-  - [ ] printMatrix()
-  - [ ] pushMatrix()
-  - [ ] resetMatrix()
-  - [ ] rotate()
-  - [ ] rotateX()
-  - [ ] rotateY()
-  - [ ] rotateZ()
-  - [ ] scale()
-  - [ ] shearX()
-  - [ ] shearY()
-  - [ ] translate()
+- [X] Transform [100%]
+  - [X] applyMatrix()
+  - [X] popMatrix()
+  - [X] printMatrix()
+  - [X] pushMatrix()
+  - [X] resetMatrix()
+  - [X] rotate()
+  - [X] rotateX()
+  - [X] rotateY()
+  - [X] rotateZ()
+  - [X] scale()
+  - [X] shearX()
+  - [X] shearY()
+  - [X] translate()
 
 - [X] Lights, Camera [100%]
   - [X] Lights [100%]
