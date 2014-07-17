@@ -142,7 +142,7 @@
     - [ ] && (logical AND)
     - [ ] || (logical OR)
 
-- [ ] Shape [0%]
+- [-] Shape [11%]
   - [ ] createShape()
   - [ ] loadShape()
   - [ ] PShape
@@ -181,15 +181,19 @@
     - [ ] strokeJoin()
     - [ ] strokeWeight()
 
-  - [ ] Vertex [0%]
-    - [ ] beginContour()
-    - [ ] beginShape()
-    - [ ] bezierVertex()
-    - [ ] curveVertex()
-    - [ ] endContour()
-    - [ ] endShape()
-    - [ ] quadraticVertex()
-    - [ ] vertex()
+  - [X] Vertex [100%]
+    - [X] beginContour()
+    - [X] beginShape()
+    - [X] bezierVertex()
+    - [X] curveVertex()
+    - [X] endContour()
+    - [X] endShape()
+    - [X] quadraticVertex()
+    - [X] vertex()
+    - [X] texture()
+      - It doesn't appear in the website reference?
+    - [X] textureMode()
+      - It doesn't appear in the website reference?
 
   - [ ] Loading & Displaying [0%]
     - [ ] shape()
