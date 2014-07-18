@@ -142,7 +142,7 @@
     - [ ] && (logical AND)
     - [ ] || (logical OR)
 
-- [-] Shape [11%]
+- [-] Shape [14%]
   - [ ] createShape()
   - [ ] loadShape()
   - [ ] PShape
@@ -172,14 +172,14 @@
     - [ ] sphere()
     - [ ] sphereDetail()
 
-  - [ ] Attributes [0%]
-    - [ ] ellipseMode()
-    - [ ] noSmooth()
-    - [ ] rectMode()
-    - [ ] smooth()
-    - [ ] strokeCap()
-    - [ ] strokeJoin()
-    - [ ] strokeWeight()
+  - [X] Attributes [100%]
+    - [X] ellipseMode()
+    - [X] noSmooth()
+    - [X] rectMode()
+    - [X] smooth()
+    - [X] strokeCap()
+    - [X] strokeJoin()
+    - [X] strokeWeight()
 
   - [X] Vertex [100%]
     - [X] beginContour()

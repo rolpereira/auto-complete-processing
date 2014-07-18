@@ -615,7 +615,38 @@ With <b>IMAGE</b>, if an image is 100 x 200 pixels, mapping the image onto the e
 <br/><br/>
 Drawing a vertex in 3D using the <b>z</b> parameter requires the P3D parameter in combination with size, as shown in the above example.
 <br/><br/>
-This function is also used to map a texture onto geometry. The <b>texture()</b> function declares the texture to apply to the geometry and the <b>u</b> and <b>v</b> coordinates set define the mapping of this texture to the form. By default, the coordinates used for <b>u</b> and <b>v</b> are specified in relation to the image's size in pixels, but this relation can be changed with <b>textureMode()</b>."))
+This function is also used to map a texture onto geometry. The <b>texture()</b> function declares the texture to apply to the geometry and the <b>u</b> and <b>v</b> coordinates set define the mapping of this texture to the form. By default, the coordinates used for <b>u</b> and <b>v</b> are specified in relation to the image's size in pixels, but this relation can be changed with <b>textureMode()</b>.")
+     ("ellipseMode()" "Modifies the location from which ellipses are drawn by changing the way in which parameters given to <b>ellipse()</b> are intepreted.<br/>
+<br/>
+The default mode is <b>ellipseMode(CENTER)</b>, which interprets the first two parameters of <b>ellipse()</b> as the shape's center point, while the third and fourth parameters are its width and height.<br/>
+<br/>
+<b>ellipseMode(RADIUS)</b> also uses the first two parameters of <b>ellipse()</b> as the shape's center point, but uses the third and fourth parameters to specify half of the shapes's width and height.<br />
+<br/>
+<b>ellipseMode(CORNER)</b> interprets the first two parameters of <b>ellipse()</b> as the upper-left corner of the shape, while the third and fourth parameters are its width and height.<br/>
+<br/>
+<b>ellipseMode(CORNERS)</b> interprets the first two parameters of <b>ellipse()</b> as the location of one corner of the ellipse's bounding box, and the third and fourth parameters as the location of the opposite corner.<br/>
+<br/>
+The parameter must be written in ALL CAPS because Processing is a case-sensitive language.")
+     ("noSmooth()" "Draws all geometry with jagged (aliased) edges.  Note that <b>smooth()</b> is active by default, so it is necessary to call <b>noSmooth()</b> to disable smoothing of geometry, images, and fonts.")
+     ("rectMode()" "Modifies the location from which rectangles are drawn by changing the way in which parameters given to <b>rect()</b> are intepreted.<br/>
+<br/>
+The default mode is <b>rectMode(CORNER)</b>, which interprets the first two parameters of <b>rect()</b> as the upper-left corner of the shape, while the third and fourth parameters are its width and height.<br/>
+<br/>
+<b>rectMode(CORNERS)</b> interprets the first two parameters of <b>rect()</b> as the location of one corner, and the third and fourth parameters as the location of the opposite corner.<br/>
+<br/>
+<b>rectMode(CENTER)</b> interprets the first two parameters of <b>rect()</b> as the shape's center point, while the third and fourth parameters are its width and height.<br/>
+<br/>
+<b>rectMode(RADIUS)</b> also uses the first two parameters of <b>rect()</b> as the shape's center point, but uses the third and fourth parameters to specify half of the shapes's width and height.<br />
+<br />
+The parameter must be written in ALL CAPS because Processing is a case-sensitive language.")
+     ("smooth()" "Draws all geometry with smooth (anti-aliased) edges. <b>smooth()</b> will also improve image quality of resized images. Note that <b>smooth()</b> is active by default; <b>noSmooth()</b> can be used to disable smoothing of geometry, images, and fonts.<br />
+<br />
+The <b>level</b> parameter increases the level of smoothness with the P2D and P3D renderers. This is the level of over sampling applied to the graphics buffer. The value \"2\" will double the rendering size before scaling it down to the display size. This is called \"2x anti-aliasing.\" The value 4 is used for 4x anti-aliasing and 8 is specified for 8x anti-aliasing. If <b>level</b> is set to 0, it will disable all smoothing; it's the equivalent of the function <b>noSmooth()</b>. The maximum anti-aliasing level is determined by the hardware of the machine that is running the software.<br >
+<br />
+With the default renderer, <b>smooth(2)</b> is bilinear and <b>smooth(4)</b> is bicubic. Nothing implemented on Android 2D.")
+     ("strokeCap()" "Sets the style for rendering line endings. These ends are either squared, extended, or rounded, each of which specified with the corresponding parameters: SQUARE, PROJECT, and ROUND. The default cap is ROUND.")
+     ("strokeJoin()" "Sets the style of the joints which connect line segments. These joints are either mitered, beveled, or rounded and specified with the corresponding parameters MITER, BEVEL, and ROUND. The default joint is MITER.")
+     ("strokeWeight()" "Sets the width of the stroke used for lines, points, and the border around shapes. All widths are set in units of pixels."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
