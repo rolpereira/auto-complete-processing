@@ -142,7 +142,7 @@
     - [ ] && (logical AND)
     - [ ] || (logical OR)
 
-- [-] Shape [14%]
+- [-] Shape [33%]
   - [ ] createShape()
   - [ ] loadShape()
   - [ ] PShape
@@ -167,10 +167,10 @@
     - [ ] curveTangent()
     - [ ] curveTightness()
 
-  - [ ] 3D Primitives [0%]
-    - [ ] box()
-    - [ ] sphere()
-    - [ ] sphereDetail()
+  - [X] 3D Primitives [100%]
+    - [X] box()
+    - [X] sphere()
+    - [X] sphereDetail()
 
   - [X] Attributes [100%]
     - [X] ellipseMode()

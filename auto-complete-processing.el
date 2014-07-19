@@ -646,7 +646,10 @@ The <b>level</b> parameter increases the level of smoothness with the P2D and P3
 With the default renderer, <b>smooth(2)</b> is bilinear and <b>smooth(4)</b> is bicubic. Nothing implemented on Android 2D.")
      ("strokeCap()" "Sets the style for rendering line endings. These ends are either squared, extended, or rounded, each of which specified with the corresponding parameters: SQUARE, PROJECT, and ROUND. The default cap is ROUND.")
      ("strokeJoin()" "Sets the style of the joints which connect line segments. These joints are either mitered, beveled, or rounded and specified with the corresponding parameters MITER, BEVEL, and ROUND. The default joint is MITER.")
-     ("strokeWeight()" "Sets the width of the stroke used for lines, points, and the border around shapes. All widths are set in units of pixels."))
+     ("strokeWeight()" "Sets the width of the stroke used for lines, points, and the border around shapes. All widths are set in units of pixels.")
+     ("box()" "A box is an extruded rectangle. A box with equal dimensions on all sides is a cube.")
+     ("sphere()" "A sphere is a hollow ball made from tessellated triangles.")
+     ("sphereDetail()" "Controls the detail used to render a sphere by adjusting the number of vertices of the sphere mesh. The default resolution is 30, which creates a fairly detailed sphere definition with vertices every 360/30 = 12 degrees. If you're going to render a great number of spheres per frame, it is advised to reduce the level of detail using this function. The setting stays active until <b>sphereDetail()</b> is called again with a new parameter and so should <i>not</i> be called prior to every <b>sphere()</b> statement, unless you wish to render spheres with different settings, e.g. using less detail for smaller spheres or ones further away from the camera. To control the detail of the horizontal and vertical resolution independently, use the version of the functions with two parameters."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
