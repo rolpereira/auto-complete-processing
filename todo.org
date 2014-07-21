@@ -142,7 +142,7 @@
     - [ ] && (logical AND)
     - [ ] || (logical OR)
 
-- [-] Shape [33%]
+- [-] Shape [44%]
   - [ ] createShape()
   - [ ] loadShape()
   - [ ] PShape
@@ -156,16 +156,16 @@
     - [ ] rect()
     - [ ] triangle()
 
-  - [ ] Curves [0%]
-    - [ ] bezier()
-    - [ ] bezierDetail()
-    - [ ] bezierPoint()
-    - [ ] bezierTangent()
-    - [ ] curve()
-    - [ ] curveDetail()
-    - [ ] curvePoint()
-    - [ ] curveTangent()
-    - [ ] curveTightness()
+  - [X] Curves [100%]
+    - [X] bezier()
+    - [X] bezierDetail()
+    - [X] bezierPoint()
+    - [X] bezierTangent()
+    - [X] curve()
+    - [X] curveDetail()
+    - [X] curvePoint()
+    - [X] curveTangent()
+    - [X] curveTightness()
 
   - [X] 3D Primitives [100%]
     - [X] box()
