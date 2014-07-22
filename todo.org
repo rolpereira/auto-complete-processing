@@ -142,19 +142,20 @@
     - [ ] && (logical AND)
     - [ ] || (logical OR)
 
-- [-] Shape [44%]
+- [-] Shape [55%]
   - [ ] createShape()
   - [ ] loadShape()
   - [ ] PShape
 
-  - [ ] 2D Primitives [0%]
-    - [ ] arc()
-    - [ ] ellipse()
-    - [ ] line()
-    - [ ] point()
-    - [ ] quad()
-    - [ ] rect()
-    - [ ] triangle()
+  - [X] 2D Primitives [100%]
+    - [X] arc()
+      - Not typed as a <subcategory>2D Primitives</subcategory>?
+    - [X] ellipse()
+    - [X] line()
+    - [X] point()
+    - [X] quad()
+    - [X] rect()
+    - [X] triangle()
 
   - [X] Curves [100%]
     - [X] bezier()
