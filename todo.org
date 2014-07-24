@@ -247,11 +247,11 @@
     - [X] second()
     - [X] year()
 
-- [ ] Output [0%]
-  - [ ] Text Area [0%]
-    - [ ] print()
-    - [ ] printArray()
-    - [ ] println()
+- [-] Output [33%]
+  - [X] Text Area [100%]
+    - [X] print()
+    - [X] printArray()
+    - [X] println()
 
   - [ ] Image [0%]
     - [ ] save()

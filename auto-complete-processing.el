@@ -671,7 +671,14 @@ There are three ways to draw an arc; the rendering technique used is defined by 
 To draw a rounded rectangle, add a fifth parameter, which is used as the radius value for all four corners.<br/>
 <br/>
 To use a different radius value for each corner, include eight parameters. When using eight parameters, the latter four set the radius of the arc at each corner separately, starting with the top-left corner and moving clockwise around the rectangle.")
-     ("triangle()" "A triangle is a plane created by connecting three points. The first two arguments specify the first point, the middle two arguments specify the second point, and the last two arguments specify the third point."))
+     ("triangle()" "A triangle is a plane created by connecting three points. The first two arguments specify the first point, the middle two arguments specify the second point, and the last two arguments specify the third point.")
+     ("print()" "The <b>print()</b> function writes to the console area, the black rectangle at the bottom of the Processing environment. This function is often helpful for looking at the data a program is producing. The companion function <b>println()</b> works like <b>print()</b>, but creates a new line of text for each call to the function. More than one parameter can be passed into the function by separating them with commas. Alternatively, individual elements can be separated with quotes (\"\") and joined with the addition operator (+).<br />
+<br />
+Using <b>print()</b> on an object will output <b>null</b>, a memory location that may look like \"@10be08,\" or the result of the <b>toString()</b> method from the object that's being printed. Advanced users who want more useful output when calling <b>print()</b> on their own classes can add a <b>toString()</b> method to the class that returns a String.")
+     ("printArray()" "The <b>printArray()</b> function writes array data to the text area of the Processing environment's console. A new line is put between each element of the array. This function can only print one dimensional arrays.")
+     ("println()" "The <b>print()</b> function writes to the console area, the black rectangle at the bottom of the Processing environment. This function is often helpful for looking at the data a program is producing. Each call to this function creates a new line of output. More than one parameter can be passed into the function by separating them with commas. Alternatively, individual elements can be separated with quotes (\"\") and joined with the addition operator (+).<br />
+<br/>
+Before Processing 2.1, <b>println()</b> was used to write array data to the console. Now, use <b>printArray()</b> to write array data to the console."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
