@@ -678,7 +678,9 @@ Using <b>print()</b> on an object will output <b>null</b>, a memory location tha
      ("printArray()" "The <b>printArray()</b> function writes array data to the text area of the Processing environment's console. A new line is put between each element of the array. This function can only print one dimensional arrays.")
      ("println()" "The <b>print()</b> function writes to the console area, the black rectangle at the bottom of the Processing environment. This function is often helpful for looking at the data a program is producing. Each call to this function creates a new line of output. More than one parameter can be passed into the function by separating them with commas. Alternatively, individual elements can be separated with quotes (\"\") and joined with the addition operator (+).<br />
 <br/>
-Before Processing 2.1, <b>println()</b> was used to write array data to the console. Now, use <b>printArray()</b> to write array data to the console."))
+Before Processing 2.1, <b>println()</b> was used to write array data to the console. Now, use <b>printArray()</b> to write array data to the console.")
+     ("textAscent()" "Returns ascent of the current font at its current size. This information is useful for determining the height of the font above the baseline. For example, adding the <b>textAscent()</b> and <b>textDescent()</b> values will give you the total height of the line.")
+     ("textDescent()" "Returns descent of the current font at its current size. This information is useful for determining the height of the font below the baseline. For example, adding the <b>textAscent()</b> and <b>textDescent()</b> values will give you the total height of the line."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix

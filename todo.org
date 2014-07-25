@@ -386,7 +386,7 @@
     - [ ] resetShader()
     - [ ] shader()
 
-- [ ] Typography [0%]
+- [-] Typography [25%]
 
   - [ ] PFont
 
@@ -403,9 +403,9 @@
     - [ ] textSize()
     - [ ] textWidth()
 
-  - [ ] Metrics [0%]
-    - [ ] textAscent()
-    - [ ] textDescent()
+  - [X] Metrics [100%]
+    - [X] textAscent()
+    - [X] textDescent()
 
 - [-] Math [66%]
   - [X] PVector
