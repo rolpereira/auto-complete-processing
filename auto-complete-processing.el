@@ -680,7 +680,43 @@ Using <b>print()</b> on an object will output <b>null</b>, a memory location tha
 <br/>
 Before Processing 2.1, <b>println()</b> was used to write array data to the console. Now, use <b>printArray()</b> to write array data to the console.")
      ("textAscent()" "Returns ascent of the current font at its current size. This information is useful for determining the height of the font above the baseline. For example, adding the <b>textAscent()</b> and <b>textDescent()</b> values will give you the total height of the line.")
-     ("textDescent()" "Returns descent of the current font at its current size. This information is useful for determining the height of the font below the baseline. For example, adding the <b>textAscent()</b> and <b>textDescent()</b> values will give you the total height of the line."))
+     ("textDescent()" "Returns descent of the current font at its current size. This information is useful for determining the height of the font below the baseline. For example, adding the <b>textAscent()</b> and <b>textDescent()</b> values will give you the total height of the line.")
+     ("join()" "Combines an array of Strings into one String, each separated by the character(s) used for the <b>separator</b> parameter. To join arrays of ints or floats, it's necessary to first convert them to Strings using <b>nf()</b> or <b>nfs()</b>.")
+     ("match()" "This function is used to apply a regular expression to a piece of text, and return matching groups (elements found inside parentheses) as a String array. If there are no matches, a null value will be returned. If no groups are specified in the regular expression, but the sequence matches, an array of length 1 (with the matched text as the first element of the array) will be returned.<br/>
+<br/>
+To use the function, first check to see if the result is null. If the result is null, then the sequence did not match at all. If the sequence did match, an array is returned.<br/>
+<br/>
+If there are groups (specified by sets of parentheses) in the regular expression, then the contents of each will be returned in the array. Element [0] of a regular expression match returns the entire matching string, and the match groups start at element [1] (the first group is [1], the second [2], and so on).<br/>
+<br/>
+The syntax can be found in the reference for Java's <a href=\"http://download.oracle.com/javase/6/docs/api/\">Pattern</a> class. For regular expression syntax, read the <a href=\"http://download.oracle.com/javase/tutorial/essential/regex/\">Java Tutorial</a> on the topic.")
+     ("matchAll()" "This function is used to apply a regular expression to a piece of text, and return a list of matching groups (elements found inside parentheses) as a two-dimensional String array. If there are no matches, a null value will be returned. If no groups are specified in the regular expression, but the sequence matches, a two dimensional array is still returned, but the second dimension is only of length one.<br />
+<br />
+To use the function, first check to see if the result is null. If the result is null, then the sequence did not match at all. If the sequence did match, a 2D array is returned.<br/>
+<br/>
+If there are groups (specified by sets of parentheses) in the regular expression, then the contents of each will be returned in the array. Assuming a loop with counter variable i, element [i][0] of a regular expression match returns the entire matching string, and the match groups start at element [i][1] (the first group is [i][1], the second [i][2], and so on).<br/>
+<br/>
+The syntax can be found in the reference for Java's <a href=\"http://download.oracle.com/javase/6/docs/api/\">Pattern</a> class. For regular expression syntax, read the <a href=\"http://download.oracle.com/javase/tutorial/essential/regex/\">Java Tutorial</a> on the topic.")
+     ("nf()" "Utility function for formatting numbers into strings. There are two versions: one for formatting floats, and one for formatting ints. The values for the <b>digits</b>, <b>left</b>, and <b>right</b> parameters should always be positive integers.<br /><br />As shown in the above example, <b>nf()</b> is used to add zeros to the left and/or right of a number. This is typically for aligning a list of numbers. To <em>remove</em> digits from a floating-point number, use the <b>int()</b>, <b>ceil()</b>, <b>floor()</b>, or <b>round()</b> functions.")
+     ("nfc()" "Utility function for formatting numbers into strings and placing appropriate commas to mark units of 1000. There are two versions: one for formatting ints, and one for formatting an array of ints. The value for the <b>right</b> parameter should always be a positive integer.
+<br/> <br/>
+For a non-US locale, this will insert periods instead of commas, or whatever is apprioriate for that region.")
+     ("nfp()" "Utility function for formatting numbers into strings. Similar to <b>nf()</b> but puts a \"+\" in front of positive numbers and a \"-\" in front of negative numbers. There are two versions: one for formatting floats, and one for formatting ints. The values for the <b>digits</b>, <b>left</b>, and <b>right</b> parameters should always be positive integers.")
+     ("nfs()" "Utility function for formatting numbers into strings. Similar to <b>nf()</b>, but leaves a blank space in front of positive numbers so they align with negative numbers in spite of the minus symbol. There are two versions: one for formatting floats, and one for formatting ints. The values for the <b>digits</b>, <b>left</b>, and <b>right</b> parameters should always be positive integers.")
+     ("split()" "The <b>split()</b> function breaks a String into pieces using a character or string as the delimiter. The <b>delim</b> parameter specifies the character or characters that mark the boundaries between each piece. A String[] array is returned that contains each of the pieces.
+<br/> <br/>
+If the result is a set of numbers, you can convert the String[] array to to a float[] or int[] array using the datatype conversion functions <b>int()</b> and <b>float()</b>.  (See the second example above.)
+<br/> <br/> 
+The <b>splitTokens()</b> function works in a similar fashion, except that it splits using a range of characters instead of a specific character or sequence.
+<!--
+<br /><br />
+This function uses regular expressions to determine how the <b>delim</b> parameter divides the <b>str</b> parameter. Therefore, if you use characters such parentheses and brackets that are used with regular expressions as a part of the <b>delim</b> parameter, you'll need to put two blackslashes (\\\\\\\\) in front of the character (see example above). You can read more about <a href=\"http://en.wikipedia.org/wiki/Regular_expression\">regular expressions</a> and <a href=\"http://en.wikipedia.org/wiki/Escape_character\">escape characters</a> on Wikipedia.
+-->")
+     ("splitTokens()" "The <b>splitTokens()</b> function splits a String at one or many character delimiters or \"tokens.\" The <b>delim</b> parameter specifies the character or characters to be used as a boundary.<br/>
+<br/>
+If no <b>delim</b> characters are specified, any whitespace character is used to split. Whitespace characters include tab (&#92;t), line feed (&#92;n), carriage return (&#92;r), form feed (&#92;f), and space.<br/>
+<br/>
+After using this function to parse incoming data, it is common to convert the data from Strings to integers or floats by using the datatype conversion functions <b>int()</b> and <b>float()</b>.")
+     ("trim()" "Removes whitespace characters from the beginning and end of a String. In addition to standard whitespace characters such as space, carriage return, and tab, this function also removes the Unicode \"nbsp\" character."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix

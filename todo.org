@@ -50,7 +50,7 @@
   - [ ] size()
   - [ ] width
 
-- [-] Data [0%]
+- [-] Data [20%]
   - [ ] Primitive [0%]
     - [ ] boolean
     - [ ] byte
@@ -91,17 +91,17 @@
     - [ ] unbinary()
     - [ ] unhex()
 
-  - [ ] String Functions [0%]
-    - [ ] join()
-    - [ ] match()
-    - [ ] matchAll()
-    - [ ] nf()
-    - [ ] nfc()
-    - [ ] nfp()
-    - [ ] nfs()
-    - [ ] split()
-    - [ ] splitTokens()
-    - [ ] trim()
+  - [X] String Functions [100%]
+    - [X] join()
+    - [X] match()
+    - [X] matchAll()
+    - [X] nf()
+    - [X] nfc()
+    - [X] nfp()
+    - [X] nfs()
+    - [X] split()
+    - [X] splitTokens()
+    - [X] trim()
 
   - [ ] Array Functions [0%]
     - [ ] append()
