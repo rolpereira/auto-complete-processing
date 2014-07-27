@@ -716,7 +716,36 @@ This function uses regular expressions to determine how the <b>delim</b> paramet
 If no <b>delim</b> characters are specified, any whitespace character is used to split. Whitespace characters include tab (&#92;t), line feed (&#92;n), carriage return (&#92;r), form feed (&#92;f), and space.<br/>
 <br/>
 After using this function to parse incoming data, it is common to convert the data from Strings to integers or floats by using the datatype conversion functions <b>int()</b> and <b>float()</b>.")
-     ("trim()" "Removes whitespace characters from the beginning and end of a String. In addition to standard whitespace characters such as space, carriage return, and tab, this function also removes the Unicode \"nbsp\" character."))
+     ("trim()" "Removes whitespace characters from the beginning and end of a String. In addition to standard whitespace characters such as space, carriage return, and tab, this function also removes the Unicode \"nbsp\" character.")
+     ("append()" "Expands an array by one element and adds data to the new position. The datatype of the <b>element</b> parameter must be the same as the datatype of the array.<br/>
+<br/>
+When using an array of objects, the data returned from the function must be cast to the object array's data type. For example: <em>SomeClass[] items = (SomeClass[]) append(originalArray, element)</em>")
+     ("arrayCopy()" "Copies an array (or part of an array) to another array. The <b>src</b> array is copied to the <b>dst</b> array, beginning at the position specified by <b>srcPosition</b> and into the position specified by <b>dstPosition</b>. The number of elements to copy is determined by <b>length</b>. Note that copying values overwrites existing values in the destination array. To append values instead of overwriting them, use <b>concat()</b>.<br/>
+<br/>
+The simplified version with only two arguments &mdash; <b>arrayCopy(src, dst)</b> &mdash; copies an entire array to another of the same size. It is equivalent to <b>arrayCopy(src, 0, dst, 0, src.length)</b>.<br/>
+<br/>
+Using this function is far more efficient for copying array data than iterating through a <b>for()</b> loop and copying each element individually.
+<br/>
+This function only copies references, which means that for most purposes it only copies one-dimensional arrays (a single set of brackets). If used with a two (or three or more) dimensional array, it will only copy the references at the first level, because a two dimensional array is simply an \"array of arrays\". This does not produce an error, however, because this is often the desired behavior. 
+<br/>
+Internally, this function calls Java's <a href=\"http://docs.oracle.com/javase/7/docs/api/java/lang/System.html#arraycopy(java.lang.Object, int, java.lang.Object, int, int)\">System.arraycopy()</a> method, so most things that apply there are inherited.")
+     ("concat()" "Concatenates two arrays. For example, concatenating the array { 1, 2, 3 } and the array { 4, 5, 6 } yields { 1, 2, 3, 4, 5, 6 }. Both parameters must be arrays of the same datatype.
+<br/> <br/>
+When using an array of objects, the data returned from the function must be cast to the object array's data type. For example: <em>SomeClass[] items = (SomeClass[]) concat(array1, array2)</em>.")
+     ("expand()" "Increases the size of an array. By default, this function doubles the size of the array, but the optional <b>newSize</b> parameter provides precise control over the increase in size. 
+<br/> <br/>
+When using an array of objects, the data returned from the function must be cast to the object array's data type. For example: <em>SomeClass[] items = (SomeClass[]) expand(originalArray)</em>")
+     ("reverse()" "Reverses the order of an array.")
+     ("shorten()" "Decreases an array by one element and returns the shortened array.
+<br/> <br/>
+When using an array of objects, the data returned from the function must be cast to the object array's data type. For example: <em>SomeClass[] items = (SomeClass[]) shorten(originalArray)</em>")
+     ("sort()" "Sorts an array of numbers from smallest to largest, or puts an array of words in alphabetical order. The original array is not modified; a re-ordered array is returned. The <b>count</b> parameter states the number of elements to sort. For example, if there are 12 elements in an array and <b>count</b> is set to 5, only the first 5 elements in the array will be sorted. <!--As of release 0126, the alphabetical ordering is case insensitive.-->")
+     ("splice()" "Inserts a value or an array of values into an existing array. The first two parameters must be arrays of the same datatype. The first parameter specifies the intial array to be modified, and the second parameter defines the data to be inserted. The third parameter is an index value which specifies the array position from which to insert data. (Remember that array index numbering starts at zero, so the first position is 0, the second position is 1, and so on.)<br/>
+<br/>
+When splicing an array of objects, the data returned from the function must be cast to the object array's data type. For example: <em>SomeClass[] items = (SomeClass[]) splice(array1, array2, index)</em>")
+     ("subset()" "Extracts an array of elements from an existing array. The <b>list</b> parameter defines the array from which the elements will be copied, and the <b>start</b> and <b>count</b> parameters specify which elements to extract. If no <b>count</b> is given, elements will be extracted from the <b>start</b> to the end of the array. When specifying the <b>start</b>, remember that the first array element is 0. This function does not change the source array.<br/>
+<br/>
+When using an array of objects, the data returned from the function must be cast to the object array's data type. For example: <em>SomeClass[] items = (SomeClass[]) subset(originalArray, 0, 4)</em>"))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix

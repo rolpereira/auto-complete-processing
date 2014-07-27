@@ -50,7 +50,7 @@
   - [ ] size()
   - [ ] width
 
-- [-] Data [20%]
+- [-] Data [40%]
   - [ ] Primitive [0%]
     - [ ] boolean
     - [ ] byte
@@ -103,16 +103,16 @@
     - [X] splitTokens()
     - [X] trim()
 
-  - [ ] Array Functions [0%]
-    - [ ] append()
-    - [ ] arrayCopy()
-    - [ ] concat()
-    - [ ] expand()
-    - [ ] reverse()
-    - [ ] shorten()
-    - [ ] sort()
-    - [ ] splice()
-    - [ ] subset()
+  - [X] Array Functions [100%]
+    - [X] append()
+    - [X] arrayCopy()
+    - [X] concat()
+    - [X] expand()
+    - [X] reverse()
+    - [X] shorten()
+    - [X] sort()
+    - [X] splice()
+    - [X] subset()
 
 - [ ] Control [0%]
   - [ ] Relational Operators [0%]
