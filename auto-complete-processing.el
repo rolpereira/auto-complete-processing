@@ -745,7 +745,17 @@ When using an array of objects, the data returned from the function must be cast
 When splicing an array of objects, the data returned from the function must be cast to the object array's data type. For example: <em>SomeClass[] items = (SomeClass[]) splice(array1, array2, index)</em>")
      ("subset()" "Extracts an array of elements from an existing array. The <b>list</b> parameter defines the array from which the elements will be copied, and the <b>start</b> and <b>count</b> parameters specify which elements to extract. If no <b>count</b> is given, elements will be extracted from the <b>start</b> to the end of the array. When specifying the <b>start</b>, remember that the first array element is 0. This function does not change the source array.<br/>
 <br/>
-When using an array of objects, the data returned from the function must be cast to the object array's data type. For example: <em>SomeClass[] items = (SomeClass[]) subset(originalArray, 0, 4)</em>"))
+When using an array of objects, the data returned from the function must be cast to the object array's data type. For example: <em>SomeClass[] items = (SomeClass[]) subset(originalArray, 0, 4)</em>")
+     ("save()" "Saves an image from the display window. Append a file extension to the name of the file, to indicate the file format to be used: either TIFF (.tif), TARGA (.tga), JPEG (.jpg), or PNG (.png). If no extension is included in the filename, the image will save in TIFF format and <b>.tif</b> will be added to the name. These files are saved to the sketch's folder, which may be opened by selecting \"Show sketch folder\" from the \"Sketch\" menu. Alternatively, the files can be saved to any location on the computer by using an absolute path (something that starts with / on Unix and Linux, or a drive letter on Windows).<br/>
+<br/>
+All images saved from the main drawing window will be opaque. To save images without a background, use <b>createGraphics()</b>.")
+     ("saveFrame()" "Saves a numbered sequence of images, one image each time the function is run. To save an image that is identical to the display window, run the function at the end of <b>draw()</b> or within mouse and key events such as <b>mousePressed()</b> and <b>keyPressed()</b>. Use the Movie Maker program in the Tools menu to combine these images to a movie.<br />
+<br />
+If <b>saveFrame()</b> is used without parameters, it will save files as screen-0000.tif, screen-0001.tif, and so on. You can specify the name of the sequence with the <b>filename</b> parameter, including hash marks (####), which will be replaced by the current <b>frameCount</b> value. (The number of hash marks is used to determine how many digits to include in the file names.) Append a file extension, to indicate the file format to be used: either TIFF (.tif), TARGA (.tga), JPEG (.jpg), or PNG (.png). Image files are saved to the sketch's folder, which may be opened by selecting \"Show Sketch Folder\" from the \"Sketch\" menu.<br />
+<br />
+Alternatively, the files can be saved to any location on the computer by using an absolute path (something that starts with / on Unix and Linux, or a drive letter on Windows).<br/>
+<br />
+All images saved from the main drawing window will be opaque. To save images without a background, use <b>createGraphics()</b>."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix

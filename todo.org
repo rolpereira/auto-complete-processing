@@ -247,15 +247,15 @@
     - [X] second()
     - [X] year()
 
-- [-] Output [33%]
+- [-] Output [66%]
   - [X] Text Area [100%]
     - [X] print()
     - [X] printArray()
     - [X] println()
 
-  - [ ] Image [0%]
-    - [ ] save()
-    - [ ] saveFrame()
+  - [X] Image [100%]
+    - [X] save()
+    - [X] saveFrame()
 
   - [ ] Files [0%]
     - [ ] beginRaw()
