@@ -365,15 +365,15 @@
     - [ ] textureMode()
     - [ ] textureWrap()
 
-  - [-] Pixels [12%]
-    - [ ] blend()
-    - [ ] copy()
-    - [ ] filter()
-    - [ ] get()
-    - [ ] loadPixels()
+  - [X] Pixels [100%]
+    - [X] blend()
+    - [X] copy()
+    - [X] filter()
+    - [X] get()
+    - [X] loadPixels()
     - [X] pixels[]
-    - [ ] set()
-    - [ ] updatePixels()
+    - [X] set()
+    - [X] updatePixels()
 
 - [ ] Rendering [0%]
   - [ ] blendMode()

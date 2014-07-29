@@ -755,7 +755,92 @@ If <b>saveFrame()</b> is used without parameters, it will save files as screen-0
 <br />
 Alternatively, the files can be saved to any location on the computer by using an absolute path (something that starts with / on Unix and Linux, or a drive letter on Windows).<br/>
 <br />
-All images saved from the main drawing window will be opaque. To save images without a background, use <b>createGraphics()</b>."))
+All images saved from the main drawing window will be opaque. To save images without a background, use <b>createGraphics()</b>.")
+     ("blend()" "Blends a region of pixels from one image into another (or in itself again) with full alpha channel support. There is a choice of the following modes to blend the source pixels (A) with the ones of pixels in the destination image (B):<br />
+<br />
+BLEND - linear interpolation of colours: C = A*factor + B<br />
+<br />
+ADD - additive blending with white clip: C = min(A*factor + B, 255)<br />
+<br />
+SUBTRACT - subtractive blending with black clip: C = max(B - A*factor, 0)<br />
+<br />
+DARKEST - only the darkest colour succeeds: C = min(A*factor, B)<br />
+<br />
+LIGHTEST - only the lightest colour succeeds: C = max(A*factor, B)<br />
+<br />
+DIFFERENCE - subtract colors from underlying image.<br />
+<br />
+EXCLUSION - similar to DIFFERENCE, but less extreme.<br />
+<br />
+MULTIPLY - Multiply the colors, result will always be darker.<br />
+<br />
+SCREEN - Opposite multiply, uses inverse values of the colors.<br />
+<br />
+OVERLAY - A mix of MULTIPLY and SCREEN. Multiplies dark values,
+and screens light values.<br />
+<br />
+HARD_LIGHT - SCREEN when greater than 50% gray, MULTIPLY when lower.<br />
+<br />
+SOFT_LIGHT - Mix of DARKEST and LIGHTEST. 
+Works like OVERLAY, but not as harsh.<br />
+<br />
+DODGE - Lightens light tones and increases contrast, ignores darks.
+Called \"Color Dodge\" in Illustrator and Photoshop.<br />
+<br />
+BURN - Darker areas are applied, increasing contrast, ignores lights.
+Called \"Color Burn\" in Illustrator and Photoshop.<br />
+<br />
+All modes use the alpha information (highest byte) of source image pixels as the blending factor. If the source and destination regions are different sizes, the image will be automatically resized to match the destination size. If the <b>srcImg</b> parameter is not used, the display window is used as the source image.<br />
+<br />
+As of release 0149, this function ignores <b>imageMode()</b>.")
+     ("copy()" "Copies a region of pixels from the display window to another area of the display window and copies a region of pixels from an image used as the <b>srcImg</b> parameter into the display window. If the source and destination regions aren't the same size, it will automatically resize the source pixels to fit the specified target region. No alpha information is used in the process, however if the source image has an alpha channel set, it will be copied as well.
+<br /><br />
+As of release 0149, this function ignores <b>imageMode()</b>.")
+     ("filter()" "Filters the display window using a preset filter or with a custom shader. Using a shader with <b>filter()</b> is much faster than without. Shaders require the P2D or P3D renderer in size().<br />
+<br />
+The presets options are:<br />
+<br />
+THRESHOLD<br />
+Converts the image to black and white pixels depending if they are above or below the threshold defined by the level parameter. The parameter must be between 0.0 (black) and 1.0 (white). If no level is specified, 0.5 is used.<br />
+<br />
+GRAY<br />
+Converts any colors in the image to grayscale equivalents. No parameter is used.<br />
+<br />
+OPAQUE<br />
+Sets the alpha channel to entirely opaque. No parameter is used.<br />
+<br />
+INVERT<br />
+Sets each pixel to its inverse value. No parameter is used.<br />
+<br />
+POSTERIZE<br />
+Limits each channel of the image to the number of colors specified as the parameter. The parameter can be set to values between 2 and 255, but results are most noticeable in the lower ranges.<br />
+<br />
+BLUR<br />
+Executes a Guassian blur with the level parameter specifying the extent of the blurring. If no parameter is used, the blur is equivalent to Guassian blur of radius 1. Larger values increase the blur.<br />
+<br />
+ERODE<br />
+Reduces the light areas. No parameter is used.<br />
+<br />
+DILATE<br />
+Increases the light areas. No parameter is used.")
+     ("get()" "Reads the color of any pixel or grabs a section of an image. If no parameters are specified, the entire image is returned. Use the <b>x</b> and <b>y</b> parameters to get the value of one pixel. Get a section of the display window by specifying additional <b>w</b> and <b>h</b> parameters. When getting an image, the <b>x</b> and <b>y</b> parameters define the coordinates for the upper-left corner of the image, regardless of the current <b>imageMode()</b>.<br />
+<br />
+If the pixel requested is outside of the image window, black is returned. The numbers returned are scaled according to the current color ranges, but only RGB values are returned by this function. For example, even though you may have drawn a shape with <b>colorMode(HSB)</b>, the numbers returned will be in RGB format.
+<br /><br />
+Getting the color of a single pixel with <b>get(x, y)</b> is easy, but not as fast as grabbing the data directly from <b>pixels[]</b>. The equivalent statement to <b>get(x, y)</b> using <b>pixels[]</b> is <b>pixels[y*width+x]</b>. See the reference for <a href=\"pixels.html\">pixels[]</a> for more information.")
+     ("loadPixels()" "Loads the pixel data for the display window into the <b>pixels[]</b> array. This function must always be called before reading from or writing to <b>pixels[]</b>.<br/>
+<br/>
+Certain renderers may or may not seem to require <b>loadPixels()</b> or <b>updatePixels()</b>. However, the rule is that any time you want to manipulate the <b>pixels[]</b> array, you must first call <b>loadPixels()</b>, and after changes have been made, call <b>updatePixels()</b>. Even if the renderer may not seem to use this function in the current Processing release, this will always be subject to change.")
+     ("set()" "Changes the color of any pixel, or writes an image directly to the display window.<br />
+<br />
+The <b>x</b> and <b>y</b> parameters specify the pixel to change and the <b>c</b> parameter specifies the color value. The <b>c</b> parameter is interpreted according to the current color mode.  (The default color mode is RGB values from 0 to 255.)  When setting an image, the <b>x</b> and <b>y</b> parameters define the coordinates for the upper-left corner of the image, regardless of the current <b>imageMode()</b>.
+<br /><br />
+Setting the color of a single pixel with <b>set(x, y)</b> is easy, but not as fast as putting the data directly into <b>pixels[]</b>. The equivalent statement to <b>set(x, y, #000000)</b> using <b>pixels[]</b> is <b>pixels[y*width+x] = #000000</b>. See the reference for <a href=\"pixels.html\">pixels[]</a> for more information.")
+     ("updatePixels()" "Updates the display window with the data in the <b>pixels[]</b> array. Use in conjunction with <b>loadPixels()</b>. If you're only reading pixels from the array, there's no need to call <b>updatePixels()</b> &mdash; updating is only necessary to apply changes.
+<br/><br/>
+Certain renderers may or may not seem to require <b>loadPixels()</b> or <b>updatePixels()</b>. However, the rule is that any time you want to manipulate the <b>pixels[]</b> array, you must first call <b>loadPixels()</b>, and after changes have been made, call <b>updatePixels()</b>. Even if the renderer may not seem to use this function in the current Processing release, this will always be subject to change.
+<br/><br/>
+Currently, while none of the renderers use the additional parameters to <b>updatePixels()</b>, this may be implemented in the future."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
