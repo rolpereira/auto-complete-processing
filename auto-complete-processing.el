@@ -840,7 +840,20 @@ Setting the color of a single pixel with <b>set(x, y)</b> is easy, but not as fa
 <br/><br/>
 Certain renderers may or may not seem to require <b>loadPixels()</b> or <b>updatePixels()</b>. However, the rule is that any time you want to manipulate the <b>pixels[]</b> array, you must first call <b>loadPixels()</b>, and after changes have been made, call <b>updatePixels()</b>. Even if the renderer may not seem to use this function in the current Processing release, this will always be subject to change.
 <br/><br/>
-Currently, while none of the renderers use the additional parameters to <b>updatePixels()</b>, this may be implemented in the future."))
+Currently, while none of the renderers use the additional parameters to <b>updatePixels()</b>, this may be implemented in the future.")
+     ("textAlign()" "Sets the current alignment for drawing text. The parameters LEFT, CENTER, and RIGHT set the display characteristics of the letters in relation to the values for the <b>x</b> and <b>y</b> parameters of the <b>text()</b> function.
+<br/> <br/>
+An optional second parameter can be used to vertically align the text. BASELINE is the default, and the vertical alignment will be reset to BASELINE if the second parameter is not used. The TOP and CENTER parameters are straightforward. The BOTTOM parameter offsets the line based on the current <b>textDescent()</b>. For multiple lines, the final line will be aligned to the bottom, with the previous lines appearing above it.
+<br/> <br/>
+When using <b>text()</b> with width and height parameters, BASELINE is ignored, and treated as TOP. (Otherwise, text would by default draw outside the box, since BASELINE is the default setting. BASELINE is not a useful drawing mode for text drawn in a rectangle.)
+<br/> <br/>
+The vertical alignment is based on the value of <b>textAscent()</b>, which many fonts do not specify correctly. It may be necessary to use a hack and offset by a few pixels by hand so that the offset looks correct. To do this as less of a hack, use some percentage of <b>textAscent()</b> or <b>textDescent()</b> so that the hack works even if you change the size of the font.")
+     ("textLeading()" "Sets the spacing between lines of text in units of pixels. This setting will be used in all subsequent calls to the <b>text()</b> function.  Note, however, that the leading is reset by <b>textSize()</b>. For example, if the leading is set to 20 with <b>textLeading(20)</b>, then if <b>textSize(48)</b> is run at a later point, the leading will be reset to the default for the text size of 48.")
+     ("textMode()" "Sets the way text draws to the screen, either as texture maps or as vector geometry. The default <b>textMode(MODEL)</b>, uses textures to render the fonts. The <b>textMode(SHAPE)</b> mode draws text using the glyph outlines of individual characters rather than as textures. This mode is only supported with the <b>PDF</b> and <b>P3D</b> renderer settings. With the <b>PDF</b> renderer, you must call <b>textMode(SHAPE)</b> before any other drawing occurs. If the outlines are not available, then <b>textMode(SHAPE)</b> will be ignored and <b>textMode(MODEL)</b> will be used instead.<br />
+<br />
+The <b>textMode(SHAPE)</b> option in <b>P3D</b> can be combined with <b>beginRaw()</b> to write vector-accurate text to 2D and 3D output files, for instance <b>DXF</b> or <b>PDF</b>. The <b>SHAPE</b> mode is not currently optimized for <b>P3D</b>, so if recording shape data, use <b>textMode(MODEL)</b> until you're ready to capture the geometry with <b>beginRaw()</b>.")
+     ("textSize()" "Sets the current font size. This size will be used in all subsequent calls to the <b>text()</b> function. Font size is measured in units of pixels.")
+     ("textWidth()" "Calculates and returns the width of any character or text string."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix

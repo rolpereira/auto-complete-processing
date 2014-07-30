@@ -386,7 +386,7 @@
     - [ ] resetShader()
     - [ ] shader()
 
-- [-] Typography [25%]
+- [-] Typography [50%]
 
   - [ ] PFont
 
@@ -396,12 +396,12 @@
     - [ ] text()
     - [ ] textFont()
 
-  - [ ] Attributes [0%]
-    - [ ] textAlign()
-    - [ ] textLeading()
-    - [ ] textMode()
-    - [ ] textSize()
-    - [ ] textWidth()
+  - [X] Attributes [100%]
+    - [X] textAlign()
+    - [X] textLeading()
+    - [X] textMode()
+    - [X] textSize()
+    - [X] textWidth()
 
   - [X] Metrics [100%]
     - [X] textAscent()
