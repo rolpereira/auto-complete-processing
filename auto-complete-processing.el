@@ -853,7 +853,45 @@ The vertical alignment is based on the value of <b>textAscent()</b>, which many 
 <br />
 The <b>textMode(SHAPE)</b> option in <b>P3D</b> can be combined with <b>beginRaw()</b> to write vector-accurate text to 2D and 3D output files, for instance <b>DXF</b> or <b>PDF</b>. The <b>SHAPE</b> mode is not currently optimized for <b>P3D</b>, so if recording shape data, use <b>textMode(MODEL)</b> until you're ready to capture the geometry with <b>beginRaw()</b>.")
      ("textSize()" "Sets the current font size. This size will be used in all subsequent calls to the <b>text()</b> function. Font size is measured in units of pixels.")
-     ("textWidth()" "Calculates and returns the width of any character or text string."))
+     ("textWidth()" "Calculates and returns the width of any character or text string.")
+     ("image()" "The <b>image()</b> function draws an image to the display window. Images must be in the sketch's \"data\" directory to load correctly. Select \"Add file...\" from the \"Sketch\" menu to add the image to the data directory, or just drag the image file onto the sketch window. Processing currently works with GIF, JPEG, and PNG images. <br />
+<br />
+The <b>img</b> parameter specifies the image to display and by default the <b>a</b> and <b>b</b> parameters define the location of its upper-left corner. The image is displayed at its original size unless the <b>c</b> and <b>d</b> parameters specify a different size. The <b>imageMode()</b> function can be used to change the way these parameters draw the image.<br/>
+<br/>
+The color of an image may be modified with the <b>tint()</b> function. This function will maintain transparency for GIF and PNG images.")
+     ("imageMode()" "Modifies the location from which images are drawn by changing the way in which parameters given to <b>image()</b> are intepreted.<br/>
+<br/>
+The default mode is <b>imageMode(CORNER)</b>, which interprets the second and third parameters of <b>image()</b> as the upper-left corner of the image. If two additional parameters are specified, they are used to set the image's width and height.<br/>
+<br/>
+<b>imageMode(CORNERS)</b> interprets the second and third parameters of <b>image()</b> as the  location of one corner, and the fourth and fifth parameters as the opposite corner.<br/>
+<br/>
+<b>imageMode(CENTER)</b> interprets the second and third parameters of <b>image()</b> as the image's center point. If two additional parameters are specified, they are used to set the image's width and height.<br/>
+<br/>
+The parameter must be written in ALL CAPS because Processing is a case-sensitive language.")
+     ("loadImage()" "Loads an image into a variable of type <b>PImage</b>. Four types of images ( <b>.gif</b>, <b>.jpg</b>, <b>.tga</b>, <b>.png</b>) images may be loaded. To load correctly, images must be located in the data directory of the current sketch.<br>
+<br />
+In most cases, load all images in <b>setup()</b> to preload them at the start of the program. Loading images inside <b>draw()</b> will reduce the speed of a program. Images cannot be loaded outside <b>setup()</b> unless they're inside a function that's called after <b>setup()</b> has already run.<br>
+<br/>
+Alternatively, the file maybe be loaded from anywhere on the local computer using an absolute path (something that starts with / on Unix and Linux, or a drive letter on Windows), or the filename parameter can be a URL for a file found on a network.<br />
+<br />
+If the file is not available or an error occurs, <b>null</b> will be returned and an error message will be printed to the console. The error message does not halt the program, however the null value may cause a NullPointerException if your code does not check whether the value returned is null.<br/>
+<br />
+The <b>extension</b> parameter is used to determine the image type in cases where the image filename does not end with a proper extension. Specify the extension as the second parameter to <b>loadImage()</b>, as shown in the third example on this page.<br/> 
+<br/>
+Depending on the type of error, a <b>PImage</b> object may still be returned, but the width and height of the image will be set to -1. This happens if bad image data is returned or cannot be decoded properly. Sometimes this happens with image URLs that produce a 403 error or that redirect to a password prompt, because <b>loadImage()</b> will attempt to interpret the HTML as image data.")
+     ("noTint()" "Removes the current fill value for displaying images and reverts to displaying images with their original hues.")
+     ("requestImage()" "This function loads images on a separate thread so that your sketch doesn't freeze while images load during <b>setup()</b>. While the image is loading, its width and height will be 0. If an error occurs while loading the image, its width and height will be set to -1. You'll know when the image has loaded properly because its <b>width</b> and <b>height</b> will be greater than 0. Asynchronous image loading (particularly when downloading from a server) can dramatically improve performance.<br />
+<br/>
+The <b>extension</b> parameter is used to determine the image type in cases where the image filename does not end with a proper extension. Specify the extension as the second parameter to <b>requestImage()</b>.")
+     ("tint()" "Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by including an alpha value.<br /> 
+<br />
+To apply transparency to an image without affecting its color, use white as the tint color and specify an alpha value. For instance, tint(255, 128) will make an image 50% transparent (assuming the default alpha range of 0-255, which can be changed with <b>colorMode()</b>).
+<br /><br />
+When using hexadecimal notation to specify a color, use \"#\" or \"0x\" before the values (e.g. #CCFFAA, 0xFFCCFFAA). The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). When using the hexadecimal notation starting with \"0x\", the hexadecimal value must be specified with eight characters; the first two characters define the alpha component and the remainder the red, green, and blue components.
+<br /><br />
+The value for the gray parameter must be less than or equal to the current maximum value as specified by <b>colorMode()</b>. The default maximum value is 255.
+<br /><br />
+The <b>tint()</b> function is also used to control the coloring of textures in 3D."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix

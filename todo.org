@@ -352,13 +352,13 @@
   - [ ] createImage()
   - [X] PImage
 
-  - [ ] Loading & Displaying [0%]
-    - [ ] image()
-    - [ ] imageMode()
-    - [ ] loadImage()
-    - [ ] noTint()
-    - [ ] requestImage()
-    - [ ] tint()
+  - [X] Loading & Displaying [100%]
+    - [X] image()
+    - [X] imageMode()
+    - [X] loadImage()
+    - [X] noTint()
+    - [X] requestImage()
+    - [X] tint()
 
   - [ ] Textures [0%]
     - [ ] texture()
