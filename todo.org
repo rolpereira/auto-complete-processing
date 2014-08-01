@@ -386,15 +386,15 @@
     - [ ] resetShader()
     - [ ] shader()
 
-- [-] Typography [50%]
+- [-] Typography [75%]
 
   - [ ] PFont
 
-  - [ ] Loading & Displaying [0%]
-    - [ ] createFont()
-    - [ ] loadFont()
-    - [ ] text()
-    - [ ] textFont()
+  - [X] Loading & Displaying [100%]
+    - [X] createFont()
+    - [X] loadFont()
+    - [X] text()
+    - [X] textFont()
 
   - [X] Attributes [100%]
     - [X] textAlign()
