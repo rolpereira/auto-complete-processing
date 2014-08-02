@@ -914,7 +914,15 @@ Note that Processing now lets you call <b>text()</b> without first specifying a 
      ("textFont()" "Sets the current font that will be drawn with the <b>text()</b> function. Fonts must be created for Processing with <b>createFont()</b> or loaded with <b>loadFont()</b> before they can be used. The font set through <b>textFont()</b> will be used in all subsequent calls to the <b>text()</b> function. If no <b>size</b> parameter is input, the font will appear at its original size (the size in which it was created with the \"Create Font...\" tool) until it is changed with <b>textSize()</b>.<br />
 <br /> Because fonts are usually bitmapped, you should create fonts at the sizes that will be used most commonly. Using <b>textFont()</b> without the size parameter will result in the cleanest type. <br />
 <br />
-With the default and PDF renderers, it's also possible to enable the use of native fonts via the command <b>hint(ENABLE_NATIVE_FONTS)</b>. This will produce vector text in both on-screen sketches and PDF output when the vector data is available, such as when the font is still installed, or the font is created dynamically via the <b>createFont()</b> function (rather than with the \"Create Font...\" tool)."))
+With the default and PDF renderers, it's also possible to enable the use of native fonts via the command <b>hint(ENABLE_NATIVE_FONTS)</b>. This will produce vector text in both on-screen sketches and PDF output when the vector data is available, such as when the font is still installed, or the font is created dynamically via the <b>createFont()</b> function (rather than with the \"Create Font...\" tool).")
+     ("PShader.set" "Sets the uniform variables inside the shader to modify the effect while the program is running.")
+     ("loadShader()" "Loads a shader into the PShader object. The shader file must be loaded in the sketch's \"data\" folder/directory to load correctly. Shaders are compatible with the P2D and P3D renderers, but not with the default renderer.<br />
+<br />
+Alternatively, the file maybe be loaded from anywhere on the local computer using an absolute path (something that starts with / on Unix and Linux, or a drive letter on Windows), or the filename parameter can be a URL for a file found on a network.<br />
+<br />
+If the file is not available or an error occurs, <b>null</b> will be returned and an error message will be printed to the console. The error message does not halt the program, however the null value may cause a NullPointerException if your code does not check whether the value returned is null.<br/>")
+     ("resetShader()" "Restores the default shaders. Code that runs after <b>resetShader()</b> will not be affected by previously defined shaders.")
+     ("shader()" "Applies the shader specified by the parameters. It's compatible with the P2D and P3D renderers, but not with the default renderer."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
@@ -1115,7 +1123,8 @@ With the default and PDF renderers, it's also possible to enable the use of nati
      ("PImage.save" . "save")
      ("PImage.set" . "set")
      ("PImage.updatePixels" . "updatePixels")
-     ("PImage.width" . "width")))
+     ("PImage.width" . "width")
+     ("PShader.set" . "set")))
 
 (defun auto-complete-processing--get-candidates ()
   "Return a list of strings containing the candidates to pass to auto-complete."

@@ -375,16 +375,16 @@
     - [X] set()
     - [X] updatePixels()
 
-- [ ] Rendering [0%]
+- [-] Rendering [25%]
   - [ ] blendMode()
   - [ ] createGraphics()
   - [ ] PGraphics
 
-  - [ ] Shaders [0%]
-    - [ ] loadShader()
-    - [ ] PShader
-    - [ ] resetShader()
-    - [ ] shader()
+  - [X] Shaders [100%]
+    - [X] loadShader()
+    - [X] PShader
+    - [X] resetShader()
+    - [X] shader()
 
 - [-] Typography [75%]
 
