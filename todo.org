@@ -348,7 +348,7 @@
     - [X] blendColor()
       - It doesn't appear in the website reference?
 
-- [-] Image
+- [-] Image [60%]
   - [ ] createImage()
   - [X] PImage
 
@@ -386,9 +386,9 @@
     - [X] resetShader()
     - [X] shader()
 
-- [-] Typography [75%]
+- [X] Typography [100%]
 
-  - [ ] PFont
+  - [X] PFont
 
   - [X] Loading & Displaying [100%]
     - [X] createFont()

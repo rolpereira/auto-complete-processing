@@ -922,7 +922,8 @@ Alternatively, the file maybe be loaded from anywhere on the local computer usin
 <br />
 If the file is not available or an error occurs, <b>null</b> will be returned and an error message will be printed to the console. The error message does not halt the program, however the null value may cause a NullPointerException if your code does not check whether the value returned is null.<br/>")
      ("resetShader()" "Restores the default shaders. Code that runs after <b>resetShader()</b> will not be affected by previously defined shaders.")
-     ("shader()" "Applies the shader specified by the parameters. It's compatible with the P2D and P3D renderers, but not with the default renderer."))
+     ("shader()" "Applies the shader specified by the parameters. It's compatible with the P2D and P3D renderers, but not with the default renderer.")
+     ("PFont.list" "Gets a list of the fonts installed on the system. The data is returned as a String array. This list provides the names of each font for input into <b>createFont()</b>, which allows Processing to dynamically format fonts."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
@@ -1124,7 +1125,8 @@ If the file is not available or an error occurs, <b>null</b> will be returned an
      ("PImage.set" . "set")
      ("PImage.updatePixels" . "updatePixels")
      ("PImage.width" . "width")
-     ("PShader.set" . "set")))
+     ("PShader.set" . "set")
+     ("PFont.list" . "list")))
 
 (defun auto-complete-processing--get-candidates ()
   "Return a list of strings containing the candidates to pass to auto-complete."
