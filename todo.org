@@ -348,8 +348,8 @@
     - [X] blendColor()
       - It doesn't appear in the website reference?
 
-- [-] Image [60%]
-  - [ ] createImage()
+- [-] Image [80%]
+  - [X] createImage()
   - [X] PImage
 
   - [X] Loading & Displaying [100%]

@@ -923,7 +923,12 @@ Alternatively, the file maybe be loaded from anywhere on the local computer usin
 If the file is not available or an error occurs, <b>null</b> will be returned and an error message will be printed to the console. The error message does not halt the program, however the null value may cause a NullPointerException if your code does not check whether the value returned is null.<br/>")
      ("resetShader()" "Restores the default shaders. Code that runs after <b>resetShader()</b> will not be affected by previously defined shaders.")
      ("shader()" "Applies the shader specified by the parameters. It's compatible with the P2D and P3D renderers, but not with the default renderer.")
-     ("PFont.list" "Gets a list of the fonts installed on the system. The data is returned as a String array. This list provides the names of each font for input into <b>createFont()</b>, which allows Processing to dynamically format fonts."))
+     ("PFont.list" "Gets a list of the fonts installed on the system. The data is returned as a String array. This list provides the names of each font for input into <b>createFont()</b>, which allows Processing to dynamically format fonts.")
+     ("createImage()" "Creates a new PImage (the datatype for storing images). This provides a fresh buffer of pixels to play with. Set the size of the buffer with the <b>width</b> and <b>height</b> parameters. The <b>format</b> parameter defines how the pixels are stored. See the PImage reference for more information.
+<br/> <br/>
+Be sure to include all three parameters, specifying only the width and height (but no format) will produce a strange error.
+<br/> <br/>
+Advanced users please note that createImage() should be used instead of the syntax <tt>new PImage()</tt>."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
