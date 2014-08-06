@@ -928,7 +928,52 @@ If the file is not available or an error occurs, <b>null</b> will be returned an
 <br/> <br/>
 Be sure to include all three parameters, specifying only the width and height (but no format) will produce a strange error.
 <br/> <br/>
-Advanced users please note that createImage() should be used instead of the syntax <tt>new PImage()</tt>."))
+Advanced users please note that createImage() should be used instead of the syntax <tt>new PImage()</tt>.")
+     ("PShape.addChild()" "This is a new reference entry for Processing 2.0. It will be updated shortly. For now, please check the Examples to see how to use this new syntax.")
+     ("PShape.beginContour()" "The <b>beginContour()</b> and <b>endContour()</b> methods make it possible to define shapes with other shapes cut out of them. For example, the inside of a letter 'O'. These two functions are always used together, you'll never use one without the other. Between them, define the geometry you want to create. As you'll see when you run the example above, the second smaller shape is cut out of the first larger shape.")
+     ("PShape.beginShape()" "This method is used to start a custom shape created with the <b>createShape()</b> function. It's always and only used with <b>createShape()</b>.")
+     ("PShape.disableStyle()" "Disables the shape's style data and uses Processing's current styles. Styles include attributes such as colors, stroke weight, and stroke joints.")
+     ("PShape.enableStyle()" "Enables the shape's style data and ignores Processing's current styles. Styles include attributes such as colors, stroke weight, and stroke joints.")
+     ("PShape.endContour()" "The <b>beginContour()</b> and <b>endContour()</b> methods make it possible to define shapes with other shapes cut out of them. For example, the inside of a letter 'O'. These two functions are always used together, you'll never use one without the other. Between them, define the geometry you want to create. As you'll see when you run the example above, the second smaller shape is cut out of the first larger shape.")
+     ("PShape.endShape()" "This method is used to complete a custom shape created with the <b>createShape()</b> function. It's always and only used with <b>createShape()</b>.")
+     ("PShape.getChild()" "Extracts a child shape from a parent shape. Specify the name of the shape with the <b>target</b> parameter. The shape is returned as a <b>PShape</b> object, or <b>null</b> is returned if there is an error.")
+     ("PShape.getChildCount()" "Returns the number of children within the PShape.")
+     ("PShape.getVertex()" "The <b>getVertex()</b> method returns a PVector with the coordinates of the vertex point located at the position defined by the <b>index</b> parameter. This method works when shapes are created as shown in the example above, but won't work properly when a shape is defined explicitly (e.g. createShape(RECT, 20, 20, 80, 80).")
+     ("PShape.getVertexCount()" "The <b>getVertexCount()</b> method returns the number of vertices that make up a PShape. In the above example, the value 4 is returned by the <b>getVertexCount()</b> method because 4 vertices are defined in <b>setup()</b>.")
+     ("PShape.height" "The height of the PShape document.")
+     ("PShape.isVisible()" "Returns a boolean value \"true\" if the image is set to be visible, \"false\" if not. This value can be modified with the <b>setVisible()</b> method.<br/>
+<br/>
+The default visibility of a shape is usually controlled by whatever program created the SVG file. For instance, this parameter is controlled by showing or hiding the shape in the layers palette in Adobe Illustrator.")
+     ("PShape.resetMatrix()" "Replaces the current matrix of a shape with the identity matrix. The equivalent function in OpenGL is <b>glLoadIdentity()</b>.")
+     ("PShape.rotate()" "Rotates a shape the amount specified by the <b>angle</b> parameter. Angles should be specified in radians (values from 0 to TWO_PI) or converted to radians with the <b>radians()</b> method.
+<br /><br />
+Shapes are always rotated around the upper-left corner of their bounding box. Positive numbers rotate objects in a clockwise direction. Transformations apply to everything that happens after and subsequent calls to the method accumulates the effect. For example, calling <b>rotate(HALF_PI)</b> and then <b>rotate(HALF_PI)</b> is the same as <b>rotate(PI)</b>. This transformation is applied directly to the shape, it's not refreshed each time <b>draw()</b> is run.")
+     ("PShape.rotateX()" "Rotates a shape around the x-axis the amount specified by the <b>angle</b> parameter. Angles should be specified in radians (values from 0 to TWO_PI) or converted to radians with the <b>radians()</b> method.
+<br /><br />
+Shapes are always rotated around the upper-left corner of their bounding box. Positive numbers rotate objects in a clockwise direction. Subsequent calls to the method accumulates the effect. For example, calling <b>rotateX(HALF_PI)</b> and then <b>rotateX(HALF_PI)</b> is the same as <b>rotateX(PI)</b>. This transformation is applied directly to the shape, it's not refreshed each time <b>draw()</b> is run.  
+<br /><br />
+This method requires a 3D renderer. You need to use P3D as a third parameter for the <b>size()</b> function as shown in the example above.")
+     ("PShape.rotateY()" "Rotates a shape around the y-axis the amount specified by the <b>angle</b> parameter. Angles should be specified in radians (values from 0 to TWO_PI) or converted to radians with the <b>radians()</b> method.
+<br /><br />
+Shapes are always rotated around the upper-left corner of their bounding box. Positive numbers rotate objects in a clockwise direction. Subsequent calls to the method accumulates the effect. For example, calling <b>rotateY(HALF_PI)</b> and then <b>rotateY(HALF_PI)</b> is the same as <b>rotateY(PI)</b>. This transformation is applied directly to the shape, it's not refreshed each time <b>draw()</b> is run. 
+<br /><br />
+This method requires a 3D renderer. You need to use P3D as a third parameter for the <b>size()</b> function as shown in the example above.")
+     ("PShape.rotateZ()" "Rotates a shape around the z-axis the amount specified by the <b>angle</b> parameter. Angles should be specified in radians (values from 0 to TWO_PI) or converted to radians with the <b>radians()</b> method.
+<br /><br />
+Shapes are always rotated around the upper-left corner of their bounding box. Positive numbers rotate objects in a clockwise direction. Subsequent calls to the method accumulates the effect. For example, calling <b>rotateZ(HALF_PI)</b> and then <b>rotateZ(HALF_PI)</b> is the same as <b>rotateZ(PI)</b>. This transformation is applied directly to the shape, it's not refreshed each time <b>draw()</b> is run. 
+<br /><br />
+This method requires a 3D renderer. You need to use P3D as a third parameter for the <b>size()</b> function as shown in the example above.")
+     ("PShape.scale()" "Increases or decreases the size of a shape by expanding and contracting vertices. Shapes always scale from the relative origin of their bounding box. Scale values are specified as decimal percentages. For example, the method call <b>scale(2.0)</b> increases the dimension of a shape by 200%. Subsequent calls to the method multiply the effect. For example, calling <b>scale(2.0)</b> and then <b>scale(1.5)</b> is the same as <b>scale(3.0)</b>. This transformation is applied directly to the shape; it's not refreshed each time <b>draw()</b> is run. 
+<br /><br />
+Using this method with the <b>z</b> parameter requires using the P3D parameter in combination with size.")
+     ("PShape.setVertex()" "The <b>setVertex()</b> method defines the coordinates of the vertex point located at the position defined by the <b>index</b> parameter. This method works when shapes are created as shown in the example above, but won't work properly when a shape is defined explicitly (e.g. createShape(RECT, 20, 20, 80, 80).")
+     ("PShape.setVisible()" "Sets the shape to be visible or invisible. This is determined by the value of the <b>visible</b> parameter.<br/>
+<br/>
+The default visibility of a shape is usually controlled by whatever program created the SVG file. For instance, this parameter is controlled by showing or hiding the shape in the layers palette in Adobe Illustrator.")
+     ("PShape.translate()" "Specifies an amount to displace the shape. The <b>x</b> parameter specifies left/right translation, the <b>y</b> parameter specifies up/down translation, and the <b>z</b> parameter specifies translations toward/away from the screen. Subsequent calls to the method accumulates the effect. For example, calling <b>translate(50, 0)</b> and then <b>translate(20, 0)</b> is the same as <b>translate(70, 0)</b>. This transformation is applied directly to the shape, it's not refreshed each time <b>draw()</b> is run. 
+<br /><br />
+Using this method with the <b>z</b> parameter requires using the P3D parameter in combination with size.")
+     ("PShape.width" "The width of the PShape document."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
@@ -1131,7 +1176,30 @@ Advanced users please note that createImage() should be used instead of the synt
      ("PImage.updatePixels" . "updatePixels")
      ("PImage.width" . "width")
      ("PShader.set" . "set")
-     ("PFont.list" . "list")))
+     ("PFont.list" . "list")
+     ("PShape.addChild" . "addChild")
+     ("PShape.beginContour" . "beginContour")
+     ("PShape.beginShape" . "beginShape")
+     ("PShape.disableStyle" . "disableStyle")
+     ("PShape.enableStyle" . "enableStyle")
+     ("PShape.endContour" . "endContour")
+     ("PShape.endShape" . "endShape")
+     ("PShape.getChild" . "getChild")
+     ("PShape.getChildCount" . "getChildCount")
+     ("PShape.getVertex" . "getVertex")
+     ("PShape.getVertexCount" . "getVertexCount")
+     ("PShape.height" . "height")
+     ("PShape.isVisible" . "isVisible")
+     ("PShape.resetMatrix" . "resetMatrix")
+     ("PShape.rotate" . "rotate")
+     ("PShape.rotateX" . "rotateX")
+     ("PShape.rotateY" . "rotateY")
+     ("PShape.rotateZ" . "rotateZ")
+     ("PShape.scale" . "scale")
+     ("PShape.setVertex" . "setVertex")
+     ("PShape.setVisible" . "setVisible")
+     ("PShape.translate" . "translate")
+     ("PShape.width" . "width")))
 
 (defun auto-complete-processing--get-candidates ()
   "Return a list of strings containing the candidates to pass to auto-complete."

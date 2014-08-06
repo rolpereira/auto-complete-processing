@@ -142,10 +142,10 @@
     - [ ] && (logical AND)
     - [ ] || (logical OR)
 
-- [-] Shape [55%]
+- [-] Shape [66%]
   - [ ] createShape()
   - [ ] loadShape()
-  - [ ] PShape
+  - [X] PShape
 
   - [X] 2D Primitives [100%]
     - [X] arc()
