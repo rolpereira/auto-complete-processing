@@ -142,9 +142,10 @@
     - [ ] && (logical AND)
     - [ ] || (logical OR)
 
-- [-] Shape [66%]
+- [-] Shape [88%]
   - [ ] createShape()
-  - [ ] loadShape()
+  - [X] loadShape()
+    - This is part of the "Loading & Displaying" subcategory?
   - [X] PShape
 
   - [X] 2D Primitives [100%]
@@ -196,9 +197,9 @@
     - [X] textureMode()
       - It doesn't appear in the website reference?
 
-  - [ ] Loading & Displaying [0%]
-    - [ ] shape()
-    - [ ] shapeMode()
+  - [X] Loading & Displaying [100%]
+    - [X] shape()
+    - [X] shapeMode()
 
 - [-] Input [50%]
   - [-] Mouse [91%]
