@@ -142,8 +142,8 @@
     - [ ] && (logical AND)
     - [ ] || (logical OR)
 
-- [-] Shape [88%]
-  - [ ] createShape()
+- [X] Shape [100%]
+  - [X] createShape()
   - [X] loadShape()
     - This is part of the "Loading & Displaying" subcategory?
   - [X] PShape
