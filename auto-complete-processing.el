@@ -989,7 +989,66 @@ Geometry that groups vertices to build larger forms, such as group of triangles,
 <br />
 The  <b>createShape()</b> function can also be used to make a complex shape made of other shapes. This is called a \"group\" and it's created by using the parameter <b>GROUP</b> as the first parameter. See the fourth example above to see how it works.<br />
 <br />
-When a shape is first created inside the <b>beingShape()</b> and <b>endShape()</b> methods, the normal Processing style functions like <b>fill()</b> and <b>stroke()</b> are used to define the drawing attributes. However, after a shape is created, a different set of functions needs to be used. These include the setFill() and setStroke() functions shown in the examples above. The complete list of methods and fields for the PShape class are in the <a href=\"http://processing.org/reference/javadoc/core/\">Processing Javadoc</a>."))
+When a shape is first created inside the <b>beingShape()</b> and <b>endShape()</b> methods, the normal Processing style functions like <b>fill()</b> and <b>stroke()</b> are used to define the drawing attributes. However, after a shape is created, a different set of functions needs to be used. These include the setFill() and setStroke() functions shown in the examples above. The complete list of methods and fields for the PShape class are in the <a href=\"http://processing.org/reference/javadoc/core/\">Processing Javadoc</a>.")
+     ("createInput()" "This is a shorthand function for advanced programmers to initialize and open a Java InputStream. It's useful if you want to use the facilities provided by PApplet to easily open files from the data folder or from a URL, but you need an InputStream object so that you can use other parts of Java to take more control of how the stream is read.<br/>
+<br/>
+The filename passed in can be:<br/>
+- A URL, as in: <b>createInput(\"http://processing.org/\")</b><br/>
+- The name of a file in the sketch's <b>data</b> folder<br/>
+- The full path to a file to be opened locally (when running as an application)<br/>
+<br/>
+If the requested item doesn't exist, null is returned. If not online, this will also check to see if the user is asking for a file whose name isn't properly capitalized. If capitalization is different, an error will be printed to the console. This helps prevent issues that appear when a sketch is exported to the web, where case sensitivity matters, as opposed to running from inside the Processing Development Environment on Windows or Mac OS, where case sensitivity is preserved but ignored.<br/>
+<br/>
+If the file ends with <b>.gz</b>, the stream will automatically be gzip decompressed. If you don't want the automatic decompression, use the related function <b>createInputRaw()</b>.<br/>
+<br/>
+In earlier releases, this function was called <b>openStream()</b>.")
+     ("createReader()" "Creates a <b>BufferedReader</b> object that can be used to read files line-by-line as individual <b>String</b> objects. This is the complement to the <b>createWriter()</b> function.
+<br/> <br/>
+Starting with Processing release 0134, all files loaded and saved by the Processing API use UTF-8 encoding. In previous releases, the default encoding for your platform was used, which causes problems when files are moved to other platforms.")
+     ("loadBytes()" "Reads the contents of a file and places it in a byte array. If the name of the file is used as the parameter, as in the above example, the file must be loaded in the sketch's \"data\" directory/folder. <br />
+<br />
+Alternatively, the file maybe be loaded from anywhere on the local computer using an absolute path (something that starts with / on Unix and Linux, or a drive letter on Windows), or the filename parameter can be a URL for a file found on a network.<br />
+<br />
+If the file is not available or an error occurs, <b>null</b> will be returned and an error message will be printed to the console. The error message does not halt the program, however the null value may cause a NullPointerException if your code does not check whether the value returned is null.<br/>")
+     ("loadJSONArray()" "Loads an array of JSON objects from the data folder or a URL, and returns a <b>JSONArray</b>.  Per standard JSON syntax, the array must be enclosed in a pair of hard brackets <b>[]</b>, and each object within the array must be separated by a comma.<br>
+<br>
+All files loaded and saved by the Processing API use UTF-8 encoding.")
+     ("loadJSONObject()" "Loads a JSON from the data folder or a URL, and returns a <b>JSONObject</b>.<br>
+<br>
+All files loaded and saved by the Processing API use UTF-8 encoding.")
+     ("loadStrings()" "Reads the contents of a file and creates a String array of its individual lines. If the name of the file is used as the parameter, as in the above example, the file must be loaded in the sketch's \"data\" directory/folder. <br />
+<br />
+Alternatively, the file maybe be loaded from anywhere on the local computer using an absolute path (something that starts with / on Unix and Linux, or a drive letter on Windows), or the filename parameter can be a URL for a file found on a network.<br />
+<br />
+If the file is not available or an error occurs, <b>null</b> will be returned and an error message will be printed to the console. The error message does not halt the program, however the null value may cause a NullPointerException if your code does not check whether the value returned is null.<br/>
+<br />
+Starting with Processing release 0134, all files loaded and saved by the Processing API use UTF-8 encoding. In previous releases, the default encoding for your platform was used, which causes problems when files are moved to other platforms.")
+     ("loadTable()" "Reads the contents of a file or URL and creates an Table object with its values. If a file is specified, it must be located in the sketch's \"data\" folder. The filename parameter can also be a URL to a file found online.  By default, the file is assumed to be comma-separated (in CSV format).  To use tab-separated data, include \"tsv\" in the options parameter.<br/>
+<br/>
+If the file contains a header row, include \"header\" in the options parameter.  If the file does not have a header row, then simply omit the \"header\" option.<br/>
+<br/>
+When specifying both a header and the file type, separate the options with commas, as in: <b>loadTable(\"data.csv\", \"header, tsv\")</b><br/>
+<br/>
+All files loaded and saved by the Processing API use UTF-8 encoding.")
+     ("loadXML()" "Reads the contents of a file or URL and creates an XML object with its values. If a file is specified, it must be located in the sketch's \"data\" folder. The filename parameter can also be a URL to a file found online.<br/>
+<br/>
+All files loaded and saved by the Processing API use UTF-8 encoding. If you need to load an XML file that's not in UTF-8 format, see the <a href=\"http://processing.org/reference/javadoc/core/processing/data/XML.html\">developer's reference</a> for the XML object.")
+     ("open()" "Attempts to open an application or file using your platform's launcher. The <b>filename</b> parameter is a String specifying the file name and location. The location parameter must be a full path name, or the name of an executable in the system's PATH. In most cases, using a full path is the best option, rather than relying on the system PATH. Be sure to make the file executable before attempting to open it (chmod +x). 
+<br/> <br/>
+The <b>argv</b> parameter is a String or String array which is passed to the command line. If you have multiple parameters, e.g. an application and a document, or a command with multiple switches, use the version that takes a String array, and place each individual item in a separate element. 
+<br/> <br/>
+If <b>argv</b> is a String (not an array), then it can only be a single file or application with no parameters. It's not the same as executing that String using a shell. For instance, <b>open(\"jikes -help\")</b> will not work properly.
+<br/> <br/>
+This function behaves differently on each platform. On Windows, the parameters are sent to the Windows shell via \"cmd /c\". On Mac OS X, the \"open\" command is used (type \"man open\" in Terminal.app for documentation). On Linux, it first tries gnome-open, then kde-open, but if neither are available, it sends the command to the shell without any alterations. 
+<br/> <br/>
+For users familiar with Java, this is not quite the same as Runtime.exec(), because the launcher command is prepended. Instead, the <b>exec(String[])</b> function is a shortcut for Runtime.getRuntime.exec(String[]).")
+     ("parseXML()" "Takes a String, parses its contents, and returns an XML object.  If the String does not contain XML data or cannot be parsed, a null value is returned.<br/>
+<br/>
+<b>parseXML()</b> is most useful when pulling data dynamically, such as from third-party APIs.  Normally, API results would be saved to a String, and then can be converted to a structured XML object using <b>parseXML()</b>.  Be sure to check if null is returned before performing operations on the new XML object, in case the String content could not be parsed.<br/>
+<br/>
+If your data already exists as an XML file in the data folder, it is simpler to use <b>loadXML()</b>.")
+     ("selectFolder()" "Opens a platform-specific file chooser dialog to select a folder. After the selection is made, the selection will be passed to the 'callback' function. If the dialog is closed or canceled, null will be sent to the function, so that the program is not waiting for additional input. The callback is necessary because of how threading works.")
+     ("selectInput()" "Opens a platform-specific file chooser dialog to select a file for input. After the selection is made, the selected File will be passed to the 'callback' function. If the dialog is closed or canceled, null will be sent to the function, so that the program is not waiting for additional input. The callback is necessary because of how threading works."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix

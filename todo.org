@@ -224,20 +224,20 @@
     - [X] keyReleased()
     - [X] keyTyped()
 
-  - [ ] Files [0%]
+  - [-] Files [92%]
     - [ ] BufferedReader
-    - [ ] createInput()
-    - [ ] createReader()
-    - [ ] loadBytes()
-    - [ ] loadJSONArray()
-    - [ ] loadJSONObject()
-    - [ ] loadStrings()
-    - [ ] loadTable()
-    - [ ] loadXML()
-    - [ ] open()
-    - [ ] parseXML()
-    - [ ] selectFolder()
-    - [ ] selectInput()
+    - [X] createInput()
+    - [X] createReader()
+    - [X] loadBytes()
+    - [X] loadJSONArray()
+    - [X] loadJSONObject()
+    - [X] loadStrings()
+    - [X] loadTable()
+    - [X] loadXML()
+    - [X] open()
+    - [X] parseXML()
+    - [X] selectFolder()
+    - [X] selectInput()
 
   - [X] Time & Date [100%]
     - [X] day()
