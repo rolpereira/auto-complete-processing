@@ -1048,7 +1048,61 @@ For users familiar with Java, this is not quite the same as Runtime.exec(), beca
 <br/>
 If your data already exists as an XML file in the data folder, it is simpler to use <b>loadXML()</b>.")
      ("selectFolder()" "Opens a platform-specific file chooser dialog to select a folder. After the selection is made, the selection will be passed to the 'callback' function. If the dialog is closed or canceled, null will be sent to the function, so that the program is not waiting for additional input. The callback is necessary because of how threading works.")
-     ("selectInput()" "Opens a platform-specific file chooser dialog to select a file for input. After the selection is made, the selected File will be passed to the 'callback' function. If the dialog is closed or canceled, null will be sent to the function, so that the program is not waiting for additional input. The callback is necessary because of how threading works."))
+     ("selectInput()" "Opens a platform-specific file chooser dialog to select a file for input. After the selection is made, the selected File will be passed to the 'callback' function. If the dialog is closed or canceled, null will be sent to the function, so that the program is not waiting for additional input. The callback is necessary because of how threading works.")
+     ("beginRaw()" "To create vectors from 3D data, use the <b>beginRaw()</b> and <b>endRaw()</b> commands. These commands will grab the shape data just before it is rendered to the screen. At this stage, your entire scene is nothing but a long list of individual lines and triangles. This means that a shape created with <b>sphere()</b> function will be made up of hundreds of triangles, rather than a single object. Or that a multi-segment line shape (such as a curve) will be rendered as individual segments.
+<br /><br />
+When using <b>beginRaw()</b> and <b>endRaw()</b>, it's possible to write to either a 2D or 3D renderer. For instance, <b>beginRaw()</b> with the PDF library will write the geometry as flattened triangles and lines, even if recording from the <b>P3D</b> renderer. 
+<br /><br />
+If you want a background to show up in your files, use <b>rect(0, 0, width, height)</b> after setting the <b>fill()</b> to the background color. Otherwise the background will not be rendered to the file because the background is not shape.
+<br /><br />
+Using <b>hint(ENABLE_DEPTH_SORT)</b> can improve the appearance of 3D geometry drawn to 2D file formats. See the <b>hint()</b> reference for more details.
+<br /><br />
+See examples in the reference for the <b>PDF</b> and <b>DXF</b> libraries for more information.")
+     ("beginRecord()" "Opens a new file and all subsequent drawing functions are echoed to this file as well as the display window. The <b>beginRecord()</b> function requires two parameters, the first is the renderer and the second is the file name. This function is always used with <b>endRecord()</b> to stop the recording process and close the file.
+<br /> <br />
+Note that beginRecord() will only pick up any settings that happen after it has been called. For instance, if you call textFont() before beginRecord(), then that font will not be set for the file that you're recording to.")
+     ("createOutput()" "Similar to <b>createInput()</b>, this creates a Java <b>OutputStream</b> for a given filename or path. The file will be created in the sketch folder, or in the same folder as an exported application.
+<br /><br />
+If the path does not exist, intermediate folders will be created. If an exception occurs, it will be printed to the console, and <b>null</b> will be returned.
+<br /><br />
+This function is a convenience over the Java approach that requires you to 1) create a FileOutputStream object, 2) determine the exact file location, and 3) handle exceptions. Exceptions are handled internally by the function, which is more appropriate for \"sketch\" projects.
+<br /><br />
+If the output filename ends with <b>.gz</b>, the output will be automatically GZIP compressed as it is written.")
+     ("createWriter()" "Creates a new file in the sketch folder, and a <b>PrintWriter</b> object to write to it. For the file to be made correctly, it should be flushed and must be closed with its <b>flush()</b> and <b>close()</b> methods (see above example). 
+<br/> <br/>
+Starting with Processing release 0134, all files loaded and saved by the Processing API use UTF-8 encoding. In previous releases, the default encoding for your platform was used, which causes problems when files are moved to other platforms.")
+     ("endRaw()" "Complement to <b>beginRaw()</b>; they must always be used together. See the <b>beginRaw()</b> reference for details.")
+     ("endRecord()" "Stops the recording process started by <b>beginRecord()</b> and closes the file.")
+     ("saveBytes()" "As the opposite of <b>loadBytes()</b>, this function will write an entire array of bytes to a file. The data is saved in binary format. This file is saved to the sketch's folder, which is opened by selecting \"Show Sketch Folder\" from the \"Sketch\" menu. Alternatively, the files can be saved to any location on the computer by using an absolute path (something that starts with / on Unix and Linux, or a drive letter on Windows).")
+     ("saveJSONArray()" "Writes the contents of a <b>JSONArray</b> object to a file. By default, this file is saved to the sketch's folder. This folder is opened by selecting \"Show Sketch Folder\" from the \"Sketch\" menu.<br>
+<br>
+Alternatively, the file can be saved to any location on the computer by using an absolute path (something that starts with / on Unix and Linux, or a drive letter on Windows).<br>
+<br>
+All files loaded and saved by the Processing API use UTF-8 encoding.")
+     ("saveJSONObject()" "Writes the contents of a <b>JSONObject</b> object to a file. By default, this file is saved to the sketch's folder. This folder is opened by selecting \"Show Sketch Folder\" from the \"Sketch\" menu.<br>
+<br>
+Alternatively, the file can be saved to any location on the computer by using an absolute path (something that starts with / on Unix and Linux, or a drive letter on Windows).<br>
+<br>
+All files loaded and saved by the Processing API use UTF-8 encoding.")
+     ("saveStream()" "Save the contents of a stream to a file in the sketch folder. This is basically <b>saveBytes(blah, loadBytes())</b>, but done more efficiently (and with less confusing syntax).<br />
+<br />   
+The <b>target</b> parameter can be either a String specifying a file name, or, for greater control over the file location, a <b>File</b> object. (Note that, unlike some other functions, this will not automatically compress or uncompress gzip files.)")
+     ("saveStrings()" "Writes an array of Strings to a file, one line per String. By default, this file is saved to the sketch's folder. This folder is opened by selecting \"Show Sketch Folder\" from the \"Sketch\" menu.<br />
+<br />
+Alternatively, the file can be saved to any location on the computer by using an absolute path (something that starts with / on Unix and Linux, or a drive letter on Windows).<br/>
+<br />
+Starting with Processing 1.0, all files loaded and saved by the Processing API use UTF-8 encoding. In earlier releases, the default encoding for your platform was used, which causes problems when files are moved to other platforms.")
+     ("saveTable()" "Writes the contents of a Table object to a file. By default, this file is saved to the sketch's folder. This folder is opened by selecting \"Show Sketch Folder\" from the \"Sketch\" menu.<br/>
+<br/>
+Alternatively, the file can be saved to any location on the computer by using an absolute path (something that starts with / on Unix and Linux, or a drive letter on Windows).<br/>
+<br/>
+All files loaded and saved by the Processing API use UTF-8 encoding.")
+     ("saveXML()" "Writes the contents of an XML object to a file. By default, this file is saved to the sketch's folder. This folder is opened by selecting \"Show Sketch Folder\" from the \"Sketch\" menu.<br/>
+<br/>
+Alternatively, the file can be saved to any location on the computer by using an absolute path (something that starts with / on Unix and Linux, or a drive letter on Windows).<br/>
+<br/>
+All files loaded and saved by the Processing API use UTF-8 encoding.")
+     ("selectOutput()" "Opens a platform-specific file chooser dialog to select a file for output. After the selection is made, the selected File will be passed to the 'callback' function. If the dialog is closed or canceled, null will be sent to the function, so that the program is not waiting for additional input. The callback is necessary because of how threading works."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix

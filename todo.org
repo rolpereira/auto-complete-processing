@@ -258,22 +258,24 @@
     - [X] save()
     - [X] saveFrame()
 
-  - [ ] Files [0%]
-    - [ ] beginRaw()
-    - [ ] beginRecord()
-    - [ ] createOutput()
-    - [ ] createWriter()
-    - [ ] endRaw()
-    - [ ] endRecord()
+  - [-] Files [93%]
+    - [X] beginRaw()
+    - [X] beginRecord()
+    - [X] createOutput()
+    - [X] createWriter()
+    - [X] endRaw()
+    - [X] endRecord()
     - [ ] PrintWriter
-    - [ ] saveBytes()
-    - [ ] saveJSONArray()
-    - [ ] saveJSONObject()
-    - [ ] saveStream()
-    - [ ] saveStrings()
-    - [ ] saveTable()
-    - [ ] saveXML()
-    - [ ] selectOutput()
+    - [X] saveBytes()
+    - [X] saveJSONArray()
+    - [X] saveJSONObject()
+    - [X] saveStream()
+    - [X] saveStrings()
+    - [X] saveTable()
+      - In the documentation it's stored in the Input category
+        - FIXED
+    - [X] saveXML()
+    - [X] selectOutput()
 
 - [X] Transform [100%]
   - [X] applyMatrix()
