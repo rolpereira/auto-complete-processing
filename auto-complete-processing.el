@@ -1102,7 +1102,64 @@ All files loaded and saved by the Processing API use UTF-8 encoding.")
 Alternatively, the file can be saved to any location on the computer by using an absolute path (something that starts with / on Unix and Linux, or a drive letter on Windows).<br/>
 <br/>
 All files loaded and saved by the Processing API use UTF-8 encoding.")
-     ("selectOutput()" "Opens a platform-specific file chooser dialog to select a file for output. After the selection is made, the selected File will be passed to the 'callback' function. If the dialog is closed or canceled, null will be sent to the function, so that the program is not waiting for additional input. The callback is necessary because of how threading works."))
+     ("selectOutput()" "Opens a platform-specific file chooser dialog to select a file for output. After the selection is made, the selected File will be passed to the 'callback' function. If the dialog is closed or canceled, null will be sent to the function, so that the program is not waiting for additional input. The callback is necessary because of how threading works.")
+     ("blendMode()" "Blends the pixels in the display window according to the defined mode. There is a choice of the following modes to blend the source pixels (A) with the ones of pixels already in the display window (B):<br />
+<br />
+BLEND - linear interpolation of colours: C = A*factor + B. This is the default blending mode.<br />
+<br />
+ADD - additive blending with white clip: C = min(A*factor + B, 255)<br />
+<br />
+SUBTRACT - subtractive blending with black clip: C = max(B - A*factor, 0)<br />
+<br />
+DARKEST - only the darkest colour succeeds: C = min(A*factor, B)<br />
+<br />
+LIGHTEST - only the lightest colour succeeds: C = max(A*factor, B)<br />
+<br />
+DIFFERENCE - subtract colors from underlying image.<br />
+<br />
+EXCLUSION - similar to DIFFERENCE, but less extreme.<br />
+<br />
+MULTIPLY - multiply the colors, result will always be darker.<br />
+<br />
+SCREEN - opposite multiply, uses inverse values of the colors.<br />
+<br />
+REPLACE - the pixels entirely replace the others and don't utilize alpha (transparency) values<br />
+<br />
+For Processing 2.0, we recommend using <b>blendMode()</b> and not the previous <b>blend()</b> function. However, unlike <b>blend()</b>, the <b>blendMode()</b> function does not support the following: HARD_LIGHT, SOFT_LIGHT, OVERLAY, DODGE, BURN. On older hardware, the LIGHTEST, DARKEST, and DIFFERENCE modes might not be available as well.")
+     ("clip()" "Limits the rendering to the boundaries of a rectangle defined by the parameters. The boundaries are drawn based on the state of the <b>imageMode()</b> fuction, either CORNER, CORNERS, or CENTER.")
+     ("createGraphics()" "Creates and returns a new <b>PGraphics</b> object. Use this class if you need to draw into an off-screen graphics buffer. The first two parameters define the width and height in pixels. The third, optional parameter specifies the renderer. It can be defined as P2D, P3D, or PDF. If the third parameter isn't used, the default renderer is set. The PDF renderer requires the filename parameter.<br /> 
+<br />
+It's important to consider the renderer used with <b>createGraphics()</b> in relation to the main renderer specified in <b>size()</b>. For example, it's only possible to use P2D or P3D with <b>createGraphics()</b> when one of them is defined in <b>size()</b>. Unlike Processing 1.0, P2D and P3D use OpenGL for drawing, and when using an OpenGL renderer it's necessary for the main drawing surface to be OpenGL-based. If P2D or P3D are used as the renderer in <b>size()</b>, then any of the options can be used with <b>createGraphics()</b>. If the default renderer is used in <b>size()</b>, then only the default or PDF can be used with <b>createGraphics()</b>.<br />
+<br />
+It's important to call any drawing functions between <b>beginDraw()</b> and <b>endDraw()</b> statements. This is also true for any functions that affect drawing, such as <b>smooth()</b> or <b>colorMode()</b>.<br/> 
+<br/>
+Unlike the main drawing surface which is completely opaque, surfaces created with <b>createGraphics()</b> can have transparency. This makes it possible to draw into a graphics and maintain the alpha channel. By using <b>save()</b> to write a PNG or TGA file, the transparency of the graphics object will be honored.")
+     ("hint()" "This command is used to enable or disable special features that control how graphics are drawn. In the course of developing Processing, we have to make many decisions about tradeoffs between performance and visual quality. We put significant effort into determining what makes most sense for the largest number of users, and then use functions like the hint() command to allow people to tune the settings for their particular sketch. 
+<br/><br/>
+Implementing a <b>hint()</b> is a last resort that's used when a more elegant solution cannot be found. Some options might graduate to standard features instead of hints over time, or be added and removed between (major) releases.
+<br/><br/>
+Hints that are used by the default (Java2D) renderer:
+<br/><br/>
+<b>hint(ENABLE_STROKE_PURE)</b> - Fixes a problem with shapes that have a stroke and are rendered using small steps (for instance, using vertex() with points that are close to one another), or are drawn at small sizes.
+<br/><br/>
+Hints for use with both P2D and P3D:
+<br/><br/>
+<b>hint(DISABLE_OPENGL_ERRORS)</b> - Speeds up the P3D renderer setting by not checking for errors while running.
+<br/><br/>
+<b>hint(DISABLE_TEXTURE_MIPMAPS)</b> - Disable generation of texture mipmaps in P2D or P3D. This results in lower quality - but faster - rendering of texture images when they appear smaller than their native resolutions (the mipmaps are scaled-down versions of a texture that make it look better when drawing it at a small size). However, the difference in performance is fairly minor on recent desktop video cards.
+<br/><br/>
+Hints for use with P3D only:
+<br/><br/>
+<b>hint(DISABLE_DEPTH_MASK)</b> - Disables writing into the depth buffer. This means that a shape drawn with this hint can be hidden by another shape drawn later, irrespective of their distances to the camera. Note that this is different from disabling the depth test. The depth test is still applied, as long as the DISABLE_DEPTH_TEST hint is not called, but the depth values of the objects are not recorded. This is useful when drawing a semi-transparent 3D object without depth sorting, in order to avoid visual glitches due the faces of the object being at different distances from the camera, but still having the object properly occluded by the rest of the objects in the scene.
+<br/><br/>
+<b>hint(ENABLE_DEPTH_SORT)</b> - Enable primitive z-sorting of triangles and lines in P3D. This can slow performance considerably, and the algorithm is not yet perfect.
+<br/><br/>
+<b>hint(DISABLE_DEPTH_TEST)</b> - Disable the zbuffer, allowing you to draw on top of everything at will. When depth testing is disabled, items will be drawn to the screen sequentially, like a painting. This hint is most often used to draw in 3D, then draw in 2D on top of it (for instance, to draw GUI controls in 2D on top of a 3D interface). When called, this will also clear the depth buffer. Restore the default with hint(ENABLE_DEPTH_TEST), but note that with the depth buffer cleared, any 3D drawing that happens later in will ignore existing shapes on the screen.
+<br/><br/>
+<b>hint(DISABLE_OPTIMIZED_STROKE)</b> - It forces the P3D renderer to draw each shape (including its strokes) separately, instead of batching them into larger groups for better performance. One consequence of this is that 2D items drawn with P3D are correctly stacked on the screen, depending on the order in which they were drawn. Otherwise, glitches such as the stroke lines being drawn on top of the interior of all the shapes will occur. However, this hint can make rendering substantially slower, so it is recommended to use it only when drawing a small amount of shapes. For drawing two-dimensional scenes, use the P2D renderer instead, which doesn't need the hint to properly stack shapes and their strokes.
+<br/><br/>
+<b>hint(ENABLE_STROKE_PERSPECTIVE)</b> - This causes stroke geometry (lines and points) to be affected by the perspective, meaning that they will look smaller as they move away from the camera.")
+     ("noClip()" "Disables the clipping previously started by the <b>clip()</b> function."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix

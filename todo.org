@@ -378,9 +378,15 @@
     - [X] set()
     - [X] updatePixels()
 
-- [-] Rendering [25%]
-  - [ ] blendMode()
-  - [ ] createGraphics()
+- [-] Rendering [85%]
+  - [X] blendMode()
+  - [X] clip()
+    - was not initially in the list
+  - [X] createGraphics()
+  - [X] hint()
+    - was not initially in the list
+  - [X] noClip()
+    - was not initially in the list
   - [ ] PGraphics
 
   - [X] Shaders [100%]
