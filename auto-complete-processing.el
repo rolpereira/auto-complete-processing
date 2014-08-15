@@ -1159,7 +1159,9 @@ Hints for use with P3D only:
 <b>hint(DISABLE_OPTIMIZED_STROKE)</b> - It forces the P3D renderer to draw each shape (including its strokes) separately, instead of batching them into larger groups for better performance. One consequence of this is that 2D items drawn with P3D are correctly stacked on the screen, depending on the order in which they were drawn. Otherwise, glitches such as the stroke lines being drawn on top of the interior of all the shapes will occur. However, this hint can make rendering substantially slower, so it is recommended to use it only when drawing a small amount of shapes. For drawing two-dimensional scenes, use the P2D renderer instead, which doesn't need the hint to properly stack shapes and their strokes.
 <br/><br/>
 <b>hint(ENABLE_STROKE_PERSPECTIVE)</b> - This causes stroke geometry (lines and points) to be affected by the perspective, meaning that they will look smaller as they move away from the camera.")
-     ("noClip()" "Disables the clipping previously started by the <b>clip()</b> function."))
+     ("noClip()" "Disables the clipping previously started by the <b>clip()</b> function.")
+     ("PGraphics.beginDraw" "Sets the default properties for a PGraphics object. It should be called before anything is drawn into the object.")
+     ("PGraphics.endDraw" "Finalizes the rendering of a PGraphics object so that it can be shown on screen."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
@@ -1385,7 +1387,9 @@ Hints for use with P3D only:
      ("PShape.setVertex" . "setVertex")
      ("PShape.setVisible" . "setVisible")
      ("PShape.translate" . "translate")
-     ("PShape.width" . "width")))
+     ("PShape.width" . "width")
+     ("PGraphics.beginDraw" . "beginDraw")
+     ("PGraphics.endDraw" . "endDraw")))
 
 (defun auto-complete-processing--get-candidates ()
   "Return a list of strings containing the candidates to pass to auto-complete."
