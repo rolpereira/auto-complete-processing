@@ -226,6 +226,7 @@
 
   - [-] Files [92%]
     - [ ] BufferedReader
+      - There isn't any file for this just a "createReader.xml" file
     - [X] createInput()
     - [X] createReader()
     - [X] loadBytes()
@@ -266,6 +267,7 @@
     - [X] endRaw()
     - [X] endRecord()
     - [ ] PrintWriter
+      - There isn't any file for this, just a "createWriter.xml" file
     - [X] saveBytes()
     - [X] saveJSONArray()
     - [X] saveJSONObject()
@@ -351,7 +353,7 @@
     - [X] blendColor()
       - It doesn't appear in the website reference?
 
-- [-] Image [80%]
+- [X] Image [100%]
   - [X] createImage()
   - [X] PImage
 
@@ -363,10 +365,12 @@
     - [X] requestImage()
     - [X] tint()
 
-  - [ ] Textures [0%]
-    - [ ] texture()
-    - [ ] textureMode()
-    - [ ] textureWrap()
+  - [X] Textures [100%]
+    - [X] texture()
+      - Is in category "Shape", subcategory "Vertex"
+    - [X] textureMode()
+      - Is in category "Shape", subcategory "Vertex"
+    - [X] textureWrap()
 
   - [X] Pixels [100%]
     - [X] blend()

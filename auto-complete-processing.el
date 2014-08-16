@@ -1161,7 +1161,8 @@ Hints for use with P3D only:
 <b>hint(ENABLE_STROKE_PERSPECTIVE)</b> - This causes stroke geometry (lines and points) to be affected by the perspective, meaning that they will look smaller as they move away from the camera.")
      ("noClip()" "Disables the clipping previously started by the <b>clip()</b> function.")
      ("PGraphics.beginDraw" "Sets the default properties for a PGraphics object. It should be called before anything is drawn into the object.")
-     ("PGraphics.endDraw" "Finalizes the rendering of a PGraphics object so that it can be shown on screen."))
+     ("PGraphics.endDraw" "Finalizes the rendering of a PGraphics object so that it can be shown on screen.")
+     ("textureWrap()" "Defines if textures repeat or draw once within a texture map. The two parameters are CLAMP (the default behavior) and REPEAT. This function only works with the P2D and P3D renderers."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
