@@ -1,5 +1,5 @@
 
-- [-] Structure [5%]
+- [-] Structure [22%]
   - [ ] () (parentheses)
   - [ ] , (comma)
   - [ ] . (dot)
@@ -13,21 +13,21 @@
   - [ ] catch
   - [ ] class
   - [X] draw()
-  - [ ] exit()
+  - [X] exit()
   - [ ] extends
   - [ ] false
   - [ ] final
   - [ ] implements
   - [ ] import
-  - [ ] loop()
+  - [X] loop()
   - [ ] new
-  - [ ] noLoop()
+  - [X] noLoop()
   - [ ] null
-  - [ ] popStyle()
+  - [X] popStyle()
   - [ ] private
   - [ ] public
-  - [ ] pushStyle()
-  - [ ] redraw()
+  - [X] pushStyle()
+  - [X] redraw()
   - [ ] return
   - [X] setup()
   - [ ] static
@@ -210,6 +210,7 @@
     - [X] mousePressed()
     - [X] mousePressed
     - [ ] mouseReleased()
+      - The type is not "p5function"
     - [X] mouseWheel()
     - [X] mouseX
     - [X] mouseY

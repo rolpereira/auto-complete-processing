@@ -1162,7 +1162,28 @@ Hints for use with P3D only:
      ("noClip()" "Disables the clipping previously started by the <b>clip()</b> function.")
      ("PGraphics.beginDraw" "Sets the default properties for a PGraphics object. It should be called before anything is drawn into the object.")
      ("PGraphics.endDraw" "Finalizes the rendering of a PGraphics object so that it can be shown on screen.")
-     ("textureWrap()" "Defines if textures repeat or draw once within a texture map. The two parameters are CLAMP (the default behavior) and REPEAT. This function only works with the P2D and P3D renderers."))
+     ("textureWrap()" "Defines if textures repeat or draw once within a texture map. The two parameters are CLAMP (the default behavior) and REPEAT. This function only works with the P2D and P3D renderers.")
+     ("exit()" "Quits/stops/exits the program. Programs without a <b>draw()</b> function exit automatically after the last line has run, but programs with <b>draw()</b> run continuously until the program is manually stopped or <b>exit()</b> is run.<br />
+<br />
+Rather than terminating immediately, <b>exit()</b> will cause the sketch to exit after <b>draw()</b> has completed (or after <b>setup()</b> completes if called during the <b>setup()</b> function).<br />
+<br />
+For Java programmers, this is <em>not</em> the same as System.exit(). Further, System.exit() should not be used because closing out an application while <b>draw()</b> is running may cause a crash (particularly with P3D).")
+     ("loop()" "By default, Processing loops through <b>draw()</b> continuously, executing the code within it. However, the <b>draw()</b> loop may be stopped by calling <b>noLoop()</b>. In that case, the <b>draw()</b> loop can be resumed with <b>loop()</b>.")
+     ("noLoop()" "Stops Processing from continuously executing the code within <b>draw()</b>. If <b>loop()</b> is called, the code in <b>draw()</b> begins to run continuously again. If using <b>noLoop()</b> in <b>setup()</b>, it should be the last line inside the block.<br/>
+<br/>
+When <b>noLoop()</b> is used, it's not possible to manipulate or access the screen inside event handling functions such as <b>mousePressed()</b> or <b>keyPressed()</b>. Instead, use those functions to call <b>redraw()</b> or <b>loop()</b>, which will run <b>draw()</b>, which can update the screen properly. This means that when <b>noLoop()</b> has been called, no drawing can happen, and functions like <b>saveFrame()</b> or <b>loadPixels()</b> may not be used.<br/>
+<br/>
+Note that if the sketch is resized, <b>redraw()</b> will be called to update the sketch, even after <b>noLoop()</b> has been specified. Otherwise, the sketch would enter an odd state until <b>loop()</b> was called.")
+     ("popStyle()" "The <b>pushStyle()</b> function saves the current style settings and <b>popStyle()</b> restores the prior settings; these functions are always used together. They allow you to change the style settings and later return to what you had. When a new style is started with <b>pushStyle()</b>, it builds on the current style information. The <b>pushStyle()</b> and <b>popStyle()</b> functions can be embedded to provide more control (see the second example above for a demonstration.)")
+     ("pushStyle()" "The <b>pushStyle()</b> function saves the current style settings and <b>popStyle()</b> restores the prior settings. Note that these functions are always used together. They allow you to change the style settings and later return to what you had. When a new style is started with <b>pushStyle()</b>, it builds on the current style information. The <b>pushStyle()</b> and <b>popStyle()</b> functions can be embedded to provide more control. (See the second example above for a demonstration.)<br />
+<br />
+The style information controlled by the following functions are included in the style:
+fill(), stroke(), tint(), strokeWeight(), strokeCap(), strokeJoin(), imageMode(), rectMode(), ellipseMode(), shapeMode(), colorMode(), textAlign(), textFont(), textMode(), textSize(), textLeading(), emissive(), specular(), shininess(), ambient()")
+     ("redraw()" "Executes the code within <b>draw()</b> one time. This functions allows the program to update the display window only when necessary, for example when an event registered by <b>mousePressed()</b> or <b>keyPressed()</b> occurs. 
+<br/><br/>
+In structuring a program, it only makes sense to call redraw() within events such as <b>mousePressed()</b>. This is because <b>redraw()</b> does not run <b>draw()</b> immediately (it only sets a flag that indicates an update is needed). 
+<br/><br/>
+The <b>redraw()</b> function does not work properly when called inside <b>draw()</b>. To enable/disable animations, use <b>loop()</b> and <b>noLoop()</b>."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
