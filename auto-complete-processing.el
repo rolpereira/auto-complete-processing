@@ -1183,7 +1183,33 @@ fill(), stroke(), tint(), strokeWeight(), strokeCap(), strokeJoin(), imageMode()
 <br/><br/>
 In structuring a program, it only makes sense to call redraw() within events such as <b>mousePressed()</b>. This is because <b>redraw()</b> does not run <b>draw()</b> immediately (it only sets a flag that indicates an update is needed). 
 <br/><br/>
-The <b>redraw()</b> function does not work properly when called inside <b>draw()</b>. To enable/disable animations, use <b>loop()</b> and <b>noLoop()</b>."))
+The <b>redraw()</b> function does not work properly when called inside <b>draw()</b>. To enable/disable animations, use <b>loop()</b> and <b>noLoop()</b>.")
+     ("cursor()" "Sets the cursor to a predefined symbol or an image, or makes it visible if already hidden. If you are trying to set an image as the cursor, the recommended size is 16x16 or 32x32 pixels. It is not possible to load an image as the cursor if you are exporting your program for the Web, and not all MODES work with all browsers. The values for parameters <b>x</b> and <b>y</b> must be less than the dimensions of the image.
+<br /> <br />
+Setting or hiding the cursor does not generally work with \"Present\" mode (when running full-screen).")
+     ("displayWidth" "System variable that stores the width of the entire screen display. This is used to run a full-screen program on any display size.")
+     ("frameRate()" "Specifies the number of frames to be displayed every second. For example, the function call <b>frameRate(30)</b> will attempt to refresh 30 times a second. If the processor is not fast enough to maintain the specified rate, the frame rate will not be achieved. Setting the frame rate within <b>setup()</b> is recommended. The default rate is 60 frames per second.")
+     ("frameRate" "The system variable <b>frameRate</b> contains the approximate frame rate of a running sketch. The initial value is 10 fps and is updated with each frame. The value is averaged over several frames, and so will only be accurate after the draw function has run 5-10 times.")
+     ("noCursor()" "Hides the cursor from view. Will not work when running the program in a web browser or in full screen (Present) mode.")
+     ("size()" "Defines the dimension of the display window in units of pixels. The <b>size()</b> function must be the first line of code, or the first code inside <b>setup()</b>. Any code that appears before the <b>size()</b> command may run more than once, which can lead to confusing results.<br/>
+<br/>
+The system variables <b>width</b> and <b>height</b> are set by the parameters passed to this function. If <b>size()</b> is not used, the window will be given a default size of 100x100 pixels. <br/>
+<br/>
+The <b>size()</b> function can only be used once inside a sketch, and it cannot be used for resizing.<br/>
+<br/>
+Do not use variables as the parameters to <b>size()</b> function, because it will cause problems when exporting your sketch. When variables are used, the dimensions of your sketch cannot be determined during export. Instead, employ numeric values in the <b>size()</b> statement, and then use the built-in <b>width</b> and <b>height</b> variables inside your program when the dimensions of the display window are needed.<br/>
+<br/>
+The maximum width and height is limited by your operating system, and is usually the width and height of your actual screen. On some machines it may simply be the number of pixels on your current screen, meaning that a screen of 800x600 could support <b>size(1600, 300)</b>, since that is the same number of pixels. This varies widely, so you'll have to try different rendering modes and sizes until you get what you're looking for. If you need something larger, use <b>createGraphics</b> to create a non-visible drawing surface.<br/>
+<br/>
+The <b>renderer</b> parameter selects which rendering engine to use. For example, if you will be drawing 3D shapes, use <b>P3D</b>. In addition to the default renderer, other renderers are:<br/>
+<br/>
+<b>P2D</b> (Processing 2D): A renderer that supports two-dimensional drawing.<br/>
+<br/>
+<b>P3D</b> (Processing 3D): 3D graphics renderer that makes use of OpenGL-compatible graphics hardware.<br/>
+<br/>
+<b>PDF</b>: The PDF renderer draws 2D graphics directly to an Acrobat PDF file. This produces excellent results when you need vector shapes for high-resolution output or printing. You must first use Import Library &rarr; PDF to make use of the library. More information can be found in the PDF library reference.<br/>
+<br/>")
+     ("width" "System variable that stores the width of the display window. This value is set by the first parameter of the <b>size()</b> function. For example, the function call <b>size(320, 240)</b> sets the <b>width</b> variable to the value 320. The value of <b>width</b> defaults to 100 if <b>size()</b> is not used in a program."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix

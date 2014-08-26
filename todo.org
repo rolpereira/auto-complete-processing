@@ -37,18 +37,20 @@
   - [ ] try
   - [ ] void
 
-- [-] Environment [36%]
-  - [ ] cursor()
+- [X] Environment [100%]
+  - [X] cursor()
   - [X] displayHeight
-  - [ ] displayWidth
+  - [X] displayWidth
+    - XML contains the tag "<type>" twice
   - [X] focused
   - [X] frameCount
-  - [ ] frameRate()
-  - [ ] frameRate
+  - [X] frameRate()
+  - [X] frameRate
+    - this is a variable named "frameRate", not to be confused with the *function* "frameRate()"
   - [X] height
-  - [ ] noCursor()
-  - [ ] size()
-  - [ ] width
+  - [X] noCursor()
+  - [X] size()
+  - [X] width
 
 - [-] Data [40%]
   - [ ] Primitive [0%]
