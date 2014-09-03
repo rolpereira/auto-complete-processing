@@ -81,17 +81,23 @@
     - [X] TableRow
     - [ ] XML
 
-  - [ ] Conversion [0%]
-    - [ ] binary()
+  - [-] Conversion [40%]
+    - [X] binary()
     - [ ] boolean()
+      - Doesn't exist as an XML
     - [ ] byte()
+      - Doesn't exist as an XML
     - [ ] char()
+      - Doesn't exist as an XML
     - [ ] float()
-    - [ ] hex()
+      - Doesn't exist as an XML
+    - [X] hex()
     - [ ] int()
+      - Doesn't exist as an XML
     - [ ] str()
-    - [ ] unbinary()
-    - [ ] unhex()
+      - Doesn't exist as an XML
+    - [X] unbinary()
+    - [X] unhex()
 
   - [X] String Functions [100%]
     - [X] join()

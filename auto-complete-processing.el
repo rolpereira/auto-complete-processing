@@ -1209,7 +1209,15 @@ The <b>renderer</b> parameter selects which rendering engine to use. For example
 <br/>
 <b>PDF</b>: The PDF renderer draws 2D graphics directly to an Acrobat PDF file. This produces excellent results when you need vector shapes for high-resolution output or printing. You must first use Import Library &rarr; PDF to make use of the library. More information can be found in the PDF library reference.<br/>
 <br/>")
-     ("width" "System variable that stores the width of the display window. This value is set by the first parameter of the <b>size()</b> function. For example, the function call <b>size(320, 240)</b> sets the <b>width</b> variable to the value 320. The value of <b>width</b> defaults to 100 if <b>size()</b> is not used in a program."))
+     ("width" "System variable that stores the width of the display window. This value is set by the first parameter of the <b>size()</b> function. For example, the function call <b>size(320, 240)</b> sets the <b>width</b> variable to the value 320. The value of <b>width</b> defaults to 100 if <b>size()</b> is not used in a program.")
+     ("binary()" "Converts a byte, char, int, or color to a String containing the equivalent binary notation. For example, the color value produced by <b>color(0, 102, 153, 255)</b> will convert to the String value \"11111111000000000110011010011001\". This function can help make your geeky debugging sessions much happier.<br/>
+<br/>
+Note that the maximum number of digits is 32, because an <b>int</b> value can only represent up to 32 bits. Specifying more than 32 digits will have no effect.")
+     ("hex()" "Converts a byte, char, int, or color to a String containing the equivalent hexadecimal notation. For example, the color value produced by <b>color(0, 102, 153)</b> will convert to the String value \"FF006699\". This function can help make your geeky debugging sessions much happier.<br/>
+<br/>
+Note that the maximum number of digits is 8, because an <b>int</b> value can only represent up to 32 bits. Specifying more than 8 digits will not increase the length of the string further.")
+     ("unbinary()" "Converts a String representation of a binary number to its equivalent integer value. For example, <b>unbinary(\"00001000\")</b> will return 8.")
+     ("unhex()" "Converts a String representation of a hexadecimal number to its equivalent integer value."))
   "List of functions and variables available by default in Processing.")
 
 (defvar auto-complete-processing--functions-to-remove-prefix
